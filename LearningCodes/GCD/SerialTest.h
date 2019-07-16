@@ -14,8 +14,6 @@ typedef void(^STCompletion)(void);
 
 @interface SerialTest : NSObject
 
-@property (strong, nonatomic) dispatch_queue_t queue;
-
 + (id)sharedInstance;
 
 - (void)doSomethingWithCompletionHandler:(STCompletion) handler;

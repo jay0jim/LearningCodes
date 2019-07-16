@@ -10,7 +10,7 @@
 
 @interface SerialTest ()
 
-
+@property (strong, nonatomic) dispatch_queue_t queue;
 
 @end
 
