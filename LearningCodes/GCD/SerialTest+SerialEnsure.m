@@ -27,6 +27,7 @@
             id varValue2 = [[SerialTest sharedInstance] valueForKey:name];
             NSLog(@"\nName: %@\nValue1: %@\nValue2: %@", name, varValue, varValue2);
         }
+        free(ivars);
         
         Ivar queueIvar = class_getInstanceVariable([SerialTest class], "_queue");
         dispatch_queue_t newQueue = nil;

@@ -10,6 +10,7 @@
 
 #import "RunLoopTestViewController.h"
 #import "GCDTestViewController.h"
+#import "JSViewController.h"
 
 @interface MainTableViewController ()
 
@@ -26,7 +27,7 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.title = @"Learning Codes";
     
-    self.catagoryArray = @[@"RunLoop", @"GCD"];
+    self.catagoryArray = @[@"RunLoop", @"GCD", @"JS"];
     
 //    //获取沙盒路径
 //    NSArray *paths  = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
@@ -69,6 +70,11 @@
     
     if (indexPath.row == 1) {
         GCDTestViewController *vc = [[GCDTestViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+    if (indexPath.row == 2) {
+        JSViewController *vc = [[JSViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

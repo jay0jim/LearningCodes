@@ -28,6 +28,8 @@ alpha:(a)]
 #import "Base/MainTableViewController.h"
 
 #import <objc/runtime.h>
-#import <objc/message.h> 
+#import <objc/message.h>
+
+#import <JavaScriptCore/JavaScriptCore.h>
 
 #endif /* PrefixHeader_pch */

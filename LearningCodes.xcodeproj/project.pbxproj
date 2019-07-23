@@ -21,6 +21,7 @@
 		EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5322DCD50100911886 /* GCDTestViewController.m */; };
 		EAD65B5722DCD64800911886 /* SerialTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5622DCD64800911886 /* SerialTest.m */; };
 		EAD65B5A22DCD87E00911886 /* SerialTest+SerialEnsure.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5922DCD87E00911886 /* SerialTest+SerialEnsure.m */; };
+		EAD65B5E22E750E600911886 /* JSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5D22E750E600911886 /* JSViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		EAD65B5622DCD64800911886 /* SerialTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SerialTest.m; sourceTree = "<group>"; };
 		EAD65B5822DCD87E00911886 /* SerialTest+SerialEnsure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SerialTest+SerialEnsure.h"; sourceTree = "<group>"; };
 		EAD65B5922DCD87E00911886 /* SerialTest+SerialEnsure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SerialTest+SerialEnsure.m"; sourceTree = "<group>"; };
+		EAD65B5C22E750E600911886 /* JSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSViewController.h; sourceTree = "<group>"; };
+		EAD65B5D22E750E600911886 /* JSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,7 @@
 		EA8CE6FC22C5A4E400E24324 /* LearningCodes */ = {
 			isa = PBXGroup;
 			children = (
+				EAD65B5B22E750C700911886 /* JS */,
 				EAD65B5122DCD4EA00911886 /* GCD */,
 				EA8CE73A22D85E6900E24324 /* RunLoop */,
 				EA8CE73222C5A59400E24324 /* Base */,
@@ -186,6 +190,15 @@
 				EAD65B5922DCD87E00911886 /* SerialTest+SerialEnsure.m */,
 			);
 			path = GCD;
+			sourceTree = "<group>";
+		};
+		EAD65B5B22E750C700911886 /* JS */ = {
+			isa = PBXGroup;
+			children = (
+				EAD65B5C22E750E600911886 /* JSViewController.h */,
+				EAD65B5D22E750E600911886 /* JSViewController.m */,
+			);
+			path = JS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */,
+				EAD65B5E22E750E600911886 /* JSViewController.m in Sources */,
 				EA8CE73D22D85E8500E24324 /* RunLoopTestViewController.m in Sources */,
 				EA8CE70D22C5A4E600E24324 /* main.m in Sources */,
 				EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */,

@@ -23,6 +23,8 @@
     // 去掉下方黑色阴影线
     navigationBar.shadowImage = [[UIImage alloc] init];
 //    [navigationBar setBackgroundImage:[[UIImage alloc] init] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    navigationBar.tintColor = [UIColor blackColor];
+    
 }
 
 - (void)viewDidLoad {
