@@ -23,6 +23,10 @@ alpha:(a)]
 
 #define JMHexColorRGB(hexValue) JMHexColorRGBA(hexValue, 1.0)
 
+// 输出
+#define JMLog(...) NSLog(@"\n%@\n", __VA_ARGS__)
+#define JMPLog(...) NSLog(@"\n%p\n", __VA_ARGS__)
+
 // 通用头文件
 #import "Base/JMNavigationController.h"
 #import "Base/MainTableViewController.h"

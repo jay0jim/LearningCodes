@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA10BCC722F2C8040078EE4D /* BasicTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10BCC622F2C8040078EE4D /* BasicTestViewController.m */; };
 		EA8CE6FF22C5A4E400E24324 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CE6FE22C5A4E400E24324 /* AppDelegate.m */; };
 		EA8CE70522C5A4E400E24324 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8CE70322C5A4E400E24324 /* Main.storyboard */; };
 		EA8CE70722C5A4E600E24324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA8CE70622C5A4E600E24324 /* Assets.xcassets */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA10BCC522F2C8040078EE4D /* BasicTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicTestViewController.h; sourceTree = "<group>"; };
+		EA10BCC622F2C8040078EE4D /* BasicTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicTestViewController.m; sourceTree = "<group>"; };
 		EA8CE6FA22C5A4E400E24324 /* LearningCodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningCodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8CE6FD22C5A4E400E24324 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EA8CE6FE22C5A4E400E24324 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -100,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA10BCC822F2C80D0078EE4D /* BasicTest */ = {
+			isa = PBXGroup;
+			children = (
+				EA10BCC522F2C8040078EE4D /* BasicTestViewController.h */,
+				EA10BCC622F2C8040078EE4D /* BasicTestViewController.m */,
+			);
+			path = BasicTest;
+			sourceTree = "<group>";
+		};
 		EA8CE6F122C5A4E400E24324 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +135,7 @@
 		EA8CE6FC22C5A4E400E24324 /* LearningCodes */ = {
 			isa = PBXGroup;
 			children = (
+				EA10BCC822F2C80D0078EE4D /* BasicTest */,
 				EAD65B5B22E750C700911886 /* JS */,
 				EAD65B5122DCD4EA00911886 /* GCD */,
 				EA8CE73A22D85E6900E24324 /* RunLoop */,
@@ -340,6 +353,7 @@
 				EA8CE73922C5A67800E24324 /* JMNavigationController.m in Sources */,
 				EA8CE73122C5A57900E24324 /* MainTableViewController.m in Sources */,
 				EAD65B5722DCD64800911886 /* SerialTest.m in Sources */,
+				EA10BCC722F2C8040078EE4D /* BasicTestViewController.m in Sources */,
 				EAD65B5A22DCD87E00911886 /* SerialTest+SerialEnsure.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

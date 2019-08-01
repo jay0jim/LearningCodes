@@ -11,6 +11,7 @@
 #import "RunLoopTestViewController.h"
 #import "GCDTestViewController.h"
 #import "JSViewController.h"
+#import "BasicTestViewController.h"
 
 @interface MainTableViewController ()
 
@@ -27,19 +28,7 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.title = @"Learning Codes";
     
-    self.catagoryArray = @[@"RunLoop", @"GCD", @"JS"];
-    
-//    //获取沙盒路径
-//    NSArray *paths  = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
-//    //获取文件路径
-//    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"testLogs.txt"];
-////    NSLog(@"%@", filePath);
-//    //创建文件管理器
-//    NSFileManager *fileManager = [NSFileManager defaultManager];
-//    [fileManager fileExistsAtPath:filePath];
-//    if([fileManager fileExistsAtPath:filePath]){
-//        [fileManager removeItemAtPath:filePath error:nil];
-//    }
+    self.catagoryArray = @[@"RunLoop", @"GCD", @"JS", @"BasicTest"];
 
 }
 
@@ -77,7 +66,14 @@
         JSViewController *vc = [[JSViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
+    
+    if (indexPath.row == 3) {
+        BasicTestViewController *vc = [[BasicTestViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
+
+
 
 
 @end
