@@ -12,6 +12,7 @@
 #import "GCDTestViewController.h"
 #import "JSViewController.h"
 #import "BasicTestViewController.h"
+#import "AddingCellTestViewController.h"
 
 @interface MainTableViewController ()
 
@@ -28,7 +29,7 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.title = @"Learning Codes";
     
-    self.catagoryArray = @[@"RunLoop", @"GCD", @"JS", @"BasicTest"];
+    self.catagoryArray = @[@"RunLoop", @"GCD", @"JS", @"BasicTest", @"Adding Cells"];
 
 }
 
@@ -69,6 +70,11 @@
     
     if (indexPath.row == 3) {
         BasicTestViewController *vc = [[BasicTestViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+    if (indexPath.row == 4) {
+        AddingCellTestViewController *vc = [[AddingCellTestViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

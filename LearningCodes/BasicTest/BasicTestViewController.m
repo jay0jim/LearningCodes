@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) NSMutableDictionary *dicForMutableTest;
 
+@property (strong, nonatomic) NSString *str;
+
 @end
 
 @implementation BasicTestViewController
@@ -116,34 +118,40 @@
 //    NSLog(@"mutableCopyMDic -- %p mutableCopyMDic[@\"aaa\"] -- %p key aaa -- %p", mutableCopyMDic, mutableCopyMDic[@"aaa"], [[mutableCopyMDic allKeys] firstObject]);
 //    NSLog(@"mutableCopyMDic2 -- %p mutableCopyMDic2[@\"aaa\"] -- %p key aaa -- %p", mutableCopyMDic2, mutableCopyMDic2[@"aaa"], [[mutableCopyMDic2 allKeys] firstObject]);
     
-    // 可变集合类型对象
-    NSMutableDictionary *aDic = [NSMutableDictionary dictionaryWithCapacity:10];
-    [aDic setObject:@"111" forKey:@"aaa"];
+//    // 可变集合类型对象
+//    NSMutableDictionary *aDic = [NSMutableDictionary dictionaryWithCapacity:10];
+//    [aDic setObject:@"111" forKey:@"aaa"];
+//
+//    NSDictionary *copyDic = [aDic copy];
+//    NSDictionary *copyDic2 = [aDic copy];
+//    NSMutableDictionary *copyMDic = [aDic copy];
+//    NSMutableDictionary *copyMDic2 = [aDic copy];
+//
+//    NSDictionary *mutableCopyDic = [aDic mutableCopy];
+//    NSDictionary *mutableCopyDic2 = [aDic mutableCopy];
+//    NSMutableDictionary *mutableCopyMDic = [aDic mutableCopy];
+//    NSMutableDictionary *mutableCopyMDic2 = [aDic mutableCopy];
+//
+//    NSLog(@"aDic -- %p aDic[@\"aaa\"] -- %p key aaa -- %p", aDic, aDic[@"aaa"], [[aDic allKeys] firstObject]);
+//
+//    NSLog(@"copyDic -- %p copyDic[@\"aaa\"] -- %p key aaa -- %p", copyDic, copyDic[@"aaa"], [[copyDic allKeys] firstObject]);
+//    NSLog(@"copyDic2 -- %p copyDic2[@\"aaa\"] -- %p key aaa -- %p", copyDic2, copyDic2[@"aaa"], [[copyDic2 allKeys] firstObject]);
+//    NSLog(@"copyMDic -- %p copyMDic[@\"aaa\"] -- %p key aaa -- %p", copyMDic, copyMDic[@"aaa"], [[copyMDic allKeys] firstObject]);
+//    NSLog(@"copyMDic2 -- %p copyMDic2[@\"aaa\"] -- %p key aaa -- %p", copyMDic2, copyMDic2[@"aaa"], [[copyMDic2 allKeys] firstObject]);
+//
+//    NSLog(@"mutableCopyDic -- %p mutableCopyDic[@\"aaa\"] -- %p key aaa -- %p", mutableCopyDic, mutableCopyDic[@"aaa"], [[mutableCopyDic allKeys] firstObject]);
+//    NSLog(@"mutableCopyDic2 -- %p mutableCopyDic2[@\"aaa\"] -- %p key aaa -- %p", mutableCopyDic2, mutableCopyDic2[@"aaa"], [[mutableCopyDic2 allKeys] firstObject]);
+//    NSLog(@"mutableCopyMDic -- %p mutableCopyMDic[@\"aaa\"] -- %p key aaa -- %p", mutableCopyMDic, mutableCopyMDic[@"aaa"], [[mutableCopyMDic allKeys] firstObject]);
+//    NSLog(@"mutableCopyMDic2 -- %p mutableCopyMDic2[@\"aaa\"] -- %p key aaa -- %p", mutableCopyMDic2, mutableCopyMDic2[@"aaa"], [[mutableCopyMDic2 allKeys] firstObject]);
     
-    NSDictionary *copyDic = [aDic copy];
-    NSDictionary *copyDic2 = [aDic copy];
-    NSMutableDictionary *copyMDic = [aDic copy];
-    NSMutableDictionary *copyMDic2 = [aDic copy];
-    
-    NSDictionary *mutableCopyDic = [aDic mutableCopy];
-    NSDictionary *mutableCopyDic2 = [aDic mutableCopy];
-    NSMutableDictionary *mutableCopyMDic = [aDic mutableCopy];
-    NSMutableDictionary *mutableCopyMDic2 = [aDic mutableCopy];
-    
-    NSLog(@"aDic -- %p aDic[@\"aaa\"] -- %p key aaa -- %p", aDic, aDic[@"aaa"], [[aDic allKeys] firstObject]);
-    
-    NSLog(@"copyDic -- %p copyDic[@\"aaa\"] -- %p key aaa -- %p", copyDic, copyDic[@"aaa"], [[copyDic allKeys] firstObject]);
-    NSLog(@"copyDic2 -- %p copyDic2[@\"aaa\"] -- %p key aaa -- %p", copyDic2, copyDic2[@"aaa"], [[copyDic2 allKeys] firstObject]);
-    NSLog(@"copyMDic -- %p copyMDic[@\"aaa\"] -- %p key aaa -- %p", copyMDic, copyMDic[@"aaa"], [[copyMDic allKeys] firstObject]);
-    NSLog(@"copyMDic2 -- %p copyMDic2[@\"aaa\"] -- %p key aaa -- %p", copyMDic2, copyMDic2[@"aaa"], [[copyMDic2 allKeys] firstObject]);
-    
-    NSLog(@"mutableCopyDic -- %p mutableCopyDic[@\"aaa\"] -- %p key aaa -- %p", mutableCopyDic, mutableCopyDic[@"aaa"], [[mutableCopyDic allKeys] firstObject]);
-    NSLog(@"mutableCopyDic2 -- %p mutableCopyDic2[@\"aaa\"] -- %p key aaa -- %p", mutableCopyDic2, mutableCopyDic2[@"aaa"], [[mutableCopyDic2 allKeys] firstObject]);
-    NSLog(@"mutableCopyMDic -- %p mutableCopyMDic[@\"aaa\"] -- %p key aaa -- %p", mutableCopyMDic, mutableCopyMDic[@"aaa"], [[mutableCopyMDic allKeys] firstObject]);
-    NSLog(@"mutableCopyMDic2 -- %p mutableCopyMDic2[@\"aaa\"] -- %p key aaa -- %p", mutableCopyMDic2, mutableCopyMDic2[@"aaa"], [[mutableCopyMDic2 allKeys] firstObject]);
-    
+    NSString *s1 = @"aaa";
+    NSMutableString *s2 = [NSMutableString stringWithFormat:@"aaa"];
 
+    self.str = s1;
+    NSLog(@"s1 -- %p, self.str -- %p", s1, self.str);
     
+    self.str = s2;
+    NSLog(@"s2 -- %p, self.str -- %p", s2, self.str);
 }
 
 

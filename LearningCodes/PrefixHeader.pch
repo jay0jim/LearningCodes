@@ -36,4 +36,6 @@ alpha:(a)]
 
 #import <JavaScriptCore/JavaScriptCore.h>
 
+#import <Masonry.h>
+
 #endif /* PrefixHeader_pch */
