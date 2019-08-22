@@ -237,10 +237,6 @@ static NSInteger count = 10;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     //    JMLog(NSStringFromCGPoint(self.tableView.contentOffset));
     CGFloat currentY = self.tableView.contentOffset.y;
     
@@ -256,6 +252,23 @@ static NSInteger count = 10;
         [self addCellsAtBottom];
     }
 }
+
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+//    //    JMLog(NSStringFromCGPoint(self.tableView.contentOffset));
+//    CGFloat currentY = self.tableView.contentOffset.y;
+//    
+//    //    NSLog(@"Height: %f --- offsetY: %f", self.tableHeight, currentY);
+//    
+//    // 接近顶部
+//    if (currentY < 340) {
+//        [self addCellsAtTop];
+//    }
+//    
+//    // 接近底部
+//    if (self.tableHeight - SCREEN_HEIGHT - currentY < 340) {
+//        [self addCellsAtBottom];
+//    }
+//}
 
 
 @end
