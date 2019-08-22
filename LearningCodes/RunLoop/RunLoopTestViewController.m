@@ -23,12 +23,14 @@
     self.title = @"RunLoopTest";
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    self.timer = [NSTimer timerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
-//        NSLog(@"timer...");
-//    }];
-//    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    self.timer = [NSTimer timerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        NSLog(@"timer...");
+    }];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
     
     UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, 100, 200) style:UITableViewStylePlain];
+    table.delegate = self;
+    table.dataSource = self;
     [self.view addSubview:table];
     
     JMLagMonitor *monitor = [JMLagMonitor sharedInstance];
@@ -36,7 +38,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -51,7 +53,7 @@
 }
 
 - (void)dealloc {
-//    [self.timer invalidate];
+    [self.timer invalidate];
     NSLog(@"dealloc..");
     [[JMLagMonitor sharedInstance] endMonitor];
 }

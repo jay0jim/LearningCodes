@@ -14,6 +14,7 @@ static NSInteger count = 10;
 
 @property (strong, nonatomic) NSMutableArray *dataArray;
 @property (copy, nonatomic) NSArray *allDataArray;
+@property (copy, nonatomic) NSArray *heightArray;
 @property (strong, nonatomic) NSMutableSet *loadedIndex;
 @property (assign, nonatomic) NSInteger loadIndex;
 
@@ -50,7 +51,11 @@ static NSInteger count = 10;
     self.tableView.estimatedRowHeight = 0;
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
-    self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        // Fallback on earlier versions
+    }
     [self.view addSubview:self.tableView];
     
     self.addTopButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -82,6 +87,14 @@ static NSInteger count = 10;
         [mockArray addObject:[NSString stringWithFormat:@"%d", i]];
     }
     self.allDataArray = mockArray;
+    
+    [mockArray removeAllObjects];
+    for (int i = 0; i < 200; i++) {
+        float h = 88 * ((i)%3 + 1);
+        [mockArray addObject:@(h)];
+//        [mockArray addObject:[NSString stringWithFormat:@"%f", h]];
+    }
+    self.heightArray = mockArray;
     
     self.loadIndex = 100;
     NSArray *subArray = [self.allDataArray subarrayWithRange:NSMakeRange(self.loadIndex, 20)];
@@ -131,6 +144,10 @@ static NSInteger count = 10;
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [[self.heightArray objectAtIndex:indexPath.row] floatValue];
+}
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     cell.textLabel.text = self.dataArray[indexPath.row];
 }
@@ -163,6 +180,7 @@ static NSInteger count = 10;
     if (![self.loadedIndex containsObject:@(self.loadIndex)]) {
         if (self.loadIndex >= 0) {
             NSArray *subArray = [self.allDataArray subarrayWithRange:NSMakeRange(self.loadIndex, 20)];
+            
             NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 20)];
             [self.dataArray insertObjects:subArray atIndexes:indexSet];
             
@@ -170,11 +188,30 @@ static NSInteger count = 10;
             [self.loadedIndex addObjectsFromArray:indices];
             
             CGPoint offset = self.tableView.contentOffset;
-            offset.y += 20*88;
+            NSArray *heightSubArray = [self.heightArray subarrayWithRange:NSMakeRange(self.loadIndex, 20)];
+            float totalHeight = [[heightSubArray valueForKeyPath:@"@sum.floatValue"] floatValue];
+            offset.y += totalHeight;
             [self.tableView reloadData];
             self.tableHeight = self.tableView.contentSize.height;
             self.tableView.contentOffset = offset;
         } else {
+            NSInteger remaining = (self.loadIndex + 20) % 20;
+            
+            NSArray *subArray = [self.allDataArray subarrayWithRange:NSMakeRange(0, remaining)];
+            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, remaining)];
+            [self.dataArray insertObjects:subArray atIndexes:indexSet];
+            
+            NSArray *indices = [self createArrayWithLocation:self.loadIndex Length:remaining];
+            [self.loadedIndex addObjectsFromArray:indices];
+            
+            CGPoint offset = self.tableView.contentOffset;
+            NSArray *heightSubArray = [self.heightArray subarrayWithRange:NSMakeRange(0, remaining)];
+            float totalHeight = [[heightSubArray valueForKeyPath:@"@sum.floatValue"] floatValue];
+            offset.y += totalHeight;
+            [self.tableView reloadData];
+            self.tableHeight = self.tableView.contentSize.height;
+            self.tableView.contentOffset = offset;
+            
             self.loadIndex = 0;
         }
     }
@@ -200,10 +237,14 @@ static NSInteger count = 10;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    JMLog(NSStringFromCGPoint(self.tableView.contentOffset));
+
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    //    JMLog(NSStringFromCGPoint(self.tableView.contentOffset));
     CGFloat currentY = self.tableView.contentOffset.y;
     
-//    NSLog(@"Height: %f --- offsetY: %f", self.tableHeight, currentY);
+    //    NSLog(@"Height: %f --- offsetY: %f", self.tableHeight, currentY);
     
     // 接近顶部
     if (currentY < 340) {
