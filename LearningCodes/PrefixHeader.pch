@@ -41,5 +41,6 @@ alpha:(a)]
 #import <JavaScriptCore/JavaScriptCore.h>
 
 #import <Masonry.h>
+#import <JKCategories.h>
 
 #endif /* PrefixHeader_pch */

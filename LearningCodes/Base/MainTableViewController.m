@@ -13,6 +13,7 @@
 #import "JSViewController.h"
 #import "BasicTestViewController.h"
 #import "AddingCellTestViewController.h"
+#import "JMTableViewController.h"
 
 @interface MainTableViewController ()
 
@@ -74,7 +75,7 @@
     }
     
     if (indexPath.row == 4) {
-        AddingCellTestViewController *vc = [[AddingCellTestViewController alloc] init];
+        JMTableViewController *vc = [[JMTableViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

@@ -8,7 +8,7 @@
 
 #import "AddingCellTestViewController.h"
 
-static NSInteger count = 10;
+static NSInteger cellCount = 500;
 
 @interface AddingCellTestViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -39,6 +39,15 @@ static NSInteger count = 10;
 
     [self initUI];
     
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    UITableViewCell *topCell = [[self.tableView visibleCells] firstObject];
+    NSInteger row = [self.tableView indexPathForCell:topCell].row;
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:row forKey:@"startIndex"];
 }
 
 - (void)initUI {
@@ -82,22 +91,23 @@ static NSInteger count = 10;
 }
 
 - (void)mockingData {
-    NSMutableArray *mockArray = [NSMutableArray arrayWithCapacity:200];
-    for (int i = 0; i < 200; i++) {
+    NSMutableArray *mockArray = [NSMutableArray arrayWithCapacity:cellCount];
+    for (int i = 0; i < cellCount; i++) {
         [mockArray addObject:[NSString stringWithFormat:@"%d", i]];
     }
     self.allDataArray = mockArray;
     
     [mockArray removeAllObjects];
-    for (int i = 0; i < 200; i++) {
+    for (int i = 0; i < cellCount; i++) {
         float h = 88 * ((i)%3 + 1);
         [mockArray addObject:@(h)];
 //        [mockArray addObject:[NSString stringWithFormat:@"%f", h]];
     }
     self.heightArray = mockArray;
     
-    self.loadIndex = 100;
-    NSArray *subArray = [self.allDataArray subarrayWithRange:NSMakeRange(self.loadIndex, 20)];
+    self.loadIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"startIndex"];
+    NSInteger start = self.loadIndex-10>0? self.loadIndex-10 : 0;
+    NSArray *subArray = [self.allDataArray subarrayWithRange:NSMakeRange(start, 20)];
     self.dataArray = [NSMutableArray arrayWithArray:subArray];
     
     self.loadedIndex = [NSMutableSet setWithCapacity:100];
@@ -118,13 +128,15 @@ static NSInteger count = 10;
     
     if (self.firstLoad) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.005 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 跳转到tableView中部
-            self.tableHeight = tableView.contentSize.height;
-            NSLog(@"tableHeight - %f", self.tableHeight);
-            CGPoint offset = self.tableView.contentOffset;
-            offset.y = self.tableHeight/2;
-            self.tableView.contentOffset = offset;
-            
+            if (self.loadIndex > 10) {
+                // 跳转到tableView中部
+                self.tableHeight = tableView.contentSize.height;
+                NSLog(@"tableHeight - %f", self.tableHeight);
+                CGPoint offset = self.tableView.contentOffset;
+                offset.y = self.tableHeight/2;
+                self.tableView.contentOffset = offset;
+            }
+
             self.firstLoad = NO;
         });
     }
@@ -154,25 +166,25 @@ static NSInteger count = 10;
 
 - (void)addCellsAtTopButtonPressed:(id)sender {
     
-    CGPoint offset = self.tableView.contentOffset;
-    JMLog(NSStringFromCGPoint(offset));
-    for (int i = 0; i < 10; i++) {
-        NSString *str = [NSString stringWithFormat:@"%d", count];
-        [self.dataArray insertObject:str atIndex:0];
-        count++;
-        offset.y += 88;
-    }
-    JMLog(NSStringFromCGPoint(offset));
-    [self.tableView reloadData];
-//    offset.y -= 64;
-    self.tableView.contentOffset = offset;
+//    CGPoint offset = self.tableView.contentOffset;
+//    JMLog(NSStringFromCGPoint(offset));
+//    for (int i = 0; i < 10; i++) {
+//        NSString *str = [NSString stringWithFormat:@"%d", count];
+//        [self.dataArray insertObject:str atIndex:0];
+//        count++;
+//        offset.y += 88;
+//    }
+//    JMLog(NSStringFromCGPoint(offset));
+//    [self.tableView reloadData];
+////    offset.y -= 64;
+//    self.tableView.contentOffset = offset;
 }
 
 - (void)addCellsAtBottomButtonPressed:(id)sender {
-    NSString *str = [NSString stringWithFormat:@"%d", count];
-    [self.dataArray addObject:str];
-    [self.tableView reloadData];
-    count++;
+//    NSString *str = [NSString stringWithFormat:@"%d", count];
+//    [self.dataArray addObject:str];
+//    [self.tableView reloadData];
+//    count++;
 }
 
 - (void)addCellsAtTop {
@@ -196,6 +208,7 @@ static NSInteger count = 10;
             self.tableView.contentOffset = offset;
         } else {
             NSInteger remaining = (self.loadIndex + 20) % 20;
+            self.loadIndex = 0;
             
             NSArray *subArray = [self.allDataArray subarrayWithRange:NSMakeRange(0, remaining)];
             NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, remaining)];
@@ -211,8 +224,6 @@ static NSInteger count = 10;
             [self.tableView reloadData];
             self.tableHeight = self.tableView.contentSize.height;
             self.tableView.contentOffset = offset;
-            
-            self.loadIndex = 0;
         }
     }
 }
@@ -256,14 +267,14 @@ static NSInteger count = 10;
 //- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
 //    //    JMLog(NSStringFromCGPoint(self.tableView.contentOffset));
 //    CGFloat currentY = self.tableView.contentOffset.y;
-//    
+//
 //    //    NSLog(@"Height: %f --- offsetY: %f", self.tableHeight, currentY);
-//    
+//
 //    // 接近顶部
 //    if (currentY < 340) {
 //        [self addCellsAtTop];
 //    }
-//    
+//
 //    // 接近底部
 //    if (self.tableHeight - SCREEN_HEIGHT - currentY < 340) {
 //        [self addCellsAtBottom];

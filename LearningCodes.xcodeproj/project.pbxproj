@@ -10,6 +10,9 @@
 		81B8187DC2B2FB41366BE0D2 /* libPods-LearningCodes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0696EB758946CFF15B9F4756 /* libPods-LearningCodes.a */; };
 		EA10BCC722F2C8040078EE4D /* BasicTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10BCC622F2C8040078EE4D /* BasicTestViewController.m */; };
 		EA10BCCC22F6DA850078EE4D /* AddingCellTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10BCCB22F6DA850078EE4D /* AddingCellTestViewController.m */; };
+		EA2DD46F230F91D00078C11F /* JMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD46E230F91D00078C11F /* JMTableViewController.m */; };
+		EA2DD473230FD64D0078C11F /* NSArray+JMSubArray.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD472230FD64D0078C11F /* NSArray+JMSubArray.m */; };
+		EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD475230FDA3F0078C11F /* JMTableViewCell.m */; };
 		EA8CE6FF22C5A4E400E24324 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CE6FE22C5A4E400E24324 /* AppDelegate.m */; };
 		EA8CE70522C5A4E400E24324 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8CE70322C5A4E400E24324 /* Main.storyboard */; };
 		EA8CE70722C5A4E600E24324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA8CE70622C5A4E600E24324 /* Assets.xcassets */; };
@@ -52,6 +55,12 @@
 		EA10BCC622F2C8040078EE4D /* BasicTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicTestViewController.m; sourceTree = "<group>"; };
 		EA10BCCA22F6DA850078EE4D /* AddingCellTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddingCellTestViewController.h; sourceTree = "<group>"; };
 		EA10BCCB22F6DA850078EE4D /* AddingCellTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddingCellTestViewController.m; sourceTree = "<group>"; };
+		EA2DD46D230F91D00078C11F /* JMTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMTableViewController.h; sourceTree = "<group>"; };
+		EA2DD46E230F91D00078C11F /* JMTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTableViewController.m; sourceTree = "<group>"; };
+		EA2DD471230FD64D0078C11F /* NSArray+JMSubArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+JMSubArray.h"; sourceTree = "<group>"; };
+		EA2DD472230FD64D0078C11F /* NSArray+JMSubArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JMSubArray.m"; sourceTree = "<group>"; };
+		EA2DD474230FDA3F0078C11F /* JMTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMTableViewCell.h; sourceTree = "<group>"; };
+		EA2DD475230FDA3F0078C11F /* JMTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTableViewCell.m; sourceTree = "<group>"; };
 		EA8CE6FA22C5A4E400E24324 /* LearningCodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningCodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8CE6FD22C5A4E400E24324 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EA8CE6FE22C5A4E400E24324 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -140,10 +149,24 @@
 		EA10BCC922F6DA630078EE4D /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				EA2DD470230FD6180078C11F /* Catagories */,
 				EA10BCCA22F6DA850078EE4D /* AddingCellTestViewController.h */,
 				EA10BCCB22F6DA850078EE4D /* AddingCellTestViewController.m */,
+				EA2DD46D230F91D00078C11F /* JMTableViewController.h */,
+				EA2DD46E230F91D00078C11F /* JMTableViewController.m */,
+				EA2DD474230FDA3F0078C11F /* JMTableViewCell.h */,
+				EA2DD475230FDA3F0078C11F /* JMTableViewCell.m */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		EA2DD470230FD6180078C11F /* Catagories */ = {
+			isa = PBXGroup;
+			children = (
+				EA2DD471230FD64D0078C11F /* NSArray+JMSubArray.h */,
+				EA2DD472230FD64D0078C11F /* NSArray+JMSubArray.m */,
+			);
+			path = Catagories;
 			sourceTree = "<group>";
 		};
 		EA8CE6F122C5A4E400E24324 = {
@@ -407,15 +430,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */,
 				EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */,
 				EAD65B5E22E750E600911886 /* JSViewController.m in Sources */,
 				EA8CE73D22D85E8500E24324 /* RunLoopTestViewController.m in Sources */,
 				EA8CE70D22C5A4E600E24324 /* main.m in Sources */,
 				EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */,
 				EA8CE6FF22C5A4E400E24324 /* AppDelegate.m in Sources */,
+				EA2DD46F230F91D00078C11F /* JMTableViewController.m in Sources */,
 				EA8CE73922C5A67800E24324 /* JMNavigationController.m in Sources */,
 				EA8CE73122C5A57900E24324 /* MainTableViewController.m in Sources */,
 				EAD65B5722DCD64800911886 /* SerialTest.m in Sources */,
+				EA2DD473230FD64D0078C11F /* NSArray+JMSubArray.m in Sources */,
 				EA10BCC722F2C8040078EE4D /* BasicTestViewController.m in Sources */,
 				EAD65B5A22DCD87E00911886 /* SerialTest+SerialEnsure.m in Sources */,
 				EA10BCCC22F6DA850078EE4D /* AddingCellTestViewController.m in Sources */,
