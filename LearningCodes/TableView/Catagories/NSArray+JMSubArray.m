@@ -13,25 +13,30 @@
 - (NSDictionary *)jm_subArrayWithCenter:(NSInteger)cen Radius:(NSInteger)rad {
     NSRange range;
     NSInteger newTop;
-    NSInteger loadIndex;
+    NSInteger loadTopPos;
+    NSInteger loadBottomPos;
     if (cen - rad < 0) {
         range = NSMakeRange(0, cen+rad);
         newTop = cen;
-        loadIndex = 0;
+        loadTopPos = 0;
+        loadBottomPos = cen+rad;
     } else if (cen + rad > self.count-1) {
         range = NSMakeRange(cen-rad, self.count-1);
         newTop = rad;
-        loadIndex = cen-rad;
+        loadTopPos = cen-rad;
+        loadBottomPos = self.count-1;
     } else {
         range = NSMakeRange(cen-rad, cen+rad);
         newTop = rad;
-        loadIndex = cen-rad;
+        loadTopPos = cen-rad;
+        loadBottomPos = cen+rad;
     }
     
     NSArray *subArray = [self subarrayWithRange:range];
     NSDictionary *ret = @{JM_SUBARRAYKEY: subArray,
                           JM_NEWTOPKEY: @(newTop),
-                          JM_LOADINDEXKEY: @(loadIndex),
+                          JM_LOAD_TOP_POS_KEY: @(loadTopPos),
+                          JM_LOAD_BOTTOM_POS_KEY: @(loadBottomPos),
                           };
     
     return ret;

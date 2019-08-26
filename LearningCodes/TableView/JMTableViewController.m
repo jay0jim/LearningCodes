@@ -33,7 +33,8 @@ static NSString *TopCellIndexKey = @"TopCellRowKey";
 // 初始化时的CellIndex
 @property (assign, nonatomic) NSInteger initialCellIndex;
 // 运行中读取数据的index
-@property (assign, nonatomic) NSInteger loadIndex;
+@property (assign, nonatomic) NSInteger loadTopPos;
+@property (assign, nonatomic) NSInteger loadBottomPos;
 @property (strong, nonatomic) NSMutableSet *loadedIndexSet;
 
 @end
@@ -94,9 +95,10 @@ static NSString *TopCellIndexKey = @"TopCellRowKey";
     self.initialCellIndex = [retDic[JM_NEWTOPKEY] integerValue];
     
     // 当前tableView最顶的cell的index
-    self.loadIndex = [retDic[JM_LOADINDEXKEY] integerValue];
+    self.loadTopPos = [retDic[JM_LOAD_TOP_POS_KEY] integerValue];
+    self.loadBottomPos = [retDic[JM_LOAD_BOTTOM_POS_KEY] integerValue];
     self.loadedIndexSet = [NSMutableSet setWithCapacity:10];
-    [self.loadedIndexSet addObject:@(self.loadIndex)];
+    [self.loadedIndexSet addObjectsFromArray:@[@(self.loadTopPos), @(self.loadBottomPos)]];
     
     [self.cellDataArray addObjectsFromArray:subArray];
     
@@ -158,61 +160,66 @@ static NSString *TopCellIndexKey = @"TopCellRowKey";
 
 #pragma mark - Adding Cells
 - (void)addCellsAtTop {
-    self.loadIndex -= 20;
-    if (![self.loadedIndexSet containsObject:@(self.loadIndex)]) {
-        if (self.loadIndex >= 0) {
-            NSArray *subArray = [self.mockDataArray subarrayWithRange:NSMakeRange(self.loadIndex, 20)];
-            
-            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 20)];
-            [self.cellDataArray insertObjects:subArray atIndexes:indexSet];
-            
-            NSArray *indices = [self createArrayWithLocation:self.loadIndex Length:20];
-            [self.loadedIndexSet addObjectsFromArray:indices];
-            
-            CGPoint offset = self.tableView.contentOffset;
-            NSArray *heightSubArray = [self.mockHeightArray subarrayWithRange:NSMakeRange(self.loadIndex, 20)];
-            float totalHeight = [[heightSubArray valueForKeyPath:@"@sum.floatValue"] floatValue];
-            offset.y += totalHeight;
-            [self.tableView reloadData];
-            self.tableHeight = self.tableView.contentSize.height;
-            self.tableView.contentOffset = offset;
-        } else {
-            NSInteger remaining = (self.loadIndex + 20) % 20;
-            self.loadIndex = 0;
-            
-            NSArray *subArray = [self.mockDataArray subarrayWithRange:NSMakeRange(0, remaining)];
-            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, remaining)];
-            [self.cellDataArray insertObjects:subArray atIndexes:indexSet];
-            
-            NSArray *indices = [self createArrayWithLocation:self.loadIndex Length:remaining];
-            [self.loadedIndexSet addObjectsFromArray:indices];
-            
-            CGPoint offset = self.tableView.contentOffset;
-            NSArray *heightSubArray = [self.heightArray subarrayWithRange:NSMakeRange(0, remaining)];
-            float totalHeight = [[heightSubArray valueForKeyPath:@"@sum.floatValue"] floatValue];
-            offset.y += totalHeight;
-            [self.tableView reloadData];
-            self.tableHeight = self.tableView.contentSize.height;
-            self.tableView.contentOffset = offset;
-        }
+    self.loadTopPos -= 20;
+    if (![self.loadedIndexSet containsObject:@(self.loadTopPos)]) {
+//        if (self.loadIndex >= 0) {
+//            NSArray *subArray = [self.mockDataArray subarrayWithRange:NSMakeRange(self.loadIndex, 20)];
+//
+//            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 20)];
+//            [self.cellDataArray insertObjects:subArray atIndexes:indexSet];
+//
+//            NSArray *indices = [self createArrayWithLocation:self.loadIndex Length:20];
+//            [self.loadedIndexSet addObjectsFromArray:indices];
+//
+//            CGPoint offset = self.tableView.contentOffset;
+//            NSArray *heightSubArray = [self.mockHeightArray subarrayWithRange:NSMakeRange(self.loadIndex, 20)];
+//            [self.cellHeightArray insertObjects:heightSubArray atIndexes:indexSet];
+//            float totalHeight = [[heightSubArray valueForKeyPath:@"@sum.floatValue"] floatValue];
+//            offset.y += totalHeight;
+//            [self.tableView reloadData];
+//            self.tableHeight = self.tableView.contentSize.height;
+//            self.tableView.contentOffset = offset;
+//        } else {
+//            NSInteger remaining = (self.loadIndex + 20) % 20;
+//            self.loadIndex = 0;
+//
+//            NSArray *subArray = [self.mockDataArray subarrayWithRange:NSMakeRange(0, remaining)];
+//            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, remaining)];
+//            [self.cellDataArray insertObjects:subArray atIndexes:indexSet];
+//
+//            NSArray *indices = [self createArrayWithLocation:self.loadIndex Length:remaining];
+//            [self.loadedIndexSet addObjectsFromArray:indices];
+//
+//            CGPoint offset = self.tableView.contentOffset;
+//            NSArray *heightSubArray = [self.mockHeightArray subarrayWithRange:NSMakeRange(self.loadIndex, 20)];
+//            [self.cellHeightArray insertObjects:heightSubArray atIndexes:indexSet];
+//            float totalHeight = [[heightSubArray valueForKeyPath:@"@sum.floatValue"] floatValue];
+//            offset.y += totalHeight;
+//            [self.tableView reloadData];
+//            self.tableHeight = self.tableView.contentSize.height;
+//            self.tableView.contentOffset = offset;
+//        }
     }
 }
 
 - (void)addCellsAtBottom {
-    self.loadIndex += 20;
+    self.loadBottomPos += 20;
     
-    if (![self.loadedIndex containsObject:@(self.loadIndex)]) {
-        if (self.loadIndex < self.allDataArray.count-1) {
-            NSArray *subArray = [self.allDataArray subarrayWithRange:NSMakeRange(self.loadIndex, 20)];
-            [self.dataArray addObjectsFromArray:subArray];
+    if (![self.loadedIndexSet containsObject:@(self.loadBottomPos)]) {
+        if (self.loadBottomPos < self.mockDataArray.count-1) {
+            NSArray *subArray = [self.mockDataArray subarrayWithRange:NSMakeRange(self.loadBottomPos, 20)];
+            [self.cellDataArray addObjectsFromArray:subArray];
             
-            NSArray *indices = [self createArrayWithLocation:self.loadIndex Length:20];
-            [self.loadedIndex addObjectsFromArray:indices];
+            NSArray *indices = [self createArrayWithLocation:self.loadBottomPos Length:20];
+            [self.loadedIndexSet addObjectsFromArray:indices];
+            
+            NSArray *heightSubArray = [self.mockHeightArray subarrayWithRange:NSMakeRange(self.loadBottomPos, 20)];
+            [self.cellHeightArray addObjectsFromArray:heightSubArray];
             
             [self.tableView reloadData];
             self.tableHeight = self.tableView.contentSize.height;
         } else {
-            self.loadIndex = self.allDataArray.count-1;
+            self.loadBottomPos = self.mockDataArray.count-1;
         }
     }
 }
@@ -224,6 +231,24 @@ static NSString *TopCellIndexKey = @"TopCellRowKey";
         loc++;
     }
     return [array copy];
+}
+
+#pragma mark - ScrollView
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    //    JMLog(NSStringFromCGPoint(self.tableView.contentOffset));
+    CGFloat currentY = self.tableView.contentOffset.y;
+    
+    //    NSLog(@"Height: %f --- offsetY: %f", self.tableHeight, currentY);
+    
+    // 接近顶部
+    if (currentY < 340) {
+        [self addCellsAtTop];
+    }
+    
+    // 接近底部
+    if (self.tableHeight - SCREEN_HEIGHT - currentY < 340) {
+        [self addCellsAtBottom];
+    }
 }
 
 #pragma mark - Request Data

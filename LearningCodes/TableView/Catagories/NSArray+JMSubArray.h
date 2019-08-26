@@ -10,7 +10,8 @@
 
 #define JM_SUBARRAYKEY @"JMSubArrayKey"
 #define JM_NEWTOPKEY @"JMNewTopKey"
-#define JM_LOADINDEXKEY @"JMLoadIndexKey"
+#define JM_LOAD_TOP_POS_KEY @"JMLoadTopPosKey"
+#define JM_LOAD_BOTTOM_POS_KEY @"JMLoadTopPosKey"
 
 NS_ASSUME_NONNULL_BEGIN
 
