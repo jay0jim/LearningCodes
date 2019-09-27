@@ -23,6 +23,7 @@
 		EA8CE73122C5A57900E24324 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CE73022C5A57900E24324 /* MainTableViewController.m */; };
 		EA8CE73922C5A67800E24324 /* JMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CE73722C5A67800E24324 /* JMNavigationController.m */; };
 		EA8CE73D22D85E8500E24324 /* RunLoopTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CE73C22D85E8500E24324 /* RunLoopTestViewController.m */; };
+		EA9944FB233C859A00CC555B /* DownloaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9944FA233C859A00CC555B /* DownloaderViewController.m */; };
 		EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B4F22DCBD5600911886 /* JMLagMonitor.m */; };
 		EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5322DCD50100911886 /* GCDTestViewController.m */; };
 		EAD65B5722DCD64800911886 /* SerialTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5622DCD64800911886 /* SerialTest.m */; };
@@ -82,6 +83,8 @@
 		EA8CE73822C5A67800E24324 /* JMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMNavigationController.h; sourceTree = "<group>"; };
 		EA8CE73B22D85E8500E24324 /* RunLoopTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopTestViewController.h; sourceTree = "<group>"; };
 		EA8CE73C22D85E8500E24324 /* RunLoopTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopTestViewController.m; sourceTree = "<group>"; };
+		EA9944F9233C859A00CC555B /* DownloaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloaderViewController.h; sourceTree = "<group>"; };
+		EA9944FA233C859A00CC555B /* DownloaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloaderViewController.m; sourceTree = "<group>"; };
 		EAD65B4E22DCBD5600911886 /* JMLagMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMLagMonitor.h; sourceTree = "<group>"; };
 		EAD65B4F22DCBD5600911886 /* JMLagMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMLagMonitor.m; sourceTree = "<group>"; };
 		EAD65B5222DCD50100911886 /* GCDTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDTestViewController.h; sourceTree = "<group>"; };
@@ -194,6 +197,7 @@
 		EA8CE6FC22C5A4E400E24324 /* LearningCodes */ = {
 			isa = PBXGroup;
 			children = (
+				EA9944F8233C858400CC555B /* Downloader */,
 				EA10BCC922F6DA630078EE4D /* TableView */,
 				EA10BCC822F2C80D0078EE4D /* BasicTest */,
 				EAD65B5B22E750C700911886 /* JS */,
@@ -250,6 +254,15 @@
 				EAD65B4F22DCBD5600911886 /* JMLagMonitor.m */,
 			);
 			path = RunLoop;
+			sourceTree = "<group>";
+		};
+		EA9944F8233C858400CC555B /* Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				EA9944F9233C859A00CC555B /* DownloaderViewController.h */,
+				EA9944FA233C859A00CC555B /* DownloaderViewController.m */,
+			);
+			path = Downloader;
 			sourceTree = "<group>";
 		};
 		EAD65B5122DCD4EA00911886 /* GCD */ = {
@@ -433,6 +446,7 @@
 				EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */,
 				EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */,
 				EAD65B5E22E750E600911886 /* JSViewController.m in Sources */,
+				EA9944FB233C859A00CC555B /* DownloaderViewController.m in Sources */,
 				EA8CE73D22D85E8500E24324 /* RunLoopTestViewController.m in Sources */,
 				EA8CE70D22C5A4E600E24324 /* main.m in Sources */,
 				EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */,

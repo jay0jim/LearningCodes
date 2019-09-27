@@ -5,6 +5,7 @@ target ‘LearningCodes’ do
 
 pod 'Masonry'
 pod 'JKCategories'
+pod 'AFNetworking'
 
 
 end

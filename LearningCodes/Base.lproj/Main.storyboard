@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,9 +11,9 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -19,6 +21,89 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="84"/>
+        </scene>
+        <!--Downloader View Controller-->
+        <scene sceneID="m0I-Vs-Xu3">
+            <objects>
+                <viewController storyboardIdentifier="DownloaderViewController" id="DaA-4H-Qgl" customClass="DownloaderViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zji-MS-9qq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uJ-vH-bxQ">
+                                <rect key="frame" x="132" y="310.5" width="150" height="75"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="2iY-2N-foj"/>
+                                    <constraint firstAttribute="height" constant="75" id="2sD-zV-Kcu"/>
+                                </constraints>
+                                <state key="normal" title="Start Download">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadButtonPressed:" destination="DaA-4H-Qgl" eventType="touchUpInside" id="pMe-dh-33i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKp-Rt-dff">
+                                <rect key="frame" x="132" y="415.5" width="150" height="75"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="gd4-hg-Kqn"/>
+                                    <constraint firstAttribute="height" constant="75" id="uIT-8b-epi"/>
+                                </constraints>
+                                <state key="normal" title="Pause">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseBtnPressed:" destination="DaA-4H-Qgl" eventType="touchUpInside" id="FlE-hW-otY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0J-w7-aOx">
+                                <rect key="frame" x="132" y="520.5" width="150" height="75"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="bxk-eq-ehw"/>
+                                    <constraint firstAttribute="width" constant="150" id="kTJ-Ax-IrL"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelBtnPressed:" destination="DaA-4H-Qgl" eventType="touchUpInside" id="feT-4C-NBy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESn-WQ-ROB">
+                                <rect key="frame" x="0.0" y="645.5" width="414" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ESn-WQ-ROB" firstAttribute="top" secondItem="c0J-w7-aOx" secondAttribute="bottom" constant="50" id="3Ri-ja-aSH"/>
+                            <constraint firstItem="c0J-w7-aOx" firstAttribute="top" secondItem="qKp-Rt-dff" secondAttribute="bottom" constant="30" id="60A-La-9Mq"/>
+                            <constraint firstItem="c0J-w7-aOx" firstAttribute="centerX" secondItem="zji-MS-9qq" secondAttribute="centerX" id="B9i-Lv-2ci"/>
+                            <constraint firstItem="qKp-Rt-dff" firstAttribute="top" secondItem="9uJ-vH-bxQ" secondAttribute="bottom" constant="30" id="Kh1-qe-5QS"/>
+                            <constraint firstItem="kTw-Sx-wLj" firstAttribute="trailing" secondItem="ESn-WQ-ROB" secondAttribute="trailing" id="SEL-RS-ZEM"/>
+                            <constraint firstItem="9uJ-vH-bxQ" firstAttribute="centerX" secondItem="zji-MS-9qq" secondAttribute="centerX" id="llE-vg-OLy"/>
+                            <constraint firstItem="9uJ-vH-bxQ" firstAttribute="centerY" secondItem="zji-MS-9qq" secondAttribute="centerY" constant="-100" id="mYq-Jf-cje"/>
+                            <constraint firstItem="ESn-WQ-ROB" firstAttribute="leading" secondItem="kTw-Sx-wLj" secondAttribute="leading" id="tOO-dU-KNd"/>
+                            <constraint firstItem="qKp-Rt-dff" firstAttribute="centerX" secondItem="zji-MS-9qq" secondAttribute="centerX" id="zp8-ob-xDT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kTw-Sx-wLj"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelBtn" destination="c0J-w7-aOx" id="2bH-Gm-QEm"/>
+                        <outlet property="pauseBtn" destination="qKp-Rt-dff" id="9pM-dH-rYj"/>
+                        <outlet property="progressLabel" destination="ESn-WQ-ROB" id="ZU5-ja-U6H"/>
+                        <outlet property="startDownloadBtn" destination="9uJ-vH-bxQ" id="fU3-ua-Fv9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYu-xg-Uw8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="84"/>
         </scene>
     </scenes>
 </document>

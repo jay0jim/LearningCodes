@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - JKCategories (1.8.1):
     - JKCategories/CoreData (= 1.8.1)
     - JKCategories/CoreLocation (= 1.8.1)
@@ -145,18 +160,21 @@ PODS:
   - Masonry (1.1.0)
 
 DEPENDENCIES:
+  - AFNetworking
   - JKCategories
   - Masonry
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworking
     - JKCategories
     - Masonry
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   JKCategories: d5fecfa4f790685ea20daea319f74a8701d4c3ab
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: a3ef5701f9856827f793e4dea9d77209afb71458
+PODFILE CHECKSUM: e47fbd4226a6e94664b058f2d19c1b876f866ec5
 
 COCOAPODS: 1.7.2

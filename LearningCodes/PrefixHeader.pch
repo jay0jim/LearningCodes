@@ -42,5 +42,6 @@ alpha:(a)]
 
 #import <Masonry.h>
 #import <JKCategories.h>
+#import <AFNetworking.h>
 
 #endif /* PrefixHeader_pch */
