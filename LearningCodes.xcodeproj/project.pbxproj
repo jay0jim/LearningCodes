@@ -13,6 +13,8 @@
 		EA2DD46F230F91D00078C11F /* JMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD46E230F91D00078C11F /* JMTableViewController.m */; };
 		EA2DD473230FD64D0078C11F /* NSArray+JMSubArray.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD472230FD64D0078C11F /* NSArray+JMSubArray.m */; };
 		EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD475230FDA3F0078C11F /* JMTableViewCell.m */; };
+		EA8BDAD32387CC3F00C6CAC4 /* NSURL+param.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */; };
+		EA8BDAD8238E549E00C6CAC4 /* AVPlayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8BDAD7238E549E00C6CAC4 /* AVPlayerTestViewController.m */; };
 		EA8CE6FF22C5A4E400E24324 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CE6FE22C5A4E400E24324 /* AppDelegate.m */; };
 		EA8CE70522C5A4E400E24324 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8CE70322C5A4E400E24324 /* Main.storyboard */; };
 		EA8CE70722C5A4E600E24324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA8CE70622C5A4E600E24324 /* Assets.xcassets */; };
@@ -62,6 +64,11 @@
 		EA2DD472230FD64D0078C11F /* NSArray+JMSubArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JMSubArray.m"; sourceTree = "<group>"; };
 		EA2DD474230FDA3F0078C11F /* JMTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMTableViewCell.h; sourceTree = "<group>"; };
 		EA2DD475230FDA3F0078C11F /* JMTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTableViewCell.m; sourceTree = "<group>"; };
+		EA8BDAD12387CC3F00C6CAC4 /* NSURL+param.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+param.h"; sourceTree = "<group>"; };
+		EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+param.m"; sourceTree = "<group>"; };
+		EA8BDAD6238E549E00C6CAC4 /* AVPlayerTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerTestViewController.h; sourceTree = "<group>"; };
+		EA8BDAD7238E549E00C6CAC4 /* AVPlayerTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerTestViewController.m; sourceTree = "<group>"; };
+		EA8BDADA238E555400C6CAC4 /* 1573592711.ts */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1573592711.ts; sourceTree = "<group>"; };
 		EA8CE6FA22C5A4E400E24324 /* LearningCodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningCodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8CE6FD22C5A4E400E24324 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EA8CE6FE22C5A4E400E24324 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -172,9 +179,27 @@
 			path = Catagories;
 			sourceTree = "<group>";
 		};
+		EA8BDAD5238E543E00C6CAC4 /* AVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				EA8BDAD6238E549E00C6CAC4 /* AVPlayerTestViewController.h */,
+				EA8BDAD7238E549E00C6CAC4 /* AVPlayerTestViewController.m */,
+			);
+			path = AVPlayer;
+			sourceTree = "<group>";
+		};
+		EA8BDAD9238E554400C6CAC4 /* TestSources */ = {
+			isa = PBXGroup;
+			children = (
+				EA8BDADA238E555400C6CAC4 /* 1573592711.ts */,
+			);
+			path = TestSources;
+			sourceTree = "<group>";
+		};
 		EA8CE6F122C5A4E400E24324 = {
 			isa = PBXGroup;
 			children = (
+				EA8BDAD9238E554400C6CAC4 /* TestSources */,
 				EA8CE6FC22C5A4E400E24324 /* LearningCodes */,
 				EA8CE71522C5A4E600E24324 /* LearningCodesTests */,
 				EA8CE72022C5A4E600E24324 /* LearningCodesUITests */,
@@ -197,6 +222,7 @@
 		EA8CE6FC22C5A4E400E24324 /* LearningCodes */ = {
 			isa = PBXGroup;
 			children = (
+				EA8BDAD5238E543E00C6CAC4 /* AVPlayer */,
 				EA9944F8233C858400CC555B /* Downloader */,
 				EA10BCC922F6DA630078EE4D /* TableView */,
 				EA10BCC822F2C80D0078EE4D /* BasicTest */,
@@ -261,6 +287,8 @@
 			children = (
 				EA9944F9233C859A00CC555B /* DownloaderViewController.h */,
 				EA9944FA233C859A00CC555B /* DownloaderViewController.m */,
+				EA8BDAD12387CC3F00C6CAC4 /* NSURL+param.h */,
+				EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */,
 			);
 			path = Downloader;
 			sourceTree = "<group>";
@@ -445,9 +473,11 @@
 			files = (
 				EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */,
 				EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */,
+				EA8BDAD32387CC3F00C6CAC4 /* NSURL+param.m in Sources */,
 				EAD65B5E22E750E600911886 /* JSViewController.m in Sources */,
 				EA9944FB233C859A00CC555B /* DownloaderViewController.m in Sources */,
 				EA8CE73D22D85E8500E24324 /* RunLoopTestViewController.m in Sources */,
+				EA8BDAD8238E549E00C6CAC4 /* AVPlayerTestViewController.m in Sources */,
 				EA8CE70D22C5A4E600E24324 /* main.m in Sources */,
 				EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */,
 				EA8CE6FF22C5A4E400E24324 /* AppDelegate.m in Sources */,

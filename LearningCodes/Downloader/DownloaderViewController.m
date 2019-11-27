@@ -8,7 +8,9 @@
 
 #import "DownloaderViewController.h"
 
-#define URL_STR @"http://61.153.102.131/upgcxcode/94/45/112874594/112874594_nb2-1-80.flv?expires=1569482100&platform=android&ssig=SulA0jUys72iFN0FRujX-g&oi=1877347901&trid=f8ad69df282e41d099a013a797c7d6a4&nfb=maPYqpoel5MI3qOUX6YpRA==&nfc=1&mid=472634959"
+#import "NSURL+param.h"
+
+#define URL_STR @"http://upos-hz-mirrorwcsu.acgvideo.com/upgcxcode/70/34/130733470/130733470_nb2-1-32.flv?e=ig8euxZM2rNcNbNz7WdVhoMghzUVhwdEto8g5X10ugNcXBlqNCNEto8g5gNvNE3DN0B5tZlqNxTEto8BTrNvN05fqx6S5ahE9IMvXBvE2ENvNCImNEVEK9GVqJIwqa80WXIekXRE9IB5QK==&uipk=5&nbs=1&deadline=1574331081&gen=playurl&os=wcsu&oi=1877347901&trid=3bfc39805ea843d9b9b032ea53eb2d29u&platform=android&upsig=a12e367e7e2804d6d6a1aaf255b56684&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&mid=472634959"
 
 @interface DownloaderViewController ()
 
@@ -26,6 +28,8 @@
     
     NSURL *url = [NSURL URLWithString:URL_STR];
     [self downloadFileWithURL:url];
+    
+    [NSURL paramsWithURL:url];
 }
 
 - (void)downloadButtonPressed:(id)sender {

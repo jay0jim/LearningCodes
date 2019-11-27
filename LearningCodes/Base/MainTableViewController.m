@@ -15,6 +15,7 @@
 #import "AddingCellTestViewController.h"
 #import "JMTableViewController.h"
 #import "DownloaderViewController.h"
+#import "AVPlayerTestViewController.h"
 
 @interface MainTableViewController ()
 
@@ -31,7 +32,7 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.title = @"Learning Codes";
     
-    self.catagoryArray = @[@"RunLoop", @"GCD", @"JS", @"BasicTest", @"Adding Cells", @"Downloader"];
+    self.catagoryArray = @[@"RunLoop", @"GCD", @"JS", @"BasicTest", @"Adding Cells", @"Downloader", @"AVPlayer"];
 
 }
 
@@ -83,6 +84,11 @@
     if (indexPath.row == 5) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         DownloaderViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"DownloaderViewController"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+    if (indexPath.row == 6) {
+        AVPlayerTestViewController *vc = [[AVPlayerTestViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
