@@ -158,23 +158,31 @@ PODS:
     - JKCategories/UIKit/UIColor
   - JKCategories/UIKit/UIWindow (1.8.1)
   - Masonry (1.1.0)
+  - ReactiveObjC (3.1.1)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking
   - JKCategories
   - Masonry
+  - ReactiveObjC
+  - YYText
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - JKCategories
     - Masonry
+    - ReactiveObjC
+    - YYText
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   JKCategories: d5fecfa4f790685ea20daea319f74a8701d4c3ab
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: e47fbd4226a6e94664b058f2d19c1b876f866ec5
+PODFILE CHECKSUM: d20866b1b54b480c5682e4902b7332adfd3c8393
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.8.4

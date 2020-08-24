@@ -10,8 +10,25 @@
 #import "SerialTest.h"
 #import "SerialTest+SerialEnsure.h"
 
-@interface GCDTestViewController ()
+#import <pthread.h>
+#import <ReactiveObjC.h>
 
+typedef void(^testBlock)(void);
+@interface BlockTest : NSObject
+
+@property (copy, nonatomic) testBlock block;
+
+@end
+
+@implementation BlockTest
+
+@end
+
+@interface GCDTestViewController () {
+
+}
+
+@property (strong, nonatomic) BlockTest *bt;
 
 @end
 
@@ -23,28 +40,28 @@
     self.title = @"GCDTest";
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    [[SerialTest sharedInstance] doSomethingWithCompletionHandler:^{
-//        NSLog(@"Awake!");
-//    }];
+    self.bt = [[BlockTest alloc] init];
     
-    [[SerialTest sharedInstance] doSomethingWithCompletionHandler:^{
-        NSLog(@"Awake!");
-    } ensureFinish:^{
-        NSLog(@"Real awake~!");
-    }];
+    @weak(self);
+    self.bt.block = ^{
+        @strong(self)
+        if (self) {
+            [self myPrint];
+        } else {
+            
+        }
+    };
     
-//    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_SERIAL);
-//    dispatch_async(queue, ^{
-//        NSLog(@"11111");
-//        [NSThread sleepForTimeInterval:2];
-//        NSLog(@"1----");
-//    });
-//
-//    dispatch_async(queue, ^{
-//        NSLog(@"22222");
-//    });
+    self.bt.block();
+    
 }
 
+- (void)myPrint {
+    NSLog(@"my print...");
+}
 
+- (void)dealloc {
+    NSLog(@"GCDTestViewController dealloc...");
+}
 
 @end

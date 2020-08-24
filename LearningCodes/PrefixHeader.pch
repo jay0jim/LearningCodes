@@ -31,6 +31,18 @@ alpha:(a)]
 #define JMLog(...) NSLog(@"\n%@\n", __VA_ARGS__)
 #define JMPLog(...) NSLog(@"\n%p\n", __VA_ARGS__)
 
+#define IS_IN_MAIN_THREAD(...) NSLog(@"%@ in main thread? =%d\n%@", __VA_ARGS__, [NSThread isMainThread], [NSThread currentThread])
+
+// weak strong dance
+#if DEBUG
+#define tl_keywordify autoreleasepool {}
+#else
+#define tl_keywordify try {} @finally{} {}
+#endif
+
+#define weak(a) tl_keywordify __weak typeof(a) a##_weak = a;
+#define strong(a) tl_keywordify typeof(a) a = a##_weak;
+
 // 通用头文件
 #import "Base/JMNavigationController.h"
 #import "Base/MainTableViewController.h"
@@ -43,5 +55,6 @@ alpha:(a)]
 #import <Masonry.h>
 #import <JKCategories.h>
 #import <AFNetworking.h>
+#import <YYText/YYText.h>
 
 #endif /* PrefixHeader_pch */

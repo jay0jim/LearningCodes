@@ -14,7 +14,8 @@
 		EA2DD473230FD64D0078C11F /* NSArray+JMSubArray.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD472230FD64D0078C11F /* NSArray+JMSubArray.m */; };
 		EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD475230FDA3F0078C11F /* JMTableViewCell.m */; };
 		EA8BDAD32387CC3F00C6CAC4 /* NSURL+param.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */; };
-		EA8BDAD8238E549E00C6CAC4 /* AVPlayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8BDAD7238E549E00C6CAC4 /* AVPlayerTestViewController.m */; };
+		EA8BDADC238E59C200C6CAC4 /* 1573592711.ts in Resources */ = {isa = PBXBuildFile; fileRef = EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */; };
+		EA8BDAF12390E1A600C6CAC4 /* 190204084208765161.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EA8BDAF02390E1A600C6CAC4 /* 190204084208765161.mp4 */; };
 		EA8CE6FF22C5A4E400E24324 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CE6FE22C5A4E400E24324 /* AppDelegate.m */; };
 		EA8CE70522C5A4E400E24324 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8CE70322C5A4E400E24324 /* Main.storyboard */; };
 		EA8CE70722C5A4E600E24324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA8CE70622C5A4E600E24324 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		EAD65B5722DCD64800911886 /* SerialTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5622DCD64800911886 /* SerialTest.m */; };
 		EAD65B5A22DCD87E00911886 /* SerialTest+SerialEnsure.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5922DCD87E00911886 /* SerialTest+SerialEnsure.m */; };
 		EAD65B5E22E750E600911886 /* JSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5D22E750E600911886 /* JSViewController.m */; };
+		EAF1001B24ED67B700FFD016 /* TTTextTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF1001A24ED67B700FFD016 /* TTTextTestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +68,12 @@
 		EA2DD475230FDA3F0078C11F /* JMTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTableViewCell.m; sourceTree = "<group>"; };
 		EA8BDAD12387CC3F00C6CAC4 /* NSURL+param.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+param.h"; sourceTree = "<group>"; };
 		EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+param.m"; sourceTree = "<group>"; };
-		EA8BDAD6238E549E00C6CAC4 /* AVPlayerTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerTestViewController.h; sourceTree = "<group>"; };
-		EA8BDAD7238E549E00C6CAC4 /* AVPlayerTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerTestViewController.m; sourceTree = "<group>"; };
-		EA8BDADA238E555400C6CAC4 /* 1573592711.ts */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1573592711.ts; sourceTree = "<group>"; };
+		EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1573592711.ts; sourceTree = "<group>"; };
+		EA8BDAE4238FA32500C6CAC4 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		EA8BDAE6238FA33200C6CAC4 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		EA8BDAE8238FA34D00C6CAC4 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		EA8BDAEA238FA35700C6CAC4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EA8BDAF02390E1A600C6CAC4 /* 190204084208765161.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 190204084208765161.mp4; sourceTree = "<group>"; };
 		EA8CE6FA22C5A4E400E24324 /* LearningCodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningCodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8CE6FD22C5A4E400E24324 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EA8CE6FE22C5A4E400E24324 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -102,6 +107,8 @@
 		EAD65B5922DCD87E00911886 /* SerialTest+SerialEnsure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SerialTest+SerialEnsure.m"; sourceTree = "<group>"; };
 		EAD65B5C22E750E600911886 /* JSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSViewController.h; sourceTree = "<group>"; };
 		EAD65B5D22E750E600911886 /* JSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSViewController.m; sourceTree = "<group>"; };
+		EAF1001924ED67B700FFD016 /* TTTextTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTextTestViewController.h; sourceTree = "<group>"; };
+		EAF1001A24ED67B700FFD016 /* TTTextTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTextTestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +140,10 @@
 		1B5DEDBA6D177C2443327D96 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA8BDAEA238FA35700C6CAC4 /* AudioToolbox.framework */,
+				EA8BDAE8238FA34D00C6CAC4 /* libc++.tbd */,
+				EA8BDAE6238FA33200C6CAC4 /* libbz2.tbd */,
+				EA8BDAE4238FA32500C6CAC4 /* libiconv.tbd */,
 				0696EB758946CFF15B9F4756 /* libPods-LearningCodes.a */,
 			);
 			name = Frameworks;
@@ -179,27 +190,11 @@
 			path = Catagories;
 			sourceTree = "<group>";
 		};
-		EA8BDAD5238E543E00C6CAC4 /* AVPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				EA8BDAD6238E549E00C6CAC4 /* AVPlayerTestViewController.h */,
-				EA8BDAD7238E549E00C6CAC4 /* AVPlayerTestViewController.m */,
-			);
-			path = AVPlayer;
-			sourceTree = "<group>";
-		};
-		EA8BDAD9238E554400C6CAC4 /* TestSources */ = {
-			isa = PBXGroup;
-			children = (
-				EA8BDADA238E555400C6CAC4 /* 1573592711.ts */,
-			);
-			path = TestSources;
-			sourceTree = "<group>";
-		};
 		EA8CE6F122C5A4E400E24324 = {
 			isa = PBXGroup;
 			children = (
-				EA8BDAD9238E554400C6CAC4 /* TestSources */,
+				EA8BDAF02390E1A600C6CAC4 /* 190204084208765161.mp4 */,
+				EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */,
 				EA8CE6FC22C5A4E400E24324 /* LearningCodes */,
 				EA8CE71522C5A4E600E24324 /* LearningCodesTests */,
 				EA8CE72022C5A4E600E24324 /* LearningCodesUITests */,
@@ -222,7 +217,7 @@
 		EA8CE6FC22C5A4E400E24324 /* LearningCodes */ = {
 			isa = PBXGroup;
 			children = (
-				EA8BDAD5238E543E00C6CAC4 /* AVPlayer */,
+				EAF1001824ED679800FFD016 /* YYTextTest */,
 				EA9944F8233C858400CC555B /* Downloader */,
 				EA10BCC922F6DA630078EE4D /* TableView */,
 				EA10BCC822F2C80D0078EE4D /* BasicTest */,
@@ -313,6 +308,15 @@
 				EAD65B5D22E750E600911886 /* JSViewController.m */,
 			);
 			path = JS;
+			sourceTree = "<group>";
+		};
+		EAF1001824ED679800FFD016 /* YYTextTest */ = {
+			isa = PBXGroup;
+			children = (
+				EAF1001924ED67B700FFD016 /* TTTextTestViewController.h */,
+				EAF1001A24ED67B700FFD016 /* TTTextTestViewController.m */,
+			);
+			path = YYTextTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +426,8 @@
 				EA8CE70A22C5A4E600E24324 /* LaunchScreen.storyboard in Resources */,
 				EA8CE70722C5A4E600E24324 /* Assets.xcassets in Resources */,
 				EA8CE70522C5A4E400E24324 /* Main.storyboard in Resources */,
+				EA8BDADC238E59C200C6CAC4 /* 1573592711.ts in Resources */,
+				EA8BDAF12390E1A600C6CAC4 /* 190204084208765161.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +483,6 @@
 				EAD65B5E22E750E600911886 /* JSViewController.m in Sources */,
 				EA9944FB233C859A00CC555B /* DownloaderViewController.m in Sources */,
 				EA8CE73D22D85E8500E24324 /* RunLoopTestViewController.m in Sources */,
-				EA8BDAD8238E549E00C6CAC4 /* AVPlayerTestViewController.m in Sources */,
 				EA8CE70D22C5A4E600E24324 /* main.m in Sources */,
 				EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */,
 				EA8CE6FF22C5A4E400E24324 /* AppDelegate.m in Sources */,
@@ -487,6 +492,7 @@
 				EAD65B5722DCD64800911886 /* SerialTest.m in Sources */,
 				EA2DD473230FD64D0078C11F /* NSArray+JMSubArray.m in Sources */,
 				EA10BCC722F2C8040078EE4D /* BasicTestViewController.m in Sources */,
+				EAF1001B24ED67B700FFD016 /* TTTextTestViewController.m in Sources */,
 				EAD65B5A22DCD87E00911886 /* SerialTest+SerialEnsure.m in Sources */,
 				EA10BCCC22F6DA850078EE4D /* AddingCellTestViewController.m in Sources */,
 			);
@@ -660,13 +666,19 @@
 			baseConfigurationReference = D3FA0042FF3154047FB2F061 /* Pods-LearningCodes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U3KSMQZZR5;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LearningCodes/PrefixHeader.pch";
 				INFOPLIST_FILE = LearningCodes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -682,13 +694,19 @@
 			baseConfigurationReference = D799829DCD6761AD2688E8AF /* Pods-LearningCodes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U3KSMQZZR5;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LearningCodes/PrefixHeader.pch";
 				INFOPLIST_FILE = LearningCodes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
