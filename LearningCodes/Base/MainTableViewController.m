@@ -8,18 +8,10 @@
 
 #import "MainTableViewController.h"
 
-#import "RunLoopTestViewController.h"
-#import "GCDTestViewController.h"
-#import "JSViewController.h"
-#import "BasicTestViewController.h"
-#import "AddingCellTestViewController.h"
-#import "JMTableViewController.h"
-#import "DownloaderViewController.h"
-#import "TTTextTestViewController.h"
-
 @interface MainTableViewController ()
 
-@property (strong, nonatomic) NSArray *catagoryArray;
+@property (strong, nonatomic) NSMutableArray *catagoryArray;
+@property (strong, nonatomic) NSMutableArray *classNames;
 
 @end
 
@@ -32,8 +24,31 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.title = @"Learning Codes";
     
-    self.catagoryArray = @[@"RunLoop", @"GCD", @"JS", @"BasicTest", @"Adding Cells", @"Downloader", @"VLC Test", @"YYText"];
+    self.catagoryArray = @[].mutableCopy;
+    self.classNames = @[].mutableCopy;
+    
+    [self addCellTitle:@"RunLoop"
+             ClassName:@"RunLoopTestViewController"];
+    [self addCellTitle:@"GCD"
+             ClassName:@"GCDTestViewController"];
+    [self addCellTitle:@"JS"
+             ClassName:@"JSViewController"];
+    [self addCellTitle:@"BasicTest"
+             ClassName:@"BasicTestViewController"];
+    [self addCellTitle:@"Adding Cells"
+             ClassName:@"JMTableViewController"];
+    [self addCellTitle:@"Downloader"
+             ClassName:@"DownloaderViewController"];
+    [self addCellTitle:@"YYText"
+             ClassName:@"TTTextTestViewController"];
+    [self addCellTitle:@"Dynamic Cell Height"
+             ClassName:@"DynamicCellHeightViewController"];
 
+}
+
+- (void)addCellTitle:(NSString *)title ClassName:(NSString *)className {
+    [self.catagoryArray jk_addObj:title];
+    [self.classNames jk_addObj:className];
 }
 
 #pragma mark - Table view data source
@@ -56,48 +71,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.row == 0) {
-        RunLoopTestViewController *vc = [[RunLoopTestViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+    NSString *className = [self.classNames jk_objectWithIndex:indexPath.row];
+    Class class = NSClassFromString(className);
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UIViewController *vc = nil;
+    @try {
+        vc = [storyboard instantiateViewControllerWithIdentifier:className];
+    } @catch (NSException *exception) {
+        NSLog(@"Reason: %@", exception.reason);
+    } @finally {
+        if (vc == nil) {
+            vc = [class new];
+            vc.title = [self.catagoryArray jk_objectWithIndex:indexPath.row];
+        }
     }
-    
-    if (indexPath.row == 1) {
-        GCDTestViewController *vc = [[GCDTestViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-    
-    if (indexPath.row == 2) {
-        JSViewController *vc = [[JSViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-    
-    if (indexPath.row == 3) {
-        BasicTestViewController *vc = [[BasicTestViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-    
-    if (indexPath.row == 4) {
-        JMTableViewController *vc = [[JMTableViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-    
-    if (indexPath.row == 5) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        DownloaderViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"DownloaderViewController"];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-    
-    if (indexPath.row == 6) {
-        
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        DownloaderViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"VLCTestViewController"];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-    
-    if (indexPath.row == 7) {
-        TTTextTestViewController *vc = [[TTTextTestViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+    [self.navigationController pushViewController:vc animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

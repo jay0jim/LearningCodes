@@ -13,6 +13,7 @@
 		EA2DD46F230F91D00078C11F /* JMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD46E230F91D00078C11F /* JMTableViewController.m */; };
 		EA2DD473230FD64D0078C11F /* NSArray+JMSubArray.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD472230FD64D0078C11F /* NSArray+JMSubArray.m */; };
 		EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD475230FDA3F0078C11F /* JMTableViewCell.m */; };
+		EA2E0F5424FBB60F00240F5E /* DynamicCellHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2E0F5324FBB60F00240F5E /* DynamicCellHeightViewController.m */; };
 		EA8BDAD32387CC3F00C6CAC4 /* NSURL+param.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */; };
 		EA8BDADC238E59C200C6CAC4 /* 1573592711.ts in Resources */ = {isa = PBXBuildFile; fileRef = EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */; };
 		EA8BDAF12390E1A600C6CAC4 /* 190204084208765161.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EA8BDAF02390E1A600C6CAC4 /* 190204084208765161.mp4 */; };
@@ -66,6 +67,8 @@
 		EA2DD472230FD64D0078C11F /* NSArray+JMSubArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JMSubArray.m"; sourceTree = "<group>"; };
 		EA2DD474230FDA3F0078C11F /* JMTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMTableViewCell.h; sourceTree = "<group>"; };
 		EA2DD475230FDA3F0078C11F /* JMTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTableViewCell.m; sourceTree = "<group>"; };
+		EA2E0F5224FBB60F00240F5E /* DynamicCellHeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicCellHeightViewController.h; sourceTree = "<group>"; };
+		EA2E0F5324FBB60F00240F5E /* DynamicCellHeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicCellHeightViewController.m; sourceTree = "<group>"; };
 		EA8BDAD12387CC3F00C6CAC4 /* NSURL+param.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+param.h"; sourceTree = "<group>"; };
 		EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+param.m"; sourceTree = "<group>"; };
 		EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1573592711.ts; sourceTree = "<group>"; };
@@ -190,6 +193,15 @@
 			path = Catagories;
 			sourceTree = "<group>";
 		};
+		EA2E0F4B24FBB2CC00240F5E /* DynamicCellHeight */ = {
+			isa = PBXGroup;
+			children = (
+				EA2E0F5224FBB60F00240F5E /* DynamicCellHeightViewController.h */,
+				EA2E0F5324FBB60F00240F5E /* DynamicCellHeightViewController.m */,
+			);
+			path = DynamicCellHeight;
+			sourceTree = "<group>";
+		};
 		EA8CE6F122C5A4E400E24324 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +229,7 @@
 		EA8CE6FC22C5A4E400E24324 /* LearningCodes */ = {
 			isa = PBXGroup;
 			children = (
+				EA2E0F4B24FBB2CC00240F5E /* DynamicCellHeight */,
 				EAF1001824ED679800FFD016 /* YYTextTest */,
 				EA9944F8233C858400CC555B /* Downloader */,
 				EA10BCC922F6DA630078EE4D /* TableView */,
@@ -483,6 +496,7 @@
 				EAD65B5E22E750E600911886 /* JSViewController.m in Sources */,
 				EA9944FB233C859A00CC555B /* DownloaderViewController.m in Sources */,
 				EA8CE73D22D85E8500E24324 /* RunLoopTestViewController.m in Sources */,
+				EA2E0F5424FBB60F00240F5E /* DynamicCellHeightViewController.m in Sources */,
 				EA8CE70D22C5A4E600E24324 /* main.m in Sources */,
 				EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */,
 				EA8CE6FF22C5A4E400E24324 /* AppDelegate.m in Sources */,
