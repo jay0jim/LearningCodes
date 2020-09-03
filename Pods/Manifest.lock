@@ -159,6 +159,9 @@ PODS:
   - JKCategories/UIKit/UIWindow (1.8.1)
   - Masonry (1.1.0)
   - ReactiveObjC (3.1.1)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
   - YYText (1.0.7)
 
 DEPENDENCIES:
@@ -166,6 +169,7 @@ DEPENDENCIES:
   - JKCategories
   - Masonry
   - ReactiveObjC
+  - SDWebImage
   - YYText
 
 SPEC REPOS:
@@ -174,6 +178,7 @@ SPEC REPOS:
     - JKCategories
     - Masonry
     - ReactiveObjC
+    - SDWebImage
     - YYText
 
 SPEC CHECKSUMS:
@@ -181,8 +186,9 @@ SPEC CHECKSUMS:
   JKCategories: d5fecfa4f790685ea20daea319f74a8701d4c3ab
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: d20866b1b54b480c5682e4902b7332adfd3c8393
+PODFILE CHECKSUM: c28634b9c88102a2176283d421855c511f9cb9e6
 
 COCOAPODS: 1.9.3

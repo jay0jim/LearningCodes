@@ -14,6 +14,8 @@
 		EA2DD473230FD64D0078C11F /* NSArray+JMSubArray.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD472230FD64D0078C11F /* NSArray+JMSubArray.m */; };
 		EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD475230FDA3F0078C11F /* JMTableViewCell.m */; };
 		EA2E0F5424FBB60F00240F5E /* DynamicCellHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2E0F5324FBB60F00240F5E /* DynamicCellHeightViewController.m */; };
+		EA2E0F582500E15500240F5E /* DynamicCellHeightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2E0F562500E15500240F5E /* DynamicCellHeightTableViewCell.m */; };
+		EA2E0F592500E15500240F5E /* DynamicCellHeightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2E0F572500E15500240F5E /* DynamicCellHeightTableViewCell.xib */; };
 		EA8BDAD32387CC3F00C6CAC4 /* NSURL+param.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */; };
 		EA8BDADC238E59C200C6CAC4 /* 1573592711.ts in Resources */ = {isa = PBXBuildFile; fileRef = EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */; };
 		EA8BDAF12390E1A600C6CAC4 /* 190204084208765161.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EA8BDAF02390E1A600C6CAC4 /* 190204084208765161.mp4 */; };
@@ -69,6 +71,9 @@
 		EA2DD475230FDA3F0078C11F /* JMTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTableViewCell.m; sourceTree = "<group>"; };
 		EA2E0F5224FBB60F00240F5E /* DynamicCellHeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicCellHeightViewController.h; sourceTree = "<group>"; };
 		EA2E0F5324FBB60F00240F5E /* DynamicCellHeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicCellHeightViewController.m; sourceTree = "<group>"; };
+		EA2E0F552500E15500240F5E /* DynamicCellHeightTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicCellHeightTableViewCell.h; sourceTree = "<group>"; };
+		EA2E0F562500E15500240F5E /* DynamicCellHeightTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicCellHeightTableViewCell.m; sourceTree = "<group>"; };
+		EA2E0F572500E15500240F5E /* DynamicCellHeightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicCellHeightTableViewCell.xib; sourceTree = "<group>"; };
 		EA8BDAD12387CC3F00C6CAC4 /* NSURL+param.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+param.h"; sourceTree = "<group>"; };
 		EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+param.m"; sourceTree = "<group>"; };
 		EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1573592711.ts; sourceTree = "<group>"; };
@@ -198,6 +203,9 @@
 			children = (
 				EA2E0F5224FBB60F00240F5E /* DynamicCellHeightViewController.h */,
 				EA2E0F5324FBB60F00240F5E /* DynamicCellHeightViewController.m */,
+				EA2E0F552500E15500240F5E /* DynamicCellHeightTableViewCell.h */,
+				EA2E0F562500E15500240F5E /* DynamicCellHeightTableViewCell.m */,
+				EA2E0F572500E15500240F5E /* DynamicCellHeightTableViewCell.xib */,
 			);
 			path = DynamicCellHeight;
 			sourceTree = "<group>";
@@ -440,6 +448,7 @@
 				EA8CE70722C5A4E600E24324 /* Assets.xcassets in Resources */,
 				EA8CE70522C5A4E400E24324 /* Main.storyboard in Resources */,
 				EA8BDADC238E59C200C6CAC4 /* 1573592711.ts in Resources */,
+				EA2E0F592500E15500240F5E /* DynamicCellHeightTableViewCell.xib in Resources */,
 				EA8BDAF12390E1A600C6CAC4 /* 190204084208765161.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2E0F582500E15500240F5E /* DynamicCellHeightTableViewCell.m in Sources */,
 				EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */,
 				EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */,
 				EA8BDAD32387CC3F00C6CAC4 /* NSURL+param.m in Sources */,

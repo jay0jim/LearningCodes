@@ -8,6 +8,7 @@ pod 'JKCategories'
 pod 'AFNetworking'
 pod 'ReactiveObjC' 
 pod 'YYText'
+pod 'SDWebImage'
 
 end
 
