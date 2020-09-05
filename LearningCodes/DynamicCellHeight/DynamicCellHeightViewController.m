@@ -132,6 +132,8 @@ typedef void(^CellOperationBlock)(void);
 static void Callback(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info){
     DynamicCellHeightViewController * vcSelf = (__bridge DynamicCellHeightViewController *)(info);
     
+    NSLog(@"%lu", activity);
+    
     if (vcSelf.optBlocks.count > 0) {
         //获取一次数组里面的任务并执行
         CellOperationBlock block = vcSelf.optBlocks.firstObject;
