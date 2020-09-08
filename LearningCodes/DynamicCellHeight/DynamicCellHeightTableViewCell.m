@@ -8,6 +8,10 @@
 
 #import "DynamicCellHeightTableViewCell.h"
 
+@interface DynamicCellHeightTableViewCell ()
+
+@end
+
 @implementation DynamicCellHeightTableViewCell
 
 - (IBAction)loadButtonPressed:(id)sender {

@@ -29,17 +29,15 @@
 //        NSLog(@"timer...");
 //    }];
 //    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
-    [self createObserver];
+//    [self createObserver];
     
-    UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, 100, 200) style:UITableViewStylePlain];
+    UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, 100, 200) style:UITableViewStylePlain];
     table.delegate = self;
     table.dataSource = self;
     [self.view addSubview:table];
     
 //    JMLagMonitor *monitor = [JMLagMonitor sharedInstance];
 //    [monitor beginMonitor];
-    
-    
     
     
     
@@ -51,7 +49,7 @@
     NSLog(@"dealloc..");
 //    [[JMLagMonitor sharedInstance] endMonitor];
     
-    CFRunLoopRemoveObserver(CFRunLoopGetCurrent(), m_observer, kCFRunLoopDefaultMode);
+//    CFRunLoopRemoveObserver(CFRunLoopGetCurrent(), m_observer, kCFRunLoopDefaultMode);
 }
 
 
@@ -69,6 +67,11 @@
     cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%ld", indexPath.row);
+    return 44;
 }
 
 #pragma mark - Events

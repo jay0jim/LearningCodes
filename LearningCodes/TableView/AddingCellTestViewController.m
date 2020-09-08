@@ -157,6 +157,7 @@ static NSInteger cellCount = 500;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%ld", indexPath.row);
     return [[self.heightArray objectAtIndex:indexPath.row] floatValue];
 }
 

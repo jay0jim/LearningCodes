@@ -47,26 +47,26 @@ static NSString *TopCellIndexKey = @"TopCellRowKey";
     self.title = @"TableView";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self initUI];
+//    [self initUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.isFirstLoad = YES;
-    
-    [self initMockData];
-    
-    [self initData];
+//    self.isFirstLoad = YES;
+//
+//    [self initMockData];
+//
+//    [self initData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
     // 保存进度
-    UITableViewCell *topCell = [[self.tableView visibleCells] firstObject];
-    NSIndexPath *idp = [self.tableView indexPathForCell:topCell];
-    [NSUserDefaults jk_setObject:@(idp.row) forKey:TopCellIndexKey];
+//    UITableViewCell *topCell = [[self.tableView visibleCells] firstObject];
+//    NSIndexPath *idp = [self.tableView indexPathForCell:topCell];
+//    [NSUserDefaults jk_setObject:@(idp.row) forKey:TopCellIndexKey];
     
 }
 
@@ -139,6 +139,7 @@ static NSString *TopCellIndexKey = @"TopCellRowKey";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%ld", indexPath.row);
     return [[self.cellHeightArray objectAtIndex:indexPath.row] floatValue];
 }
 

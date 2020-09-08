@@ -43,6 +43,8 @@
              ClassName:@"TTTextTestViewController"];
     [self addCellTitle:@"Dynamic Cell Height"
              ClassName:@"DynamicCellHeightViewController"];
+    [self addCellTitle:@"Table View Test"
+             ClassName:@"TableViewTestViewController"];
 
 }
 

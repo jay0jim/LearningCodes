@@ -9,13 +9,19 @@
 #import "DynamicCellHeightViewController.h"
 #import "DynamicCellHeightTableViewCell.h"
 
+#import "JMImageDownloader.h"
+
 typedef void(^CellOperationBlock)(void);
 
-@interface DynamicCellHeightViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface DynamicCellHeightViewController () <UITableViewDelegate, UITableViewDataSource> {
+    CFRunLoopObserverRef observer;
+}
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSMutableDictionary *heights;
 @property (strong, nonatomic) NSMutableArray *optBlocks;
+@property (copy, nonatomic) NSArray *urls;
+@property (strong, nonatomic) JMImageDownloader *downloader;
 
 @end
 
@@ -28,13 +34,36 @@ typedef void(^CellOperationBlock)(void);
     [self.view addSubview:self.tableView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.estimatedRowHeight = 64;
+//    self.tableView.estimatedRowHeight = 64;
     
     self.heights = @{}.mutableCopy;
     self.optBlocks = @[].mutableCopy;
     
-    //
-    [self runLoopOptimization];
+    self.downloader = [JMImageDownloader sharedInstance];
+    
+
+    self.urls = @[@"https://c-ssl.duitang.com/uploads/item/201701/16/20170116105642_a3EXe.jpeg", @"https://c-ssl.duitang.com/uploads/item/201702/04/20170204154039_iYy2k.thumb.700_0.jpeg", @"https://c-ssl.duitang.com/uploads/item/201701/16/20170116105642_a3EXe.jpeg", @"https://c-ssl.duitang.com/uploads/item/201702/04/20170204154039_iYy2k.thumb.700_0.jpeg", @"https://c-ssl.duitang.com/uploads/item/201701/16/20170116105642_a3EXe.jpeg", @"https://c-ssl.duitang.com/uploads/item/201702/04/20170204154039_iYy2k.thumb.700_0.jpeg",
+                       @"https://c-ssl.duitang.com/uploads/item/202005/28/20200528140705_dtsoe.jpg",
+                       @"https://c-ssl.duitang.com/uploads/item/202003/09/20200309221735_ulmuj.jpg",
+                       @"https://c-ssl.duitang.com/uploads/item/202003/08/20200308113806_xcdvu.jpg",
+                       @"https://c-ssl.duitang.com/uploads/item/201706/28/20170628065315_sGZx4.jpeg",
+                       @"https://c-ssl.duitang.com/uploads/item/201906/07/20190607102134_cwris.jpg",
+                       @"https://c-ssl.duitang.com/uploads/item/201706/07/20170607124001_XsdPS.jpeg",
+                       @"https://c-ssl.duitang.com/uploads/item/201712/18/20171218114506_VQiPA.jpeg",
+                       @"https://c-ssl.duitang.com/uploads/item/201902/18/20190218183426_ljnhm.jpg",
+                       @"https://c-ssl.duitang.com/uploads/item/202004/16/20200416165008_B3xMH.jpeg",
+                       @"https://c-ssl.duitang.com/uploads/item/201706/28/20170628065738_VSGrj.jpeg",
+                       @"https://c-ssl.duitang.com/uploads/blog/202009/08/20200908143624_3aea0.jpg",
+                       @"https://c-ssl.duitang.com/uploads/item/202002/01/20200201151237_RVMvy.jpeg",
+                       @"https://c-ssl.duitang.com/uploads/item/202006/07/20200607195916_G23zt.jpeg",
+                       @"https://c-ssl.duitang.com/uploads/item/202007/26/20200726174834_LP4kN.jpeg",
+                       @"https://c-ssl.duitang.com/uploads/item/202001/02/20200102134318_ogprr.jpg",
+    ];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
 }
 
 - (void)dealloc {
@@ -42,8 +71,12 @@ typedef void(^CellOperationBlock)(void);
 }
 
 #pragma mark - TableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 30;
+    return self.urls.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -54,18 +87,21 @@ typedef void(^CellOperationBlock)(void);
     
     cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
     
-    cell.callback = ^{
-        NSLog(@"%ld", indexPath.row);
-        CellOperationBlock block = ^{
-            [self setCellImageWithIndexPath:indexPath];
-        };
-        [self.optBlocks jk_addObj:block];
-    };
+    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:self.urls[indexPath.row]] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        CGFloat imgHeight = image.size.height;
+        if (imgHeight > 80) {
+            imgHeight = (imgHeight/image.size.width)*(SCREEN_WIDTH-30);
+        }
+        [self.heights jk_setFloat:70+imgHeight forKey:[NSString stringWithFormat:@"%ld", indexPath.row]];
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    }];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    NSLog(@"%ld", indexPath.row);
+    
     NSString *key = [NSString stringWithFormat:@"%ld", indexPath.row];
     CGFloat height = [self.heights jk_floatForKey:key];
     if (height <= 0.001) {
@@ -75,74 +111,30 @@ typedef void(^CellOperationBlock)(void);
     return height;
 }
 
-- (void)setCellImageWithIndexPath:(NSIndexPath *)indexPath {
-//    DynamicCellHeightTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+//- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if ([tableView.indexPathsForVisibleRows indexOfObject:indexPath] == NSNotFound) {
+//        NSString *urlStr = self.urls[indexPath.row];
+//        [self.downloader suspendTaskWithURL:[NSURL URLWithString:urlStr]];
+//    }
+//}
+//
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if ([tableView.indexPathsForVisibleRows indexOfObject:indexPath] != NSNotFound) {
+//        NSString *urlStr = self.urls[indexPath.row];
+//        [self.downloader resumeTaskWithURL:[NSURL URLWithString:urlStr]];
+//    }
+//}
+
+- (void)setCellImageWithIndexPath:(NSIndexPath *)indexPath Entity:(NSDictionary *)entity{
     NSLog(@"hhh...");
-    
-    NSString *key = [NSString stringWithFormat:@"%ld", indexPath.row];
-    [self.heights jk_setCGFloat:200.0 forKey:key];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-    });
-    
-}
-
-#pragma mark - RunLoop
-- (void)runLoopOptimization {
-    //1、先获取当前的Runloop
-    CFRunLoopRef runloop = CFRunLoopGetCurrent();
-    //定义观察者
-    CFRunLoopObserverRef observer;
-    CFRunLoopObserverContext context = {
-        0,
-        (__bridge void *)self,
-        &CFRetain,
-        &CFRelease,
-        NULL
-    };
-    /*创建观察者
-     参数一：分配空间的方式，
-     参数二：运行循环状态，
-     参数三：是否一直监听，
-     参数四：优先级
-     参数五：回调函数的地址，
-     参数六：上下文
-     */
-    observer = CFRunLoopObserverCreate(kCFAllocatorMalloc,
-                                       kCFRunLoopBeforeWaiting,
-                                       YES,
-                                       0,
-                                       &Callback,
-                                       &context);
-    //添加观察者，添加在common模式下面
-    CFRunLoopAddObserver(runloop, observer, kCFRunLoopCommonModes);
 
     
     
-    //创建定时器 (保证runloop回调函数一直在执行)
-    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(notDoSomething)];
-    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    
+//    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    
 }
 
-- (void)notDoSomething {
-    // 不做事情,就是为了让 callBack() 函数一直相应
-}
 
-//定义一个回调函数  一次RunLoop来一次
-static void Callback(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info){
-    DynamicCellHeightViewController * vcSelf = (__bridge DynamicCellHeightViewController *)(info);
-    
-    NSLog(@"%lu", activity);
-    
-    if (vcSelf.optBlocks.count > 0) {
-        //获取一次数组里面的任务并执行
-        CellOperationBlock block = vcSelf.optBlocks.firstObject;
-        if (block) {
-            block();
-        }
-        [vcSelf.optBlocks removeObjectAtIndex:0];
-    }
-    
-}
 
 @end

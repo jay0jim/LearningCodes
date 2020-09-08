@@ -56,5 +56,6 @@ alpha:(a)]
 #import <JKCategories.h>
 #import <AFNetworking.h>
 #import <YYText/YYText.h>
+#import <SDWebImage.h>
 
 #endif /* PrefixHeader_pch */

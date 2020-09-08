@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DynamicCellHeightTableViewCell : UITableViewCell
 
 @property (copy, nonatomic) DCHLoadButtonBlock callback;
+@property (strong, nonatomic) UIImage *img;
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
+
 
 @end
 
