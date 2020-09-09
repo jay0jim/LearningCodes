@@ -45,6 +45,7 @@
              ClassName:@"DynamicCellHeightViewController"];
     [self addCellTitle:@"Table View Test"
              ClassName:@"TableViewTestViewController"];
+    [self addCellTitle:@"Dynamic Cell Count" ClassName:@"DynamicCellCountViewController"];
 
 }
 
