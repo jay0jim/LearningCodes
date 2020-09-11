@@ -19,6 +19,8 @@
 		EA6E6B6225072C040039A8A6 /* TableViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E6B6125072C040039A8A6 /* TableViewTestViewController.m */; };
 		EA6E6B72250764100039A8A6 /* JMImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E6B6F250764100039A8A6 /* JMImageDownloader.m */; };
 		EA6E6B73250764100039A8A6 /* JMImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E6B70250764100039A8A6 /* JMImageCache.m */; };
+		EA6E6B7B250914BE0039A8A6 /* teacher.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA6E6B7A250914BD0039A8A6 /* teacher.txt */; };
+		EA6E6B7F25093B470039A8A6 /* DynamicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E6B7E25093B470039A8A6 /* DynamicTableViewController.m */; };
 		EA8BDAD32387CC3F00C6CAC4 /* NSURL+param.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */; };
 		EA8BDADC238E59C200C6CAC4 /* 1573592711.ts in Resources */ = {isa = PBXBuildFile; fileRef = EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */; };
 		EA8BDAF12390E1A600C6CAC4 /* 190204084208765161.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EA8BDAF02390E1A600C6CAC4 /* 190204084208765161.mp4 */; };
@@ -38,7 +40,6 @@
 		EAD65B5722DCD64800911886 /* SerialTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5622DCD64800911886 /* SerialTest.m */; };
 		EAD65B5A22DCD87E00911886 /* SerialTest+SerialEnsure.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5922DCD87E00911886 /* SerialTest+SerialEnsure.m */; };
 		EAD65B5E22E750E600911886 /* JSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5D22E750E600911886 /* JSViewController.m */; };
-		EADEDA422508DA6F004A5B51 /* DynamicCellCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADEDA412508DA6F004A5B51 /* DynamicCellCountViewController.m */; };
 		EAF1001B24ED67B700FFD016 /* TTTextTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF1001A24ED67B700FFD016 /* TTTextTestViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,9 @@
 		EA6E6B6F250764100039A8A6 /* JMImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMImageDownloader.m; sourceTree = "<group>"; };
 		EA6E6B70250764100039A8A6 /* JMImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMImageCache.m; sourceTree = "<group>"; };
 		EA6E6B71250764100039A8A6 /* JMImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMImageDownloader.h; sourceTree = "<group>"; };
+		EA6E6B7A250914BD0039A8A6 /* teacher.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = teacher.txt; sourceTree = "<group>"; };
+		EA6E6B7D25093B470039A8A6 /* DynamicTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicTableViewController.h; sourceTree = "<group>"; };
+		EA6E6B7E25093B470039A8A6 /* DynamicTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicTableViewController.m; sourceTree = "<group>"; };
 		EA8BDAD12387CC3F00C6CAC4 /* NSURL+param.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+param.h"; sourceTree = "<group>"; };
 		EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+param.m"; sourceTree = "<group>"; };
 		EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1573592711.ts; sourceTree = "<group>"; };
@@ -125,8 +129,6 @@
 		EAD65B5922DCD87E00911886 /* SerialTest+SerialEnsure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SerialTest+SerialEnsure.m"; sourceTree = "<group>"; };
 		EAD65B5C22E750E600911886 /* JSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSViewController.h; sourceTree = "<group>"; };
 		EAD65B5D22E750E600911886 /* JSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSViewController.m; sourceTree = "<group>"; };
-		EADEDA402508DA6F004A5B51 /* DynamicCellCountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicCellCountViewController.h; sourceTree = "<group>"; };
-		EADEDA412508DA6F004A5B51 /* DynamicCellCountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicCellCountViewController.m; sourceTree = "<group>"; };
 		EAF1001924ED67B700FFD016 /* TTTextTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTextTestViewController.h; sourceTree = "<group>"; };
 		EAF1001A24ED67B700FFD016 /* TTTextTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTextTestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,11 +245,21 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		EA6E6B7C25093B1B0039A8A6 /* DynamicTableView */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E6B7D25093B470039A8A6 /* DynamicTableViewController.h */,
+				EA6E6B7E25093B470039A8A6 /* DynamicTableViewController.m */,
+			);
+			path = DynamicTableView;
+			sourceTree = "<group>";
+		};
 		EA8CE6F122C5A4E400E24324 = {
 			isa = PBXGroup;
 			children = (
 				EA8BDAF02390E1A600C6CAC4 /* 190204084208765161.mp4 */,
 				EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */,
+				EA6E6B7A250914BD0039A8A6 /* teacher.txt */,
 				EA8CE6FC22C5A4E400E24324 /* LearningCodes */,
 				EA8CE71522C5A4E600E24324 /* LearningCodesTests */,
 				EA8CE72022C5A4E600E24324 /* LearningCodesUITests */,
@@ -270,7 +282,7 @@
 		EA8CE6FC22C5A4E400E24324 /* LearningCodes */ = {
 			isa = PBXGroup;
 			children = (
-				EADEDA3C2508D659004A5B51 /* DynamicCellCount */,
+				EA6E6B7C25093B1B0039A8A6 /* DynamicTableView */,
 				EA6E6B5F25072BCC0039A8A6 /* TableViewHeight */,
 				EA2E0F4B24FBB2CC00240F5E /* DynamicCellHeight */,
 				EAF1001824ED679800FFD016 /* YYTextTest */,
@@ -364,15 +376,6 @@
 				EAD65B5D22E750E600911886 /* JSViewController.m */,
 			);
 			path = JS;
-			sourceTree = "<group>";
-		};
-		EADEDA3C2508D659004A5B51 /* DynamicCellCount */ = {
-			isa = PBXGroup;
-			children = (
-				EADEDA402508DA6F004A5B51 /* DynamicCellCountViewController.h */,
-				EADEDA412508DA6F004A5B51 /* DynamicCellCountViewController.m */,
-			);
-			path = DynamicCellCount;
 			sourceTree = "<group>";
 		};
 		EAF1001824ED679800FFD016 /* YYTextTest */ = {
@@ -489,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA8CE70A22C5A4E600E24324 /* LaunchScreen.storyboard in Resources */,
+				EA6E6B7B250914BE0039A8A6 /* teacher.txt in Resources */,
 				EA8CE70722C5A4E600E24324 /* Assets.xcassets in Resources */,
 				EA8CE70522C5A4E400E24324 /* Main.storyboard in Resources */,
 				EA8BDADC238E59C200C6CAC4 /* 1573592711.ts in Resources */,
@@ -543,7 +547,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EADEDA422508DA6F004A5B51 /* DynamicCellCountViewController.m in Sources */,
 				EA2E0F582500E15500240F5E /* DynamicCellHeightTableViewCell.m in Sources */,
 				EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */,
 				EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */,
@@ -555,6 +558,7 @@
 				EA8CE70D22C5A4E600E24324 /* main.m in Sources */,
 				EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */,
 				EA8CE6FF22C5A4E400E24324 /* AppDelegate.m in Sources */,
+				EA6E6B7F25093B470039A8A6 /* DynamicTableViewController.m in Sources */,
 				EA2DD46F230F91D00078C11F /* JMTableViewController.m in Sources */,
 				EA8CE73922C5A67800E24324 /* JMNavigationController.m in Sources */,
 				EA8CE73122C5A57900E24324 /* MainTableViewController.m in Sources */,

@@ -57,19 +57,19 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%ld", indexPath.row);
+    NSLog(@"heightForRowAtIndexPath - %ld", indexPath.row);
     return 60;
 }
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"didEndDisplayingCell - %ld", indexPath.row);
-    if ([tableView.indexPathsForVisibleRows indexOfObject:indexPath] == NSNotFound) {
-        NSLog(@"didEndDisplayingCell - %ld", indexPath.row);
-    }
+    NSLog(@"didEndDisplayingCell - %ld", indexPath.row);
+//    if ([tableView.indexPathsForVisibleRows indexOfObject:indexPath] == NSNotFound) {
+//        NSLog(@"didEndDisplayingCell - %ld", indexPath.row);
+//    }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"willDisplayCell - %ld", indexPath.row);
+    NSLog(@"willDisplayCell - %@", cell.textLabel.text);
 }
 
 @end

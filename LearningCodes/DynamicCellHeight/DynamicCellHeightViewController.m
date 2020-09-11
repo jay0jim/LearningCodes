@@ -84,23 +84,23 @@ typedef void(^CellOperationBlock)(void);
     if (cell == nil) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"DynamicCellHeightTableViewCell" owner:self options:nil].firstObject;
     }
-    
+    NSLog(@"cellForRowAtIndexPath - %ld", indexPath.row);
     cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
     
-    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:self.urls[indexPath.row]] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        CGFloat imgHeight = image.size.height;
-        if (imgHeight > 80) {
-            imgHeight = (imgHeight/image.size.width)*(SCREEN_WIDTH-30);
-        }
-        [self.heights jk_setFloat:70+imgHeight forKey:[NSString stringWithFormat:@"%ld", indexPath.row]];
-        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-    }];
+//    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:self.urls[indexPath.row]] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+//        CGFloat imgHeight = image.size.height;
+//        if (imgHeight > 80) {
+//            imgHeight = (imgHeight/image.size.width)*(SCREEN_WIDTH-30);
+//        }
+//        [self.heights jk_setFloat:70+imgHeight forKey:[NSString stringWithFormat:@"%ld", indexPath.row]];
+//        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+//    }];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%ld", indexPath.row);
+    NSLog(@"heightForRowAtIndexPath - %ld", indexPath.row);
     
     NSString *key = [NSString stringWithFormat:@"%ld", indexPath.row];
     CGFloat height = [self.heights jk_floatForKey:key];

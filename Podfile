@@ -8,7 +8,7 @@ pod 'JKCategories'
 pod 'AFNetworking'
 pod 'ReactiveObjC' 
 pod 'YYText'
-pod 'SDWebImage'
+pod 'SDWebImage', '5.8.4'
 
 end
 

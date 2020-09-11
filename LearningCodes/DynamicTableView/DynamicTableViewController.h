@@ -1,8 +1,8 @@
 //
-//  DynamicCellCountViewController.h
+//  DynamicTableViewController.h
 //  LearningCodes
 //
-//  Created by Tony Lee on 2020/9/9.
+//  Created by Tony on 2020/9/10.
 //  Copyright © 2020 Tony. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DynamicCellCountViewController : UIViewController
+@interface DynamicTableViewController : UITableViewController
 
 @end
 
