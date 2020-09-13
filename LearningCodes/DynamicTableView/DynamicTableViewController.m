@@ -8,13 +8,17 @@
 
 #import "DynamicTableViewController.h"
 
+
+
 @interface DynamicTableViewController () {
     int     m_count;
 }
 
-@property (copy, nonatomic) NSArray *urls;
-
 @property (strong, nonatomic) NSMutableArray *data;
+
+// 用于记录是否“在table停止滑动后，run loop休眠前”已经进行过更新
+// 当table再次滑动后将此标记重置为否
+@property (assign, nonatomic) BOOL updated;
 
 @end
 
@@ -22,24 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.urls = @[@"https://c-ssl.duitang.com/uploads/item/201701/16/20170116105642_a3EXe.jpeg", @"https://c-ssl.duitang.com/uploads/item/201702/04/20170204154039_iYy2k.thumb.700_0.jpeg", @"https://c-ssl.duitang.com/uploads/item/201701/16/20170116105642_a3EXe.jpeg", @"https://c-ssl.duitang.com/uploads/item/201702/04/20170204154039_iYy2k.thumb.700_0.jpeg", @"https://c-ssl.duitang.com/uploads/item/201701/16/20170116105642_a3EXe.jpeg", @"https://c-ssl.duitang.com/uploads/item/201702/04/20170204154039_iYy2k.thumb.700_0.jpeg",
-                       @"https://c-ssl.duitang.com/uploads/item/202005/28/20200528140705_dtsoe.jpg",
-                       @"https://c-ssl.duitang.com/uploads/item/202003/09/20200309221735_ulmuj.jpg",
-                       @"https://c-ssl.duitang.com/uploads/item/202003/08/20200308113806_xcdvu.jpg",
-                       @"https://c-ssl.duitang.com/uploads/item/201706/28/20170628065315_sGZx4.jpeg",
-                       @"https://c-ssl.duitang.com/uploads/item/201906/07/20190607102134_cwris.jpg",
-                       @"https://c-ssl.duitang.com/uploads/item/201706/07/20170607124001_XsdPS.jpeg",
-                       @"https://c-ssl.duitang.com/uploads/item/201712/18/20171218114506_VQiPA.jpeg",
-                       @"https://c-ssl.duitang.com/uploads/item/201902/18/20190218183426_ljnhm.jpg",
-                       @"https://c-ssl.duitang.com/uploads/item/202004/16/20200416165008_B3xMH.jpeg",
-                       @"https://c-ssl.duitang.com/uploads/item/201706/28/20170628065738_VSGrj.jpeg",
-                       @"https://c-ssl.duitang.com/uploads/blog/202009/08/20200908143624_3aea0.jpg",
-                       @"https://c-ssl.duitang.com/uploads/item/202002/01/20200201151237_RVMvy.jpeg",
-                       @"https://c-ssl.duitang.com/uploads/item/202006/07/20200607195916_G23zt.jpeg",
-                       @"https://c-ssl.duitang.com/uploads/item/202007/26/20200726174834_LP4kN.jpeg",
-                       @"https://c-ssl.duitang.com/uploads/item/202001/02/20200102134318_ogprr.jpg",
-    ];
     
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [rightBtn setTitle:@"点我看看" forState:UIControlStateNormal];
@@ -55,15 +41,21 @@
         self.data = @[].mutableCopy;
         m_count = 0;
         
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 30; i++) {
             [self.data insertObject:@(m_count+i) atIndex:0];
         }
-        m_count += 10;
+        m_count += 30;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:10 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
         });
     });
+    
+    // RunLoop
+    CFRunLoopObserverContext context = {0,(__bridge void*)self,NULL,NULL};
+    CFRunLoopObserverRef observer = CFRunLoopObserverCreate(CFAllocatorGetDefault(), kCFRunLoopAllActivities, YES, 0, &runLoopObserverCallback, &context);
+    CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopDefaultMode);
 }
 
 - (void)dealloc {
@@ -104,29 +96,46 @@
     m_count += 10;
     [self.tableView reloadData];
     
-//    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:10 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-    
-//    NSLog(@"contentSize: %@", NSStringFromCGSize(self.tableView.contentSize));
-//    NSLog(@"contentOffset: %@", NSStringFromCGPoint(self.tableView.contentOffset));
-//    NSLog(@"contentInset: %@", NSStringFromUIEdgeInsets(self.tableView.contentInset));
-//    NSLog(@"frame: %@", NSStringFromCGRect(self.tableView.frame));
-//    NSLog(@"bound: %@", NSStringFromCGRect(self.tableView.bounds));
-    
     self.tableView.contentOffset = CGPointMake(0.0f, self.tableView.contentSize.height - offsetOfButtom);
-//    self.tableView.contentOffset = CGPointMake(0, 900);
-    
-//    CGFloat offsetOfButtom = self.tableView.contentSize.height - self.tableView.contentOffset.y;
-//
-//    [self.dataArray insertObjects:oldMessages atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0,[oldMessages count])]];
-//
-//    [self.tableView reloadData];
-//
-//    self.tableView.contentOffset = CGPointMake(0.0f, self.tableView.contentSize.height - offsetOfButtom - K_HeadViewHeight);
+
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    NSLog(@"contentSize: %@", NSStringFromCGSize(self.tableView.contentSize));
-    NSLog(@"contentOffset: %@", NSStringFromCGPoint(self.tableView.contentOffset));
+//    if (self.tableView.contentOffset.y <= 200) {
+//        NSLog(@"Near top");
+//
+//    }
+    
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    self.updated = NO;
+}
+
+#pragma mark - Private methods
+- (void)addCellsToPosition {
+    
+}
+
+#pragma mark - RunLoop
+static void runLoopObserverCallback(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
+    DynamicTableViewController *vc = (__bridge DynamicTableViewController *)info;
+    switch (activity) {
+        case kCFRunLoopBeforeWaiting: {
+            if (!vc.updated) {
+                NSLog(@"Before Waiting");
+                
+                
+                
+                vc.updated = YES;
+            }
+            break;
+        }
+            
+        default:
+            break;
+    }
+    
 }
 
 
