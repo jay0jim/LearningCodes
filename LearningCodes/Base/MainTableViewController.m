@@ -48,6 +48,10 @@
     [self addCellTitle:@"Dynamic Table View"
              ClassName:@"DynamicTableViewController"];
 
+    
+//    NSArray *a = @[@"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", ];
+//    NSArray *b = [a objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(17, 5)]];
+//    NSLog(@"%@", b);
 }
 
 - (void)addCellTitle:(NSString *)title ClassName:(NSString *)className {

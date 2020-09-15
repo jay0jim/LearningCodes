@@ -16,12 +16,17 @@ typedef enum : NSUInteger {
 #define kUpdateThresholdTop     500
 #define kUpdateThresholdBottom  500
 
+#define kMockCount              100
+
 @interface DynamicTableViewController () {
     CFRunLoopObserverRef    m_observer;
 }
 
 @property (copy, nonatomic) NSArray *mockArray;
+@property (copy, nonatomic) NSDictionary *mockHeightDic;
+
 @property (strong, nonatomic) NSMutableArray *data;
+@property (strong, nonatomic) NSMutableDictionary *heights;
 
 // 用于记录是否“在table停止滑动后，run loop休眠前”已经进行过更新
 // 当table再次滑动后将此标记重置为否
@@ -50,16 +55,27 @@ typedef enum : NSUInteger {
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSMutableArray *array = @[].mutableCopy;
-        for (int i = 0; i < 5000; i++) {
+        NSMutableDictionary *dic = @{}.mutableCopy;
+        for (int i = 0; i < kMockCount; i++) {
             [array addObject:@(i)];
+            
+            int a = arc4random()%20;
+            a *= 10;
+            a += 100;
+            [dic setObject:@(a) forKey:[NSString stringWithFormat:@"%d", i]];
         }
         self.mockArray = [NSArray arrayWithArray:array];
+        self.mockHeightDic = [NSDictionary dictionaryWithDictionary:dic];
         
-        self.currentTopIndex = 2500;
-        self.currentBottomIndex = 2529;
+        self.currentTopIndex = 25;
+        self.currentBottomIndex = self.currentTopIndex + 29;
         self.data = @[].mutableCopy;
+        self.heights = @{}.mutableCopy;
         for (int i = 0; i < 30; i++) {
             [self.data addObject:self.mockArray[i+self.currentTopIndex]];
+            
+            NSNumber *h = [self.mockHeightDic objectForKey:[NSString stringWithFormat:@"%ld", i+self.currentTopIndex]];
+            [self.heights setObject:h forKey:[NSString stringWithFormat:@"%d", i]];
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -95,13 +111,19 @@ typedef enum : NSUInteger {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL" forIndexPath:indexPath];
     
 //    NSLog(@"cellForRowAtIndexPath - %ld", indexPath.row);
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", [self.data[indexPath.row] intValue]];
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.text = [NSString stringWithFormat:@"IndexPath.row: %d\nCell height: %.2f", [self.data[indexPath.row] intValue], cell.bounds.size.height];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    NSLog(@"heightForRowAtIndexPath - %ld", indexPath.row);
+    NSNumber *h = [self.heights objectForKey:[NSString stringWithFormat:@"%ld", indexPath.row]];
+    if (h) {
+        CGFloat height = [h doubleValue];
+        return height;
+    }
     return 90;
 }
 
@@ -144,37 +166,59 @@ typedef enum : NSUInteger {
             // 1、请求从currentTopIndex往前10位开始的10个数据，并移除data数组中最后10个元素
             // 2、将新得到的30个数据传入data数组，更新currentTopIndex、currentBottomIndex
             [self.data removeObjectsInRange:NSMakeRange(20, 10)];
-            NSArray *newItems = [self.mockArray objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(self.currentTopIndex-10, 10)]];
-            [self.data insertObjects:newItems atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 10)]]; // 从头插入
-            self.currentTopIndex -= 10;
-            self.currentBottomIndex -= 10;
+            NSArray *newItems = [self requestDataWithLocation:self.currentTopIndex-10 Length:10];
+            [self.data insertObjects:newItems atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, newItems.count )]]; // 从头插入
+            self.currentTopIndex = (self.currentTopIndex - 10)>0? (self.currentTopIndex - 10) : 0;
+            self.currentBottomIndex = (self.currentBottomIndex - 10)>29? (self.currentBottomIndex - 10) : 29;
+            
+            // 更新高度
+            CGFloat heightForTopCells = 0.;
+            [self.heights removeAllObjects];
+            for (int i = 0; i < self.currentBottomIndex - self.currentTopIndex + 1; i++) {
+                NSNumber *h = [self.mockHeightDic objectForKey:[NSString stringWithFormat:@"%ld", i+self.currentTopIndex]];
+                [self.heights setObject:h forKey:[NSString stringWithFormat:@"%d", i]];
+                if (i < newItems.count) {
+                    heightForTopCells += [h doubleValue];
+                }
+            }
+            
             
             // 3、将tableView.contentOffset设置到停止滑动时的位置
             [self.tableView reloadData];
-#warning Mock: 此处应获取前十个cell的高度然后进行累加，再加offsetY
-            self.tableView.contentOffset = CGPointMake(0.0f, offsetY+900);
+            self.tableView.contentOffset = CGPointMake(0.0f, offsetY+heightForTopCells);
 
             break;
         }
             
         case DCPositionBottom: {
-            NSLog(@"Add cells to bottom.");
+//            NSLog(@"Add cells to bottom.");
 
-            // 0、记录当前停止滑动时的tableView.contentOffset.y
-            CGFloat offsetY = self.tableView.contentOffset.y;
+            // 0、记录当前停止滑动时的tableView.contentOffset.y与底部之间的距离
+            CGFloat offsetYToBottom = self.tableView.contentSize.height - self.tableView.contentOffset.y;
             
             // 1、请求从currentBottomIndex往后10位的10个数据，并移除data数组中前10个元素
             // 2、将新得到的30个数据传入data数组，更新currentTopIndex
             [self.data removeObjectsInRange:NSMakeRange(0, 10)];
-            NSArray *newItems = [self.mockArray objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(self.currentBottomIndex+1, 10)]];
+            NSArray *newItems = [self requestDataWithLocation:self.currentBottomIndex+1 Length:10];
             [self.data addObjectsFromArray:newItems]; // 从后插入
-            self.currentTopIndex += 10;
-            self.currentBottomIndex += 10;
+            self.currentTopIndex = (self.currentTopIndex + 10)<kMockCount? (self.currentTopIndex + 10) : kMockCount-30;
+            self.currentBottomIndex = (self.currentBottomIndex + 10)<kMockCount-1? (self.currentBottomIndex + 10) : kMockCount-1;
+            
+            // 更新高度
+            CGFloat heightForTopCells = 0.;
+            [self.heights removeAllObjects];
+            for (int i = 0; i < self.currentBottomIndex - self.currentTopIndex + 1; i++) {
+                NSNumber *h = [self.mockHeightDic objectForKey:[NSString stringWithFormat:@"%ld", i+self.currentTopIndex]];
+                [self.heights setObject:h forKey:[NSString stringWithFormat:@"%d", i]];
+                if (i > 19) {
+                    heightForTopCells += [h doubleValue];
+                }
+            }
             
             // 3、将tableView.contentOffset设置到停止滑动时的位置
             [self.tableView reloadData];
-#warning Mock: 此处应获取前十个cell的高度然后进行累加，再减offsetY
-            self.tableView.contentOffset = CGPointMake(0.0f, offsetY-900);
+            // 用tableView新的高度减去offsetYToBottom与新加入的cells的高度之和即为现在的offset.y
+            self.tableView.contentOffset = CGPointMake(0.0f, self.tableView.contentSize.height - (offsetYToBottom+heightForTopCells));
             
             
             break;
@@ -185,23 +229,44 @@ typedef enum : NSUInteger {
     }
 }
 
+- (NSArray *)requestDataWithLocation:(NSInteger)loc Length:(NSInteger)len {
+    if (len < 0) {
+        NSLog(@"len: %ld\nLength error! Please check!",len);
+        return nil;
+    }
+    
+    NSInteger newLen = len;
+    if (loc < 0) {
+        newLen = loc + len;
+        loc = 0;
+    }
+    
+    if (loc+len > kMockCount-1) {
+        newLen = kMockCount - loc;
+    }
+    
+    NSArray *newItems = [self.mockArray objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(loc, newLen)]];
+    
+    return newItems;
+}
+
 #pragma mark - RunLoop
 static void runLoopObserverCallback(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
     DynamicTableViewController *vc = (__bridge DynamicTableViewController *)info;
     switch (activity) {
         case kCFRunLoopBeforeWaiting: {
             if (!vc.updated) {
-                NSLog(@"Before Waiting");
+//                NSLog(@"Before Waiting");
                 
-                if (vc.tableView.contentOffset.y < kUpdateThresholdTop) {
+                if (vc.tableView.contentOffset.y < kUpdateThresholdTop && vc.currentTopIndex > 0) {
                     [vc addCellsToPosition:DCPositionTop];
                 }
-                
-                CGFloat height = vc.tableView.contentSize.height;
-                CGFloat offsetToBottom = vc.tableView.contentOffset.y + vc.tableView.bounds.size.height;
-                if (height - offsetToBottom < kUpdateThresholdBottom) {
-                    [vc addCellsToPosition:DCPositionBottom];
-                }
+
+//                CGFloat height = vc.tableView.contentSize.height;
+//                CGFloat offsetToBottom = vc.tableView.contentOffset.y + vc.tableView.bounds.size.height;
+//                if (height - offsetToBottom < kUpdateThresholdBottom && vc.currentBottomIndex < kMockCount-1) {
+//                    [vc addCellsToPosition:DCPositionBottom];
+//                }
                 
                 vc.updated = YES;
             }
