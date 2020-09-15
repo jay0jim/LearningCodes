@@ -50,6 +50,8 @@ typedef enum : NSUInteger {
     
 //    self.tableView.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
     self.tableView.estimatedRowHeight = 0;
+    // 屏蔽点击statusBar回到最顶
+    self.tableView.scrollsToTop = NO;
     
     
     
@@ -163,13 +165,13 @@ typedef enum : NSUInteger {
             // 0、记录当前停止滑动时的tableView.contentOffset.y
             CGFloat offsetY = self.tableView.contentOffset.y;
             
-            // 1、请求从currentTopIndex往前10位开始的10个数据，并移除data数组中最后10个元素
+            // 1、请求从currentTopIndex往前10位开始的10个数据，并移除data数组中最后对应数量个元素
             // 2、将新得到的30个数据传入data数组，更新currentTopIndex、currentBottomIndex
-            [self.data removeObjectsInRange:NSMakeRange(20, 10)];
             NSArray *newItems = [self requestDataWithLocation:self.currentTopIndex-10 Length:10];
-            [self.data insertObjects:newItems atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, newItems.count )]]; // 从头插入
-            self.currentTopIndex = (self.currentTopIndex - 10)>0? (self.currentTopIndex - 10) : 0;
-            self.currentBottomIndex = (self.currentBottomIndex - 10)>29? (self.currentBottomIndex - 10) : 29;
+            [self.data removeObjectsInRange:NSMakeRange(20, newItems.count)];
+            [self.data insertObjects:newItems atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, newItems.count)]]; // 从头插入
+            self.currentTopIndex = (self.currentTopIndex - newItems.count);
+            self.currentBottomIndex = (self.currentBottomIndex - newItems.count);
             
             // 更新高度
             CGFloat heightForTopCells = 0.;
@@ -196,13 +198,13 @@ typedef enum : NSUInteger {
             // 0、记录当前停止滑动时的tableView.contentOffset.y与底部之间的距离
             CGFloat offsetYToBottom = self.tableView.contentSize.height - self.tableView.contentOffset.y;
             
-            // 1、请求从currentBottomIndex往后10位的10个数据，并移除data数组中前10个元素
+            // 1、请求从currentBottomIndex往后10位的10个数据，并移除data数组中前面对应数量个元素
             // 2、将新得到的30个数据传入data数组，更新currentTopIndex
-            [self.data removeObjectsInRange:NSMakeRange(0, 10)];
             NSArray *newItems = [self requestDataWithLocation:self.currentBottomIndex+1 Length:10];
+            [self.data removeObjectsInRange:NSMakeRange(0, newItems.count)];
             [self.data addObjectsFromArray:newItems]; // 从后插入
-            self.currentTopIndex = (self.currentTopIndex + 10)<kMockCount? (self.currentTopIndex + 10) : kMockCount-30;
-            self.currentBottomIndex = (self.currentBottomIndex + 10)<kMockCount-1? (self.currentBottomIndex + 10) : kMockCount-1;
+            self.currentTopIndex = (self.currentTopIndex + newItems.count);
+            self.currentBottomIndex = (self.currentBottomIndex + newItems.count);
             
             // 更新高度
             CGFloat heightForTopCells = 0.;
@@ -210,7 +212,7 @@ typedef enum : NSUInteger {
             for (int i = 0; i < self.currentBottomIndex - self.currentTopIndex + 1; i++) {
                 NSNumber *h = [self.mockHeightDic objectForKey:[NSString stringWithFormat:@"%ld", i+self.currentTopIndex]];
                 [self.heights setObject:h forKey:[NSString stringWithFormat:@"%d", i]];
-                if (i > 19) {
+                if (i > self.data.count - newItems.count - 1) {
                     heightForTopCells += [h doubleValue];
                 }
             }
@@ -262,11 +264,11 @@ static void runLoopObserverCallback(CFRunLoopObserverRef observer, CFRunLoopActi
                     [vc addCellsToPosition:DCPositionTop];
                 }
 
-//                CGFloat height = vc.tableView.contentSize.height;
-//                CGFloat offsetToBottom = vc.tableView.contentOffset.y + vc.tableView.bounds.size.height;
-//                if (height - offsetToBottom < kUpdateThresholdBottom && vc.currentBottomIndex < kMockCount-1) {
-//                    [vc addCellsToPosition:DCPositionBottom];
-//                }
+                CGFloat height = vc.tableView.contentSize.height;
+                CGFloat offsetToBottom = vc.tableView.contentOffset.y + vc.tableView.bounds.size.height;
+                if (height - offsetToBottom < kUpdateThresholdBottom && vc.currentBottomIndex < kMockCount-1) {
+                    [vc addCellsToPosition:DCPositionBottom];
+                }
                 
                 vc.updated = YES;
             }
