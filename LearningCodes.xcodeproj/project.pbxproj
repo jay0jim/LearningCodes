@@ -40,6 +40,9 @@
 		EAD65B5722DCD64800911886 /* SerialTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5622DCD64800911886 /* SerialTest.m */; };
 		EAD65B5A22DCD87E00911886 /* SerialTest+SerialEnsure.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5922DCD87E00911886 /* SerialTest+SerialEnsure.m */; };
 		EAD65B5E22E750E600911886 /* JSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5D22E750E600911886 /* JSViewController.m */; };
+		EADEDA46251C6BF4004A5B51 /* LocalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADEDA45251C6BF4004A5B51 /* LocalWebViewController.m */; };
+		EADEDA48251C6FB0004A5B51 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADEDA47251C6FB0004A5B51 /* WebKit.framework */; };
+		EADEDA4A251C76BA004A5B51 /* localHTML.css in Resources */ = {isa = PBXBuildFile; fileRef = EADEDA49251C76BA004A5B51 /* localHTML.css */; };
 		EAF1001B24ED67B700FFD016 /* TTTextTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF1001A24ED67B700FFD016 /* TTTextTestViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +132,10 @@
 		EAD65B5922DCD87E00911886 /* SerialTest+SerialEnsure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SerialTest+SerialEnsure.m"; sourceTree = "<group>"; };
 		EAD65B5C22E750E600911886 /* JSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSViewController.h; sourceTree = "<group>"; };
 		EAD65B5D22E750E600911886 /* JSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSViewController.m; sourceTree = "<group>"; };
+		EADEDA44251C6BF4004A5B51 /* LocalWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalWebViewController.h; sourceTree = "<group>"; };
+		EADEDA45251C6BF4004A5B51 /* LocalWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalWebViewController.m; sourceTree = "<group>"; };
+		EADEDA47251C6FB0004A5B51 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		EADEDA49251C76BA004A5B51 /* localHTML.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = localHTML.css; sourceTree = "<group>"; };
 		EAF1001924ED67B700FFD016 /* TTTextTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTextTestViewController.h; sourceTree = "<group>"; };
 		EAF1001A24ED67B700FFD016 /* TTTextTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTextTestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EADEDA48251C6FB0004A5B51 /* WebKit.framework in Frameworks */,
 				81B8187DC2B2FB41366BE0D2 /* libPods-LearningCodes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +170,7 @@
 		1B5DEDBA6D177C2443327D96 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EADEDA47251C6FB0004A5B51 /* WebKit.framework */,
 				EA8BDAEA238FA35700C6CAC4 /* AudioToolbox.framework */,
 				EA8BDAE8238FA34D00C6CAC4 /* libc++.tbd */,
 				EA8BDAE6238FA33200C6CAC4 /* libbz2.tbd */,
@@ -282,6 +291,7 @@
 		EA8CE6FC22C5A4E400E24324 /* LearningCodes */ = {
 			isa = PBXGroup;
 			children = (
+				EADEDA43251C6BD4004A5B51 /* Web */,
 				EA6E6B7C25093B1B0039A8A6 /* DynamicTableView */,
 				EA6E6B5F25072BCC0039A8A6 /* TableViewHeight */,
 				EA2E0F4B24FBB2CC00240F5E /* DynamicCellHeight */,
@@ -376,6 +386,16 @@
 				EAD65B5D22E750E600911886 /* JSViewController.m */,
 			);
 			path = JS;
+			sourceTree = "<group>";
+		};
+		EADEDA43251C6BD4004A5B51 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				EADEDA49251C76BA004A5B51 /* localHTML.css */,
+				EADEDA44251C6BF4004A5B51 /* LocalWebViewController.h */,
+				EADEDA45251C6BF4004A5B51 /* LocalWebViewController.m */,
+			);
+			path = Web;
 			sourceTree = "<group>";
 		};
 		EAF1001824ED679800FFD016 /* YYTextTest */ = {
@@ -495,6 +515,7 @@
 				EA6E6B7B250914BE0039A8A6 /* teacher.txt in Resources */,
 				EA8CE70722C5A4E600E24324 /* Assets.xcassets in Resources */,
 				EA8CE70522C5A4E400E24324 /* Main.storyboard in Resources */,
+				EADEDA4A251C76BA004A5B51 /* localHTML.css in Resources */,
 				EA8BDADC238E59C200C6CAC4 /* 1573592711.ts in Resources */,
 				EA2E0F592500E15500240F5E /* DynamicCellHeightTableViewCell.xib in Resources */,
 				EA8BDAF12390E1A600C6CAC4 /* 190204084208765161.mp4 in Resources */,
@@ -550,6 +571,7 @@
 				EA2E0F582500E15500240F5E /* DynamicCellHeightTableViewCell.m in Sources */,
 				EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */,
 				EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */,
+				EADEDA46251C6BF4004A5B51 /* LocalWebViewController.m in Sources */,
 				EA8BDAD32387CC3F00C6CAC4 /* NSURL+param.m in Sources */,
 				EAD65B5E22E750E600911886 /* JSViewController.m in Sources */,
 				EA9944FB233C859A00CC555B /* DownloaderViewController.m in Sources */,

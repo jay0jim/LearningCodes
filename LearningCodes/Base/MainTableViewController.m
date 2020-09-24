@@ -47,6 +47,7 @@
              ClassName:@"TableViewTestViewController"];
     [self addCellTitle:@"Dynamic Table View"
              ClassName:@"DynamicTableViewController"];
+    [self addCellTitle:@"Local Web View" ClassName:@"LocalWebViewController"];
 
     
 //    NSArray *a = @[@"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", ];
