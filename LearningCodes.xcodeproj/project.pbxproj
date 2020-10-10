@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		81B8187DC2B2FB41366BE0D2 /* libPods-LearningCodes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0696EB758946CFF15B9F4756 /* libPods-LearningCodes.a */; };
+		EA0C8CDA2531A43900D0F8DF /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = EA0C8CD92531A43900D0F8DF /* test.html */; };
 		EA10BCC722F2C8040078EE4D /* BasicTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10BCC622F2C8040078EE4D /* BasicTestViewController.m */; };
 		EA10BCCC22F6DA850078EE4D /* AddingCellTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10BCCB22F6DA850078EE4D /* AddingCellTestViewController.m */; };
 		EA2DD46F230F91D00078C11F /* JMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD46E230F91D00078C11F /* JMTableViewController.m */; };
@@ -67,6 +68,7 @@
 		0696EB758946CFF15B9F4756 /* libPods-LearningCodes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LearningCodes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3FA0042FF3154047FB2F061 /* Pods-LearningCodes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningCodes.debug.xcconfig"; path = "Target Support Files/Pods-LearningCodes/Pods-LearningCodes.debug.xcconfig"; sourceTree = "<group>"; };
 		D799829DCD6761AD2688E8AF /* Pods-LearningCodes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningCodes.release.xcconfig"; path = "Target Support Files/Pods-LearningCodes/Pods-LearningCodes.release.xcconfig"; sourceTree = "<group>"; };
+		EA0C8CD92531A43900D0F8DF /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		EA10BCC522F2C8040078EE4D /* BasicTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicTestViewController.h; sourceTree = "<group>"; };
 		EA10BCC622F2C8040078EE4D /* BasicTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicTestViewController.m; sourceTree = "<group>"; };
 		EA10BCCA22F6DA850078EE4D /* AddingCellTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddingCellTestViewController.h; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		EA8CE6F122C5A4E400E24324 = {
 			isa = PBXGroup;
 			children = (
+				EA0C8CD92531A43900D0F8DF /* test.html */,
 				EA8BDAF02390E1A600C6CAC4 /* 190204084208765161.mp4 */,
 				EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */,
 				EA6E6B7A250914BD0039A8A6 /* teacher.txt */,
@@ -519,6 +522,7 @@
 				EA8BDADC238E59C200C6CAC4 /* 1573592711.ts in Resources */,
 				EA2E0F592500E15500240F5E /* DynamicCellHeightTableViewCell.xib in Resources */,
 				EA8BDAF12390E1A600C6CAC4 /* 190204084208765161.mp4 in Resources */,
+				EA0C8CDA2531A43900D0F8DF /* test.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
