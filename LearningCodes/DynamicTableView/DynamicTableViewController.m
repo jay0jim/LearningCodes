@@ -69,7 +69,7 @@ typedef enum : NSUInteger {
         self.mockArray = [NSArray arrayWithArray:array];
         self.mockHeightDic = [NSDictionary dictionaryWithDictionary:dic];
         
-        self.currentTopIndex = 25;
+        self.currentTopIndex = 0;
         self.currentBottomIndex = self.currentTopIndex + 29;
         self.data = @[].mutableCopy;
         self.heights = @{}.mutableCopy;
@@ -82,7 +82,7 @@ typedef enum : NSUInteger {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
-            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:10 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+//            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:10 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
         });
     });
     

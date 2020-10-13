@@ -36,6 +36,9 @@
 		EA8CE73922C5A67800E24324 /* JMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CE73722C5A67800E24324 /* JMNavigationController.m */; };
 		EA8CE73D22D85E8500E24324 /* RunLoopTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CE73C22D85E8500E24324 /* RunLoopTestViewController.m */; };
 		EA9944FB233C859A00CC555B /* DownloaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9944FA233C859A00CC555B /* DownloaderViewController.m */; };
+		EAC4B8D125360B5500D79A5A /* LearningHTML.html in Resources */ = {isa = PBXBuildFile; fileRef = EAC4B8D025360B5500D79A5A /* LearningHTML.html */; };
+		EAC4B8D625360BDD00D79A5A /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = EAC4B8D525360BDD00D79A5A /* style.css */; };
+		EAC4B8DB25360C2900D79A5A /* HTMLBody in Resources */ = {isa = PBXBuildFile; fileRef = EAC4B8DA25360C2900D79A5A /* HTMLBody */; };
 		EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B4F22DCBD5600911886 /* JMLagMonitor.m */; };
 		EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5322DCD50100911886 /* GCDTestViewController.m */; };
 		EAD65B5722DCD64800911886 /* SerialTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5622DCD64800911886 /* SerialTest.m */; };
@@ -124,6 +127,9 @@
 		EA8CE73C22D85E8500E24324 /* RunLoopTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopTestViewController.m; sourceTree = "<group>"; };
 		EA9944F9233C859A00CC555B /* DownloaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloaderViewController.h; sourceTree = "<group>"; };
 		EA9944FA233C859A00CC555B /* DownloaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloaderViewController.m; sourceTree = "<group>"; };
+		EAC4B8D025360B5500D79A5A /* LearningHTML.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LearningHTML.html; sourceTree = "<group>"; };
+		EAC4B8D525360BDD00D79A5A /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		EAC4B8DA25360C2900D79A5A /* HTMLBody */ = {isa = PBXFileReference; lastKnownFileType = text; path = HTMLBody; sourceTree = "<group>"; };
 		EAD65B4E22DCBD5600911886 /* JMLagMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMLagMonitor.h; sourceTree = "<group>"; };
 		EAD65B4F22DCBD5600911886 /* JMLagMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMLagMonitor.m; sourceTree = "<group>"; };
 		EAD65B5222DCD50100911886 /* GCDTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDTestViewController.h; sourceTree = "<group>"; };
@@ -268,6 +274,9 @@
 		EA8CE6F122C5A4E400E24324 = {
 			isa = PBXGroup;
 			children = (
+				EAC4B8DA25360C2900D79A5A /* HTMLBody */,
+				EAC4B8D025360B5500D79A5A /* LearningHTML.html */,
+				EAC4B8D525360BDD00D79A5A /* style.css */,
 				EA0C8CD92531A43900D0F8DF /* test.html */,
 				EA8BDAF02390E1A600C6CAC4 /* 190204084208765161.mp4 */,
 				EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */,
@@ -515,14 +524,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA8CE70A22C5A4E600E24324 /* LaunchScreen.storyboard in Resources */,
+				EAC4B8D125360B5500D79A5A /* LearningHTML.html in Resources */,
 				EA6E6B7B250914BE0039A8A6 /* teacher.txt in Resources */,
 				EA8CE70722C5A4E600E24324 /* Assets.xcassets in Resources */,
 				EA8CE70522C5A4E400E24324 /* Main.storyboard in Resources */,
 				EADEDA4A251C76BA004A5B51 /* localHTML.css in Resources */,
+				EAC4B8D625360BDD00D79A5A /* style.css in Resources */,
 				EA8BDADC238E59C200C6CAC4 /* 1573592711.ts in Resources */,
 				EA2E0F592500E15500240F5E /* DynamicCellHeightTableViewCell.xib in Resources */,
 				EA8BDAF12390E1A600C6CAC4 /* 190204084208765161.mp4 in Resources */,
 				EA0C8CDA2531A43900D0F8DF /* test.html in Resources */,
+				EAC4B8DB25360C2900D79A5A /* HTMLBody in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

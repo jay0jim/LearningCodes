@@ -1,0 +1,38 @@
+body {
+	font-family: "PingFangSC-Regular";
+	margin-left: 20px;
+	margin-right: 20px;
+	font-weight: 100;
+	letter-spacing: 1px;
+	/*font-size: 1.6rem;*/
+	/*line-height: 1.7em;*/
+}
+img {
+	width: 100%;
+	height: auto;
+}
+a {
+	text-decoration-color: yellow;
+	color: black;
+	padding-bottom: 30px;
+}
+p {
+	margin-top: 35px;
+	line-height: 1.7rem;
+}
+blockquote {
+	background-image: url(open_quote.jpeg);
+	background-position: top left;
+	background-size: 10%;
+	background-repeat: no-repeat;
+	padding-top: 20px;
+	margin-left: 15px;
+	margin-right: 15px;
+	color: gray;
+}
+.editor-image-source {
+	color: gray;
+	font-size: 70%;
+	margin-top: -40px;
+}
+
