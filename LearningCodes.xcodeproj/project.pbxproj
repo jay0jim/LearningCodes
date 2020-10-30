@@ -39,6 +39,8 @@
 		EAC4B8D125360B5500D79A5A /* LearningHTML.html in Resources */ = {isa = PBXBuildFile; fileRef = EAC4B8D025360B5500D79A5A /* LearningHTML.html */; };
 		EAC4B8D625360BDD00D79A5A /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = EAC4B8D525360BDD00D79A5A /* style.css */; };
 		EAC4B8DB25360C2900D79A5A /* HTMLBody in Resources */ = {isa = PBXBuildFile; fileRef = EAC4B8DA25360C2900D79A5A /* HTMLBody */; };
+		EAC4B8E2254BDDEE00D79A5A /* TLCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC4B8E1254BDDEE00D79A5A /* TLCollectionViewController.m */; };
+		EAC4B8EB254BE96D00D79A5A /* TLFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC4B8EA254BE96D00D79A5A /* TLFlowLayout.m */; };
 		EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B4F22DCBD5600911886 /* JMLagMonitor.m */; };
 		EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5322DCD50100911886 /* GCDTestViewController.m */; };
 		EAD65B5722DCD64800911886 /* SerialTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5622DCD64800911886 /* SerialTest.m */; };
@@ -130,6 +132,10 @@
 		EAC4B8D025360B5500D79A5A /* LearningHTML.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LearningHTML.html; sourceTree = "<group>"; };
 		EAC4B8D525360BDD00D79A5A /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		EAC4B8DA25360C2900D79A5A /* HTMLBody */ = {isa = PBXFileReference; lastKnownFileType = text; path = HTMLBody; sourceTree = "<group>"; };
+		EAC4B8E0254BDDEE00D79A5A /* TLCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLCollectionViewController.h; sourceTree = "<group>"; };
+		EAC4B8E1254BDDEE00D79A5A /* TLCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLCollectionViewController.m; sourceTree = "<group>"; };
+		EAC4B8E9254BE96D00D79A5A /* TLFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLFlowLayout.h; sourceTree = "<group>"; };
+		EAC4B8EA254BE96D00D79A5A /* TLFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLFlowLayout.m; sourceTree = "<group>"; };
 		EAD65B4E22DCBD5600911886 /* JMLagMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMLagMonitor.h; sourceTree = "<group>"; };
 		EAD65B4F22DCBD5600911886 /* JMLagMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMLagMonitor.m; sourceTree = "<group>"; };
 		EAD65B5222DCD50100911886 /* GCDTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDTestViewController.h; sourceTree = "<group>"; };
@@ -303,6 +309,7 @@
 		EA8CE6FC22C5A4E400E24324 /* LearningCodes */ = {
 			isa = PBXGroup;
 			children = (
+				EAC4B8DF254BDDBB00D79A5A /* CollectionView */,
 				EADEDA43251C6BD4004A5B51 /* Web */,
 				EA6E6B7C25093B1B0039A8A6 /* DynamicTableView */,
 				EA6E6B5F25072BCC0039A8A6 /* TableViewHeight */,
@@ -376,6 +383,17 @@
 				EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */,
 			);
 			path = Downloader;
+			sourceTree = "<group>";
+		};
+		EAC4B8DF254BDDBB00D79A5A /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				EAC4B8E0254BDDEE00D79A5A /* TLCollectionViewController.h */,
+				EAC4B8E1254BDDEE00D79A5A /* TLCollectionViewController.m */,
+				EAC4B8E9254BE96D00D79A5A /* TLFlowLayout.h */,
+				EAC4B8EA254BE96D00D79A5A /* TLFlowLayout.m */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		EAD65B5122DCD4EA00911886 /* GCD */ = {
@@ -586,6 +604,7 @@
 			files = (
 				EA2E0F582500E15500240F5E /* DynamicCellHeightTableViewCell.m in Sources */,
 				EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */,
+				EAC4B8EB254BE96D00D79A5A /* TLFlowLayout.m in Sources */,
 				EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */,
 				EADEDA46251C6BF4004A5B51 /* LocalWebViewController.m in Sources */,
 				EA8BDAD32387CC3F00C6CAC4 /* NSURL+param.m in Sources */,
@@ -604,6 +623,7 @@
 				EAD65B5722DCD64800911886 /* SerialTest.m in Sources */,
 				EA2DD473230FD64D0078C11F /* NSArray+JMSubArray.m in Sources */,
 				EA6E6B6225072C040039A8A6 /* TableViewTestViewController.m in Sources */,
+				EAC4B8E2254BDDEE00D79A5A /* TLCollectionViewController.m in Sources */,
 				EA10BCC722F2C8040078EE4D /* BasicTestViewController.m in Sources */,
 				EA6E6B72250764100039A8A6 /* JMImageDownloader.m in Sources */,
 				EAF1001B24ED67B700FFD016 /* TTTextTestViewController.m in Sources */,
