@@ -11,6 +11,7 @@
 		EA0C8CDA2531A43900D0F8DF /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = EA0C8CD92531A43900D0F8DF /* test.html */; };
 		EA10BCC722F2C8040078EE4D /* BasicTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10BCC622F2C8040078EE4D /* BasicTestViewController.m */; };
 		EA10BCCC22F6DA850078EE4D /* AddingCellTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10BCCB22F6DA850078EE4D /* AddingCellTestViewController.m */; };
+		EA20E5FD2552815700AF46D7 /* rgba.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA20E5FC2552815700AF46D7 /* rgba.txt */; };
 		EA2DD46F230F91D00078C11F /* JMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD46E230F91D00078C11F /* JMTableViewController.m */; };
 		EA2DD473230FD64D0078C11F /* NSArray+JMSubArray.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD472230FD64D0078C11F /* NSArray+JMSubArray.m */; };
 		EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2DD475230FDA3F0078C11F /* JMTableViewCell.m */; };
@@ -78,6 +79,7 @@
 		EA10BCC622F2C8040078EE4D /* BasicTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicTestViewController.m; sourceTree = "<group>"; };
 		EA10BCCA22F6DA850078EE4D /* AddingCellTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddingCellTestViewController.h; sourceTree = "<group>"; };
 		EA10BCCB22F6DA850078EE4D /* AddingCellTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddingCellTestViewController.m; sourceTree = "<group>"; };
+		EA20E5FC2552815700AF46D7 /* rgba.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rgba.txt; sourceTree = "<group>"; };
 		EA2DD46D230F91D00078C11F /* JMTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMTableViewController.h; sourceTree = "<group>"; };
 		EA2DD46E230F91D00078C11F /* JMTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTableViewController.m; sourceTree = "<group>"; };
 		EA2DD471230FD64D0078C11F /* NSArray+JMSubArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+JMSubArray.h"; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 		EA8CE6F122C5A4E400E24324 = {
 			isa = PBXGroup;
 			children = (
+				EA20E5FC2552815700AF46D7 /* rgba.txt */,
 				EAC4B8DA25360C2900D79A5A /* HTMLBody */,
 				EAC4B8D025360B5500D79A5A /* LearningHTML.html */,
 				EAC4B8D525360BDD00D79A5A /* style.css */,
@@ -541,6 +544,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA20E5FD2552815700AF46D7 /* rgba.txt in Resources */,
 				EA8CE70A22C5A4E600E24324 /* LaunchScreen.storyboard in Resources */,
 				EAC4B8D125360B5500D79A5A /* LearningHTML.html in Resources */,
 				EA6E6B7B250914BE0039A8A6 /* teacher.txt in Resources */,

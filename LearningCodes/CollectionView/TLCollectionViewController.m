@@ -11,6 +11,8 @@
 
 @interface TLCollectionViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
+@property (copy, nonatomic) NSArray *colors;
+
 @end
 
 @implementation TLCollectionViewController
@@ -37,6 +39,11 @@
     
     [self.view addSubview:collectionView];
 
+    NSString *colorsPath = [[NSBundle mainBundle] pathForResource:@"rgba.txt" ofType:nil];
+    NSString *colorsStr = [NSString stringWithContentsOfFile:colorsPath encoding:NSUTF8StringEncoding error:nil];
+    NSArray *colorsStrArray = [colorsStr componentsSeparatedByString:@"\n"];
+    self.colors = colorsStrArray;
+    
 }
 
 #pragma mark - Collection view delegate and datasource
@@ -46,14 +53,14 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     TLFlowLayout *layout = (TLFlowLayout *)collectionView.collectionViewLayout;
-    layout.itemCount = 100;
-    return 100;
+    layout.itemCount = self.colors.count;
+    return self.colors.count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CELL" forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
+    cell.backgroundColor = [self colorWithString:self.colors[indexPath.row]];
     
     return cell;
 }
@@ -69,5 +76,20 @@
 //
 //    return CGSizeMake(itemWidth, itemHeight);
 //}
+
+#pragma mark - Helpers
+- (UIColor *)colorWithString:(NSString *)colorStr {
+    CGFloat c[4];
+    NSArray *color = [colorStr componentsSeparatedByString:@" "];
+    for (int i = 0; i < color.count; i++) {
+        c[i] = [color[i] floatValue];
+    }
+    
+    return [UIColor colorWithRed:c[0]
+                           green:c[1]
+                            blue:c[2]
+                           alpha:c[3]];
+    
+}
 
 @end
