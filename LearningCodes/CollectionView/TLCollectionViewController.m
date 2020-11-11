@@ -66,7 +66,10 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@", indexPath);
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    CGRect cellRectInView = [collectionView convertRect:cell.frame toView:self.view];
+    NSLog(@"cell frame: %@", NSStringFromCGRect(cell.frame));
+    NSLog(@"frame in view: %@", NSStringFromCGRect(cellRectInView));
 }
 
 #pragma mark UICollectionViewDelegateFlowLayout

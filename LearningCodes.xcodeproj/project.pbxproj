@@ -23,6 +23,8 @@
 		EA6E6B73250764100039A8A6 /* JMImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E6B70250764100039A8A6 /* JMImageCache.m */; };
 		EA6E6B7B250914BE0039A8A6 /* teacher.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA6E6B7A250914BD0039A8A6 /* teacher.txt */; };
 		EA6E6B7F25093B470039A8A6 /* DynamicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E6B7E25093B470039A8A6 /* DynamicTableViewController.m */; };
+		EA864A70255B91C90068F1C8 /* TransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA864A6F255B91C90068F1C8 /* TransitionViewController.m */; };
+		EA864A92255BC0740068F1C8 /* TLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA864A91255BC0740068F1C8 /* TLScrollView.m */; };
 		EA8BDAD32387CC3F00C6CAC4 /* NSURL+param.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */; };
 		EA8BDADC238E59C200C6CAC4 /* 1573592711.ts in Resources */ = {isa = PBXBuildFile; fileRef = EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */; };
 		EA8BDAF12390E1A600C6CAC4 /* 190204084208765161.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EA8BDAF02390E1A600C6CAC4 /* 190204084208765161.mp4 */; };
@@ -100,6 +102,10 @@
 		EA6E6B7A250914BD0039A8A6 /* teacher.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = teacher.txt; sourceTree = "<group>"; };
 		EA6E6B7D25093B470039A8A6 /* DynamicTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicTableViewController.h; sourceTree = "<group>"; };
 		EA6E6B7E25093B470039A8A6 /* DynamicTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicTableViewController.m; sourceTree = "<group>"; };
+		EA864A6E255B91C90068F1C8 /* TransitionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionViewController.h; sourceTree = "<group>"; };
+		EA864A6F255B91C90068F1C8 /* TransitionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionViewController.m; sourceTree = "<group>"; };
+		EA864A90255BC0740068F1C8 /* TLScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLScrollView.h; sourceTree = "<group>"; };
+		EA864A91255BC0740068F1C8 /* TLScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLScrollView.m; sourceTree = "<group>"; };
 		EA8BDAD12387CC3F00C6CAC4 /* NSURL+param.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+param.h"; sourceTree = "<group>"; };
 		EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+param.m"; sourceTree = "<group>"; };
 		EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1573592711.ts; sourceTree = "<group>"; };
@@ -279,6 +285,17 @@
 			path = DynamicTableView;
 			sourceTree = "<group>";
 		};
+		EA864A52255B85740068F1C8 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				EA864A6E255B91C90068F1C8 /* TransitionViewController.h */,
+				EA864A6F255B91C90068F1C8 /* TransitionViewController.m */,
+				EA864A90255BC0740068F1C8 /* TLScrollView.h */,
+				EA864A91255BC0740068F1C8 /* TLScrollView.m */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		EA8CE6F122C5A4E400E24324 = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +329,7 @@
 		EA8CE6FC22C5A4E400E24324 /* LearningCodes */ = {
 			isa = PBXGroup;
 			children = (
+				EA864A52255B85740068F1C8 /* Transition */,
 				EAC4B8DF254BDDBB00D79A5A /* CollectionView */,
 				EADEDA43251C6BD4004A5B51 /* Web */,
 				EA6E6B7C25093B1B0039A8A6 /* DynamicTableView */,
@@ -613,6 +631,7 @@
 				EADEDA46251C6BF4004A5B51 /* LocalWebViewController.m in Sources */,
 				EA8BDAD32387CC3F00C6CAC4 /* NSURL+param.m in Sources */,
 				EAD65B5E22E750E600911886 /* JSViewController.m in Sources */,
+				EA864A92255BC0740068F1C8 /* TLScrollView.m in Sources */,
 				EA9944FB233C859A00CC555B /* DownloaderViewController.m in Sources */,
 				EA8CE73D22D85E8500E24324 /* RunLoopTestViewController.m in Sources */,
 				EA2E0F5424FBB60F00240F5E /* DynamicCellHeightViewController.m in Sources */,
@@ -621,6 +640,7 @@
 				EA8CE6FF22C5A4E400E24324 /* AppDelegate.m in Sources */,
 				EA6E6B7F25093B470039A8A6 /* DynamicTableViewController.m in Sources */,
 				EA2DD46F230F91D00078C11F /* JMTableViewController.m in Sources */,
+				EA864A70255B91C90068F1C8 /* TransitionViewController.m in Sources */,
 				EA8CE73922C5A67800E24324 /* JMNavigationController.m in Sources */,
 				EA8CE73122C5A57900E24324 /* MainTableViewController.m in Sources */,
 				EA6E6B73250764100039A8A6 /* JMImageCache.m in Sources */,
@@ -805,6 +825,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U3KSMQZZR5;
 				ENABLE_BITCODE = NO;
@@ -823,6 +844,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tony.LearningCodes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -833,6 +855,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U3KSMQZZR5;
 				ENABLE_BITCODE = NO;
@@ -851,6 +874,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tony.LearningCodes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

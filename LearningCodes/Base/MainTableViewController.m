@@ -24,6 +24,8 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.title = @"Learning Codes";
     
+    
+    
     self.catagoryArray = @[].mutableCopy;
     self.classNames = @[].mutableCopy;
     
@@ -49,6 +51,7 @@
              ClassName:@"DynamicTableViewController"];
     [self addCellTitle:@"Local Web View" ClassName:@"LocalWebViewController"];
     [self addCellTitle:@"Collection View" ClassName:@"TLCollectionViewController"];
+    [self addCellTitle:@"Transition" ClassName:@"TransitionViewController"];
 
     
 //    NSArray *a = @[@"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", ];
@@ -76,7 +79,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MainTableCell"];
     }
     
+    cell.backgroundColor = [UIColor whiteColor];
     cell.textLabel.text = self.catagoryArray[indexPath.row];
+    cell.textLabel.textColor = [UIColor blackColor];
     
     
     return cell;
@@ -102,8 +107,6 @@
     [self.navigationController pushViewController:vc animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-
 
 
 @end

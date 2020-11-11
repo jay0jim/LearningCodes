@@ -24,12 +24,15 @@
     navigationBar.shadowImage = [[UIImage alloc] init];
 //    [navigationBar setBackgroundImage:[[UIImage alloc] init] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     navigationBar.tintColor = [UIColor blackColor];
+    navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor blackColor]};
+//    navigationBar.barStyle = UIBarStyleBlack;
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 
