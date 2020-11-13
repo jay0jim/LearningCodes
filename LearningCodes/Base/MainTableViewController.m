@@ -52,15 +52,8 @@
     [self addCellTitle:@"Local Web View" ClassName:@"LocalWebViewController"];
     [self addCellTitle:@"Collection View" ClassName:@"TLCollectionViewController"];
     [self addCellTitle:@"Transition" ClassName:@"TransitionViewController"];
+    [self addCellTitle:@"Touch Test" ClassName:@"TouchTestViewController"];
 
-    
-//    NSArray *a = @[@"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", ];
-//    NSArray *b = [a objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(17, 5)]];
-//    NSLog(@"%@", b);
-    
-//    NSMutableArray *a = @[@"1"].mutableCopy;
-//    [a removeObjectsInRange:NSMakeRange(20, 0)];
-//    NSLog(@"%@", a);
 }
 
 - (void)addCellTitle:(NSString *)title ClassName:(NSString *)className {

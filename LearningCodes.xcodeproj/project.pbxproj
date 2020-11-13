@@ -25,6 +25,9 @@
 		EA6E6B7F25093B470039A8A6 /* DynamicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E6B7E25093B470039A8A6 /* DynamicTableViewController.m */; };
 		EA864A70255B91C90068F1C8 /* TransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA864A6F255B91C90068F1C8 /* TransitionViewController.m */; };
 		EA864A92255BC0740068F1C8 /* TLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA864A91255BC0740068F1C8 /* TLScrollView.m */; };
+		EA864A9C255E68DF0068F1C8 /* TouchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA864A9B255E68DF0068F1C8 /* TouchTestViewController.m */; };
+		EA864AA5255E690C0068F1C8 /* TLViewA.m in Sources */ = {isa = PBXBuildFile; fileRef = EA864AA4255E690C0068F1C8 /* TLViewA.m */; };
+		EA864AAB255E69480068F1C8 /* TLViewB.m in Sources */ = {isa = PBXBuildFile; fileRef = EA864AAA255E69480068F1C8 /* TLViewB.m */; };
 		EA8BDAD32387CC3F00C6CAC4 /* NSURL+param.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */; };
 		EA8BDADC238E59C200C6CAC4 /* 1573592711.ts in Resources */ = {isa = PBXBuildFile; fileRef = EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */; };
 		EA8BDAF12390E1A600C6CAC4 /* 190204084208765161.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EA8BDAF02390E1A600C6CAC4 /* 190204084208765161.mp4 */; };
@@ -106,6 +109,12 @@
 		EA864A6F255B91C90068F1C8 /* TransitionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionViewController.m; sourceTree = "<group>"; };
 		EA864A90255BC0740068F1C8 /* TLScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLScrollView.h; sourceTree = "<group>"; };
 		EA864A91255BC0740068F1C8 /* TLScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLScrollView.m; sourceTree = "<group>"; };
+		EA864A9A255E68DF0068F1C8 /* TouchTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchTestViewController.h; sourceTree = "<group>"; };
+		EA864A9B255E68DF0068F1C8 /* TouchTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchTestViewController.m; sourceTree = "<group>"; };
+		EA864AA3255E690C0068F1C8 /* TLViewA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLViewA.h; sourceTree = "<group>"; };
+		EA864AA4255E690C0068F1C8 /* TLViewA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLViewA.m; sourceTree = "<group>"; };
+		EA864AA9255E69480068F1C8 /* TLViewB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLViewB.h; sourceTree = "<group>"; };
+		EA864AAA255E69480068F1C8 /* TLViewB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLViewB.m; sourceTree = "<group>"; };
 		EA8BDAD12387CC3F00C6CAC4 /* NSURL+param.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+param.h"; sourceTree = "<group>"; };
 		EA8BDAD22387CC3F00C6CAC4 /* NSURL+param.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+param.m"; sourceTree = "<group>"; };
 		EA8BDADB238E59C200C6CAC4 /* 1573592711.ts */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1573592711.ts; sourceTree = "<group>"; };
@@ -296,6 +305,19 @@
 			path = Transition;
 			sourceTree = "<group>";
 		};
+		EA864A99255E68BF0068F1C8 /* TouchTest */ = {
+			isa = PBXGroup;
+			children = (
+				EA864A9A255E68DF0068F1C8 /* TouchTestViewController.h */,
+				EA864A9B255E68DF0068F1C8 /* TouchTestViewController.m */,
+				EA864AA3255E690C0068F1C8 /* TLViewA.h */,
+				EA864AA4255E690C0068F1C8 /* TLViewA.m */,
+				EA864AA9255E69480068F1C8 /* TLViewB.h */,
+				EA864AAA255E69480068F1C8 /* TLViewB.m */,
+			);
+			path = TouchTest;
+			sourceTree = "<group>";
+		};
 		EA8CE6F122C5A4E400E24324 = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +351,7 @@
 		EA8CE6FC22C5A4E400E24324 /* LearningCodes */ = {
 			isa = PBXGroup;
 			children = (
+				EA864A99255E68BF0068F1C8 /* TouchTest */,
 				EA864A52255B85740068F1C8 /* Transition */,
 				EAC4B8DF254BDDBB00D79A5A /* CollectionView */,
 				EADEDA43251C6BD4004A5B51 /* Web */,
@@ -625,6 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA2E0F582500E15500240F5E /* DynamicCellHeightTableViewCell.m in Sources */,
+				EA864AAB255E69480068F1C8 /* TLViewB.m in Sources */,
 				EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */,
 				EAC4B8EB254BE96D00D79A5A /* TLFlowLayout.m in Sources */,
 				EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */,
@@ -632,6 +656,7 @@
 				EA8BDAD32387CC3F00C6CAC4 /* NSURL+param.m in Sources */,
 				EAD65B5E22E750E600911886 /* JSViewController.m in Sources */,
 				EA864A92255BC0740068F1C8 /* TLScrollView.m in Sources */,
+				EA864A9C255E68DF0068F1C8 /* TouchTestViewController.m in Sources */,
 				EA9944FB233C859A00CC555B /* DownloaderViewController.m in Sources */,
 				EA8CE73D22D85E8500E24324 /* RunLoopTestViewController.m in Sources */,
 				EA2E0F5424FBB60F00240F5E /* DynamicCellHeightViewController.m in Sources */,
@@ -643,6 +668,7 @@
 				EA864A70255B91C90068F1C8 /* TransitionViewController.m in Sources */,
 				EA8CE73922C5A67800E24324 /* JMNavigationController.m in Sources */,
 				EA8CE73122C5A57900E24324 /* MainTableViewController.m in Sources */,
+				EA864AA5255E690C0068F1C8 /* TLViewA.m in Sources */,
 				EA6E6B73250764100039A8A6 /* JMImageCache.m in Sources */,
 				EAD65B5722DCD64800911886 /* SerialTest.m in Sources */,
 				EA2DD473230FD64D0078C11F /* NSArray+JMSubArray.m in Sources */,
