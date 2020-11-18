@@ -11,26 +11,39 @@
 @implementation TLViewA
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"ViewA touch began.");
+    [self printResponderChain];
+    [super touchesBegan:touches withEvent:event];
 }
 
+//- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    UITouch *touch = [touches anyObject];
+//    
+//    CGPoint prePoint = [touch previousLocationInView:self];
+//    CGPoint curPoint = [touch locationInView:self];
+//    
+//    CGFloat offsetX = curPoint.x - prePoint.x;
+//    CGFloat offsetY = curPoint.y - prePoint.y;
+//    
+//    self.transform = CGAffineTransformTranslate(self.transform, offsetX, offsetY);
+//}
+
 #pragma mark - 点击蓝色非重叠区域时，蓝色响应
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    
-    UIView *rView = [super hitTest:point withEvent:event];
-    
-    // 假定只有viewB一个subview
-    UIView *viewB = self.subviews[0];
-    CGPoint pointInViewB = [self convertPoint:point toView:viewB];
-    
-    if ([viewB pointInside:pointInViewB withEvent:event]) {
-        return viewB;
-    }
-    
-    
-    
-    return rView;
-}
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+//    
+//    UIView *rView = [super hitTest:point withEvent:event];
+//    
+//    // 假定只有viewB一个subview
+//    UIView *viewB = self.subviews[0];
+//    CGPoint pointInViewB = [self convertPoint:point toView:viewB];
+//    
+//    if ([viewB pointInside:pointInViewB withEvent:event]) {
+//        return viewB;
+//    }
+//    
+//    
+//    
+//    return rView;
+//}
 
 #pragma mark -
 //- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
@@ -50,5 +63,16 @@
 //     */
 //    return fitView;
 //}
+
+#pragma mark - Helpers
+- (void)printResponderChain
+{
+    UIResponder *responder = self;
+    printf("%s",[NSStringFromClass([responder class]) UTF8String]);
+    while (responder.nextResponder) {
+        responder = responder.nextResponder;
+        printf(" --> %s",[NSStringFromClass([responder class]) UTF8String]);
+    }
+}
 
 @end

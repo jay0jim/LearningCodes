@@ -25,10 +25,10 @@
     viewA.backgroundColor = [UIColor redColor];
     [self.view addSubview:viewA];
     
-    TLViewB *viewB = [[TLViewB alloc] initWithFrame:CGRectMake(-50, -100, 200, 170)];
-    viewB.backgroundColor = [UIColor blueColor];
-    viewB.alpha = 0.8;
-    [viewA addSubview:viewB];
+//    TLViewB *viewB = [[TLViewB alloc] initWithFrame:CGRectMake(-50, -100, 200, 170)];
+//    viewB.backgroundColor = [UIColor blueColor];
+//    viewB.alpha = 0.8;
+//    [viewA addSubview:viewB];
 }
 
 
