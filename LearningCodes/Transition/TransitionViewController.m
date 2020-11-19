@@ -8,11 +8,11 @@
 
 #import "TransitionViewController.h"
 
-#import "TLScrollView.h"
+#import "TLTransitionAnimator.h"
+#import "TransitonFirstViewController.h"
 
-@interface TransitionViewController ()
 
-@property (strong, nonatomic) TLScrollView *tl_scrollView;
+@interface TransitionViewController () <UIViewControllerTransitioningDelegate>
 
 @end
 
@@ -21,28 +21,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
     
-    self.tl_scrollView = [[TLScrollView alloc] initWithFrame:self.view.frame];
-    [self.tl_scrollView setContentSize:CGSizeMake(4*SCREEN_WIDTH, 0)];
-    [self.tl_scrollView setPagingEnabled:YES];
-    NSArray *colorArray = @[
-        [UIColor blueColor],
-        [UIColor greenColor],
-        [UIColor redColor],
-        [UIColor yellowColor],
-    ];
-    for (int i = 0; i < 4; i++) {
-        CGRect frame = self.tl_scrollView.frame;
-        frame.origin.x += i * SCREEN_WIDTH;
-        UIView *tempView = [[UIView alloc] initWithFrame:frame];
-        tempView.backgroundColor = colorArray[i];
-        [self.tl_scrollView addSubview:tempView];
-    }
-    [self.view addSubview:self.tl_scrollView];
     
     
 }
 
+- (IBAction)standardTransition:(id)sender {
+    TransitonFirstViewController *firstVC = [[TransitonFirstViewController alloc] init];
+    firstVC.transitioningDelegate = self;
+    firstVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    
+    [self presentViewController:firstVC animated:YES completion:^{
+
+    }];
+//    [self.navigationController pushViewController:firstVC animated:YES];
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    return [TLTransitionAnimator new];
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    return [TLTransitionAnimator new];
+}
 
 @end

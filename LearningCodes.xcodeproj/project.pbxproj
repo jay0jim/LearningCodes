@@ -47,6 +47,8 @@
 		EAC4B8DB25360C2900D79A5A /* HTMLBody in Resources */ = {isa = PBXBuildFile; fileRef = EAC4B8DA25360C2900D79A5A /* HTMLBody */; };
 		EAC4B8E2254BDDEE00D79A5A /* TLCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC4B8E1254BDDEE00D79A5A /* TLCollectionViewController.m */; };
 		EAC4B8EB254BE96D00D79A5A /* TLFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC4B8EA254BE96D00D79A5A /* TLFlowLayout.m */; };
+		EAC62E282566510500A7A3A2 /* TransitonFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC62E272566510400A7A3A2 /* TransitonFirstViewController.m */; };
+		EAC62E2E2566560100A7A3A2 /* TLTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC62E2D2566560100A7A3A2 /* TLTransitionAnimator.m */; };
 		EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B4F22DCBD5600911886 /* JMLagMonitor.m */; };
 		EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5322DCD50100911886 /* GCDTestViewController.m */; };
 		EAD65B5722DCD64800911886 /* SerialTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5622DCD64800911886 /* SerialTest.m */; };
@@ -153,6 +155,10 @@
 		EAC4B8E1254BDDEE00D79A5A /* TLCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLCollectionViewController.m; sourceTree = "<group>"; };
 		EAC4B8E9254BE96D00D79A5A /* TLFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLFlowLayout.h; sourceTree = "<group>"; };
 		EAC4B8EA254BE96D00D79A5A /* TLFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLFlowLayout.m; sourceTree = "<group>"; };
+		EAC62E262566510400A7A3A2 /* TransitonFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitonFirstViewController.h; sourceTree = "<group>"; };
+		EAC62E272566510400A7A3A2 /* TransitonFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitonFirstViewController.m; sourceTree = "<group>"; };
+		EAC62E2C2566560100A7A3A2 /* TLTransitionAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLTransitionAnimator.h; sourceTree = "<group>"; };
+		EAC62E2D2566560100A7A3A2 /* TLTransitionAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLTransitionAnimator.m; sourceTree = "<group>"; };
 		EAD65B4E22DCBD5600911886 /* JMLagMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMLagMonitor.h; sourceTree = "<group>"; };
 		EAD65B4F22DCBD5600911886 /* JMLagMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMLagMonitor.m; sourceTree = "<group>"; };
 		EAD65B5222DCD50100911886 /* GCDTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDTestViewController.h; sourceTree = "<group>"; };
@@ -301,6 +307,10 @@
 				EA864A6F255B91C90068F1C8 /* TransitionViewController.m */,
 				EA864A90255BC0740068F1C8 /* TLScrollView.h */,
 				EA864A91255BC0740068F1C8 /* TLScrollView.m */,
+				EAC62E262566510400A7A3A2 /* TransitonFirstViewController.h */,
+				EAC62E272566510400A7A3A2 /* TransitonFirstViewController.m */,
+				EAC62E2C2566560100A7A3A2 /* TLTransitionAnimator.h */,
+				EAC62E2D2566560100A7A3A2 /* TLTransitionAnimator.m */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -675,8 +685,10 @@
 				EA6E6B6225072C040039A8A6 /* TableViewTestViewController.m in Sources */,
 				EAC4B8E2254BDDEE00D79A5A /* TLCollectionViewController.m in Sources */,
 				EA10BCC722F2C8040078EE4D /* BasicTestViewController.m in Sources */,
+				EAC62E282566510500A7A3A2 /* TransitonFirstViewController.m in Sources */,
 				EA6E6B72250764100039A8A6 /* JMImageDownloader.m in Sources */,
 				EAF1001B24ED67B700FFD016 /* TTTextTestViewController.m in Sources */,
+				EAC62E2E2566560100A7A3A2 /* TLTransitionAnimator.m in Sources */,
 				EAD65B5A22DCD87E00911886 /* SerialTest+SerialEnsure.m in Sources */,
 				EA10BCCC22F6DA850078EE4D /* AddingCellTestViewController.m in Sources */,
 			);
