@@ -222,11 +222,20 @@
                                     <action selector="standardTransition:" destination="vUd-fL-1ne" eventType="touchUpInside" id="jlU-7v-Awm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aop-kG-JG2">
+                                <rect key="frame" x="191.5" y="144" width="31" height="30"/>
+                                <state key="normal" title="边缘"/>
+                                <connections>
+                                    <action selector="edgeTransitionButtonTapped:" destination="vUd-fL-1ne" eventType="touchUpInside" id="Kia-a9-GRy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rua-Kp-lVK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Aop-kG-JG2" firstAttribute="top" secondItem="plH-Rp-a9n" secondAttribute="bottom" constant="30" id="0aB-rQ-DY9"/>
                             <constraint firstItem="plH-Rp-a9n" firstAttribute="centerX" secondItem="Uhs-QU-Uod" secondAttribute="centerX" id="WSq-TV-yne"/>
+                            <constraint firstItem="Aop-kG-JG2" firstAttribute="centerX" secondItem="Uhs-QU-Uod" secondAttribute="centerX" id="Z2b-sO-vyx"/>
                             <constraint firstItem="plH-Rp-a9n" firstAttribute="top" secondItem="Rua-Kp-lVK" secondAttribute="top" constant="40" id="eYG-Qj-xgk"/>
                         </constraints>
                     </view>

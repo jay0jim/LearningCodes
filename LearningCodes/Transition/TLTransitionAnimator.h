@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSUInteger {
     TLTransitionAnimationDissolve,
+    TLTransitionAnimationSlide,
 } TLTransitionAnimation;
 
 @interface TLTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>

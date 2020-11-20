@@ -9,7 +9,10 @@
 #import "TransitionViewController.h"
 
 #import "TLTransitionAnimator.h"
+#import "TLSwipeTransitionAnimator.h"
 #import "TransitonFirstViewController.h"
+#import "TransitionSecondViewController.h"
+
 
 
 @interface TransitionViewController () <UIViewControllerTransitioningDelegate>
@@ -22,7 +25,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    UIScreenEdgePanGestureRecognizer *interactiveRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(edgeTransition:)];
+    interactiveRecognizer.edges = UIRectEdgeRight;
+    [self.view addGestureRecognizer:interactiveRecognizer];
     
 }
 
@@ -37,13 +42,29 @@
 //    [self.navigationController pushViewController:firstVC animated:YES];
 }
 
+- (void)edgeTransition:(UIScreenEdgePanGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        [self edgeTransitionButtonTapped:sender];
+    }
+}
+
+- (IBAction)edgeTransitionButtonTapped:(id)sender {
+    TransitionSecondViewController *secondVC = [[TransitionSecondViewController alloc] init];
+    secondVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:secondVC animated:YES completion:^{
+        
+    }];
+}
+
 #pragma mark - UIViewControllerTransitioningDelegate
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    return [TLTransitionAnimator new];
+    TLSwipeTransitionAnimator *animator = [[TLSwipeTransitionAnimator alloc] initWithEdge:UIRectEdgeRight];
+    return animator;
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    return [TLTransitionAnimator new];
+    TLSwipeTransitionAnimator *animator = [[TLSwipeTransitionAnimator alloc] initWithEdge:UIRectEdgeLeft];
+    return animator;
 }
 
 @end

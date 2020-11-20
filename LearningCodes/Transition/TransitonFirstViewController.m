@@ -24,8 +24,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
-    CGFloat barHeight = statusBarHeight + 44;
+    CGFloat barHeight = STATUSBAR_HEIGHT + 44;
     UIView *bar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, barHeight)];
     [bar setBackgroundColor:JMHexColorRGB(0xFBFBFB)];
     [self.view addSubview:bar];
@@ -35,7 +34,7 @@
     [bar addSubview:leftButton];
     [leftButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10);
-        make.centerY.mas_equalTo(bar.mas_centerY).offset(statusBarHeight/2);
+        make.centerY.mas_equalTo(bar.mas_centerY).offset(STATUSBAR_HEIGHT/2);
     }];
 
     self.tl_scrollView = [[TLScrollView alloc] initWithFrame:self.view.frame];

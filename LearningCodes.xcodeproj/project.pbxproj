@@ -49,6 +49,10 @@
 		EAC4B8EB254BE96D00D79A5A /* TLFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC4B8EA254BE96D00D79A5A /* TLFlowLayout.m */; };
 		EAC62E282566510500A7A3A2 /* TransitonFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC62E272566510400A7A3A2 /* TransitonFirstViewController.m */; };
 		EAC62E2E2566560100A7A3A2 /* TLTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC62E2D2566560100A7A3A2 /* TLTransitionAnimator.m */; };
+		EAC62E352567A26C00A7A3A2 /* TransitionSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC62E342567A26C00A7A3A2 /* TransitionSecondViewController.m */; };
+		EAC62E3B2567A50500A7A3A2 /* TLTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC62E3A2567A50500A7A3A2 /* TLTransitioningDelegate.m */; };
+		EAC62E412567BB3200A7A3A2 /* TLSwipeTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC62E402567BB3200A7A3A2 /* TLSwipeTransitionAnimator.m */; };
+		EAC62E4A2567C51C00A7A3A2 /* TLSwipeTransitionInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC62E492567C51C00A7A3A2 /* TLSwipeTransitionInteractionController.m */; };
 		EAD65B5022DCBD5600911886 /* JMLagMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B4F22DCBD5600911886 /* JMLagMonitor.m */; };
 		EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5322DCD50100911886 /* GCDTestViewController.m */; };
 		EAD65B5722DCD64800911886 /* SerialTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD65B5622DCD64800911886 /* SerialTest.m */; };
@@ -159,6 +163,14 @@
 		EAC62E272566510400A7A3A2 /* TransitonFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitonFirstViewController.m; sourceTree = "<group>"; };
 		EAC62E2C2566560100A7A3A2 /* TLTransitionAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLTransitionAnimator.h; sourceTree = "<group>"; };
 		EAC62E2D2566560100A7A3A2 /* TLTransitionAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLTransitionAnimator.m; sourceTree = "<group>"; };
+		EAC62E332567A26C00A7A3A2 /* TransitionSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionSecondViewController.h; sourceTree = "<group>"; };
+		EAC62E342567A26C00A7A3A2 /* TransitionSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionSecondViewController.m; sourceTree = "<group>"; };
+		EAC62E392567A50500A7A3A2 /* TLTransitioningDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLTransitioningDelegate.h; sourceTree = "<group>"; };
+		EAC62E3A2567A50500A7A3A2 /* TLTransitioningDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLTransitioningDelegate.m; sourceTree = "<group>"; };
+		EAC62E3F2567BB3200A7A3A2 /* TLSwipeTransitionAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLSwipeTransitionAnimator.h; sourceTree = "<group>"; };
+		EAC62E402567BB3200A7A3A2 /* TLSwipeTransitionAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLSwipeTransitionAnimator.m; sourceTree = "<group>"; };
+		EAC62E482567C51C00A7A3A2 /* TLSwipeTransitionInteractionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLSwipeTransitionInteractionController.h; sourceTree = "<group>"; };
+		EAC62E492567C51C00A7A3A2 /* TLSwipeTransitionInteractionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLSwipeTransitionInteractionController.m; sourceTree = "<group>"; };
 		EAD65B4E22DCBD5600911886 /* JMLagMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMLagMonitor.h; sourceTree = "<group>"; };
 		EAD65B4F22DCBD5600911886 /* JMLagMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMLagMonitor.m; sourceTree = "<group>"; };
 		EAD65B5222DCD50100911886 /* GCDTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDTestViewController.h; sourceTree = "<group>"; };
@@ -311,6 +323,14 @@
 				EAC62E272566510400A7A3A2 /* TransitonFirstViewController.m */,
 				EAC62E2C2566560100A7A3A2 /* TLTransitionAnimator.h */,
 				EAC62E2D2566560100A7A3A2 /* TLTransitionAnimator.m */,
+				EAC62E3F2567BB3200A7A3A2 /* TLSwipeTransitionAnimator.h */,
+				EAC62E402567BB3200A7A3A2 /* TLSwipeTransitionAnimator.m */,
+				EAC62E332567A26C00A7A3A2 /* TransitionSecondViewController.h */,
+				EAC62E342567A26C00A7A3A2 /* TransitionSecondViewController.m */,
+				EAC62E392567A50500A7A3A2 /* TLTransitioningDelegate.h */,
+				EAC62E3A2567A50500A7A3A2 /* TLTransitioningDelegate.m */,
+				EAC62E482567C51C00A7A3A2 /* TLSwipeTransitionInteractionController.h */,
+				EAC62E492567C51C00A7A3A2 /* TLSwipeTransitionInteractionController.m */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -657,6 +677,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAC62E3B2567A50500A7A3A2 /* TLTransitioningDelegate.m in Sources */,
 				EA2E0F582500E15500240F5E /* DynamicCellHeightTableViewCell.m in Sources */,
 				EA864AAB255E69480068F1C8 /* TLViewB.m in Sources */,
 				EA2DD476230FDA3F0078C11F /* JMTableViewCell.m in Sources */,
@@ -680,6 +701,7 @@
 				EA8CE73122C5A57900E24324 /* MainTableViewController.m in Sources */,
 				EA864AA5255E690C0068F1C8 /* TLViewA.m in Sources */,
 				EA6E6B73250764100039A8A6 /* JMImageCache.m in Sources */,
+				EAC62E412567BB3200A7A3A2 /* TLSwipeTransitionAnimator.m in Sources */,
 				EAD65B5722DCD64800911886 /* SerialTest.m in Sources */,
 				EA2DD473230FD64D0078C11F /* NSArray+JMSubArray.m in Sources */,
 				EA6E6B6225072C040039A8A6 /* TableViewTestViewController.m in Sources */,
@@ -688,8 +710,10 @@
 				EAC62E282566510500A7A3A2 /* TransitonFirstViewController.m in Sources */,
 				EA6E6B72250764100039A8A6 /* JMImageDownloader.m in Sources */,
 				EAF1001B24ED67B700FFD016 /* TTTextTestViewController.m in Sources */,
+				EAC62E352567A26C00A7A3A2 /* TransitionSecondViewController.m in Sources */,
 				EAC62E2E2566560100A7A3A2 /* TLTransitionAnimator.m in Sources */,
 				EAD65B5A22DCD87E00911886 /* SerialTest+SerialEnsure.m in Sources */,
+				EAC62E4A2567C51C00A7A3A2 /* TLSwipeTransitionInteractionController.m in Sources */,
 				EA10BCCC22F6DA850078EE4D /* AddingCellTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
