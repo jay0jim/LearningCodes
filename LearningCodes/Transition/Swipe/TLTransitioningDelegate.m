@@ -9,6 +9,7 @@
 #import "TLTransitioningDelegate.h"
 
 #import "TLSwipeTransitionAnimator.h"
+#import "TLSwipeTransitionInteractionController.h"
 
 @implementation TLTransitioningDelegate
 
@@ -25,11 +26,19 @@
 
 #pragma mark - 交互式（interactivity）还需要多实现这两个方法
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator {
-    return nil;
+    if (self.edgeRecognizer) {
+        return [[TLSwipeTransitionInteractionController alloc] initWithGestureRecognizer:self.edgeRecognizer edge:self.edge];
+    } else {
+        return nil;
+    }
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
-    return nil;
+    if (self.edgeRecognizer) {
+        return [[TLSwipeTransitionInteractionController alloc] initWithGestureRecognizer:self.edgeRecognizer edge:self.edge];
+    } else {
+        return nil;
+    }
 }
 
 @end

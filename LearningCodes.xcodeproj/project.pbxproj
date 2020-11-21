@@ -315,22 +315,10 @@
 		EA864A52255B85740068F1C8 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
+				EAC62E52256976BC00A7A3A2 /* Dissolve */,
+				EAC62E51256976A400A7A3A2 /* Swipe */,
 				EA864A6E255B91C90068F1C8 /* TransitionViewController.h */,
 				EA864A6F255B91C90068F1C8 /* TransitionViewController.m */,
-				EA864A90255BC0740068F1C8 /* TLScrollView.h */,
-				EA864A91255BC0740068F1C8 /* TLScrollView.m */,
-				EAC62E262566510400A7A3A2 /* TransitonFirstViewController.h */,
-				EAC62E272566510400A7A3A2 /* TransitonFirstViewController.m */,
-				EAC62E2C2566560100A7A3A2 /* TLTransitionAnimator.h */,
-				EAC62E2D2566560100A7A3A2 /* TLTransitionAnimator.m */,
-				EAC62E3F2567BB3200A7A3A2 /* TLSwipeTransitionAnimator.h */,
-				EAC62E402567BB3200A7A3A2 /* TLSwipeTransitionAnimator.m */,
-				EAC62E332567A26C00A7A3A2 /* TransitionSecondViewController.h */,
-				EAC62E342567A26C00A7A3A2 /* TransitionSecondViewController.m */,
-				EAC62E392567A50500A7A3A2 /* TLTransitioningDelegate.h */,
-				EAC62E3A2567A50500A7A3A2 /* TLTransitioningDelegate.m */,
-				EAC62E482567C51C00A7A3A2 /* TLSwipeTransitionInteractionController.h */,
-				EAC62E492567C51C00A7A3A2 /* TLSwipeTransitionInteractionController.m */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -468,6 +456,34 @@
 				EAC4B8EA254BE96D00D79A5A /* TLFlowLayout.m */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		EAC62E51256976A400A7A3A2 /* Swipe */ = {
+			isa = PBXGroup;
+			children = (
+				EAC62E3F2567BB3200A7A3A2 /* TLSwipeTransitionAnimator.h */,
+				EAC62E402567BB3200A7A3A2 /* TLSwipeTransitionAnimator.m */,
+				EAC62E332567A26C00A7A3A2 /* TransitionSecondViewController.h */,
+				EAC62E342567A26C00A7A3A2 /* TransitionSecondViewController.m */,
+				EAC62E392567A50500A7A3A2 /* TLTransitioningDelegate.h */,
+				EAC62E3A2567A50500A7A3A2 /* TLTransitioningDelegate.m */,
+				EAC62E482567C51C00A7A3A2 /* TLSwipeTransitionInteractionController.h */,
+				EAC62E492567C51C00A7A3A2 /* TLSwipeTransitionInteractionController.m */,
+			);
+			path = Swipe;
+			sourceTree = "<group>";
+		};
+		EAC62E52256976BC00A7A3A2 /* Dissolve */ = {
+			isa = PBXGroup;
+			children = (
+				EAC62E2C2566560100A7A3A2 /* TLTransitionAnimator.h */,
+				EAC62E2D2566560100A7A3A2 /* TLTransitionAnimator.m */,
+				EA864A90255BC0740068F1C8 /* TLScrollView.h */,
+				EA864A91255BC0740068F1C8 /* TLScrollView.m */,
+				EAC62E262566510400A7A3A2 /* TransitonFirstViewController.h */,
+				EAC62E272566510400A7A3A2 /* TransitonFirstViewController.m */,
+			);
+			path = Dissolve;
 			sourceTree = "<group>";
 		};
 		EAD65B5122DCD4EA00911886 /* GCD */ = {

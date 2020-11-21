@@ -12,10 +12,11 @@
 #import "TLSwipeTransitionAnimator.h"
 #import "TransitonFirstViewController.h"
 #import "TransitionSecondViewController.h"
-
-
+#import "TLTransitioningDelegate.h"
 
 @interface TransitionViewController () <UIViewControllerTransitioningDelegate>
+
+@property (strong, nonatomic) TLTransitioningDelegate *transitionDelegate;
 
 @end
 
@@ -29,6 +30,13 @@
     interactiveRecognizer.edges = UIRectEdgeRight;
     [self.view addGestureRecognizer:interactiveRecognizer];
     
+}
+
+- (TLTransitioningDelegate *)transitionDelegate {
+    if (_transitionDelegate == nil) {
+        _transitionDelegate = [[TLTransitioningDelegate alloc] init];
+    }
+    return _transitionDelegate;
 }
 
 - (IBAction)standardTransition:(id)sender {
@@ -50,7 +58,18 @@
 
 - (IBAction)edgeTransitionButtonTapped:(id)sender {
     TransitionSecondViewController *secondVC = [[TransitionSecondViewController alloc] init];
+    
+    // 设置转场代理
+    TLTransitioningDelegate *customTransitionDelegate = self.transitionDelegate;
+    if ([sender isKindOfClass:UIScreenEdgePanGestureRecognizer.class]) {
+        customTransitionDelegate.edgeRecognizer = sender;
+    } else {
+        customTransitionDelegate.edgeRecognizer = nil;
+    }
+    customTransitionDelegate.edge = UIRectEdgeRight;
+    secondVC.transitioningDelegate = customTransitionDelegate;
     secondVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    
     [self presentViewController:secondVC animated:YES completion:^{
         
     }];
