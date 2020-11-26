@@ -14,9 +14,13 @@
 #import "TransitionSecondViewController.h"
 #import "TLTransitioningDelegate.h"
 
+#import "TransitionImageDetailViewController.h"
+#import "TLFullScreenSwipeTransitionDelegate.h"
+
 @interface TransitionViewController () <UIViewControllerTransitioningDelegate>
 
 @property (strong, nonatomic) TLTransitioningDelegate *transitionDelegate;
+@property (strong, nonatomic) TLFullScreenSwipeTransitionDelegate *fullScreenSwipeDelegate;
 
 @end
 
@@ -29,6 +33,8 @@
     UIScreenEdgePanGestureRecognizer *interactiveRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(edgeTransition:)];
     interactiveRecognizer.edges = UIRectEdgeRight;
     [self.view addGestureRecognizer:interactiveRecognizer];
+    
+    self.imgButton.adjustsImageWhenHighlighted = NO;
     
 }
 
@@ -71,6 +77,19 @@
     secondVC.modalPresentationStyle = UIModalPresentationFullScreen;
     
     [self presentViewController:secondVC animated:YES completion:^{
+        
+    }];
+}
+
+- (IBAction)imageButtonTap:(UIButton *)sender {
+    TransitionImageDetailViewController *detailVC = [[TransitionImageDetailViewController alloc] init];
+    detailVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    self.fullScreenSwipeDelegate = [[TLFullScreenSwipeTransitionDelegate alloc] init];
+    CGRect imgRect = [self.view convertRect:sender.frame toView:self.view];
+    self.fullScreenSwipeDelegate.imgFrameInScreen = imgRect;
+    detailVC.transitioningDelegate = self.fullScreenSwipeDelegate;
+    
+    [self presentViewController:detailVC animated:YES completion:^{
         
     }];
 }

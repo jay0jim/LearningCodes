@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		81B8187DC2B2FB41366BE0D2 /* libPods-LearningCodes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0696EB758946CFF15B9F4756 /* libPods-LearningCodes.a */; };
+		EA061648256DFB79004B5342 /* TLFullScreenSwipeAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = EA061647256DFB79004B5342 /* TLFullScreenSwipeAnimator.m */; };
+		EA061651256E0314004B5342 /* TransitionImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA061650256E0314004B5342 /* TransitionImageDetailViewController.m */; };
+		EA061656256E06B9004B5342 /* testImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA061655256E06B9004B5342 /* testImage.jpg */; };
+		EA06165C256F7739004B5342 /* TLFullScreenSwipeTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA06165B256F7739004B5342 /* TLFullScreenSwipeTransitionDelegate.m */; };
 		EA0C8CDA2531A43900D0F8DF /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = EA0C8CD92531A43900D0F8DF /* test.html */; };
 		EA10BCC722F2C8040078EE4D /* BasicTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10BCC622F2C8040078EE4D /* BasicTestViewController.m */; };
 		EA10BCCC22F6DA850078EE4D /* AddingCellTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10BCCB22F6DA850078EE4D /* AddingCellTestViewController.m */; };
@@ -85,6 +89,13 @@
 		0696EB758946CFF15B9F4756 /* libPods-LearningCodes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LearningCodes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3FA0042FF3154047FB2F061 /* Pods-LearningCodes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningCodes.debug.xcconfig"; path = "Target Support Files/Pods-LearningCodes/Pods-LearningCodes.debug.xcconfig"; sourceTree = "<group>"; };
 		D799829DCD6761AD2688E8AF /* Pods-LearningCodes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningCodes.release.xcconfig"; path = "Target Support Files/Pods-LearningCodes/Pods-LearningCodes.release.xcconfig"; sourceTree = "<group>"; };
+		EA061646256DFB79004B5342 /* TLFullScreenSwipeAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLFullScreenSwipeAnimator.h; sourceTree = "<group>"; };
+		EA061647256DFB79004B5342 /* TLFullScreenSwipeAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLFullScreenSwipeAnimator.m; sourceTree = "<group>"; };
+		EA06164F256E0314004B5342 /* TransitionImageDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionImageDetailViewController.h; sourceTree = "<group>"; };
+		EA061650256E0314004B5342 /* TransitionImageDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionImageDetailViewController.m; sourceTree = "<group>"; };
+		EA061655256E06B9004B5342 /* testImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImage.jpg; sourceTree = "<group>"; };
+		EA06165A256F7739004B5342 /* TLFullScreenSwipeTransitionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLFullScreenSwipeTransitionDelegate.h; sourceTree = "<group>"; };
+		EA06165B256F7739004B5342 /* TLFullScreenSwipeTransitionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLFullScreenSwipeTransitionDelegate.m; sourceTree = "<group>"; };
 		EA0C8CD92531A43900D0F8DF /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		EA10BCC522F2C8040078EE4D /* BasicTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicTestViewController.h; sourceTree = "<group>"; };
 		EA10BCC622F2C8040078EE4D /* BasicTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicTestViewController.m; sourceTree = "<group>"; };
@@ -238,6 +249,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EA061645256DFB12004B5342 /* FullScreenSwipe */ = {
+			isa = PBXGroup;
+			children = (
+				EA061646256DFB79004B5342 /* TLFullScreenSwipeAnimator.h */,
+				EA061647256DFB79004B5342 /* TLFullScreenSwipeAnimator.m */,
+				EA06164F256E0314004B5342 /* TransitionImageDetailViewController.h */,
+				EA061650256E0314004B5342 /* TransitionImageDetailViewController.m */,
+				EA06165A256F7739004B5342 /* TLFullScreenSwipeTransitionDelegate.h */,
+				EA06165B256F7739004B5342 /* TLFullScreenSwipeTransitionDelegate.m */,
+			);
+			path = FullScreenSwipe;
+			sourceTree = "<group>";
+		};
 		EA10BCC822F2C80D0078EE4D /* BasicTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +339,7 @@
 		EA864A52255B85740068F1C8 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
+				EA061645256DFB12004B5342 /* FullScreenSwipe */,
 				EAC62E52256976BC00A7A3A2 /* Dissolve */,
 				EAC62E51256976A400A7A3A2 /* Swipe */,
 				EA864A6E255B91C90068F1C8 /* TransitionViewController.h */,
@@ -339,6 +364,7 @@
 		EA8CE6F122C5A4E400E24324 = {
 			isa = PBXGroup;
 			children = (
+				EA061655256E06B9004B5342 /* testImage.jpg */,
 				EA20E5FC2552815700AF46D7 /* rgba.txt */,
 				EAC4B8DA25360C2900D79A5A /* HTMLBody */,
 				EAC4B8D025360B5500D79A5A /* LearningHTML.html */,
@@ -634,6 +660,7 @@
 				EA20E5FD2552815700AF46D7 /* rgba.txt in Resources */,
 				EA8CE70A22C5A4E600E24324 /* LaunchScreen.storyboard in Resources */,
 				EAC4B8D125360B5500D79A5A /* LearningHTML.html in Resources */,
+				EA061656256E06B9004B5342 /* testImage.jpg in Resources */,
 				EA6E6B7B250914BE0039A8A6 /* teacher.txt in Resources */,
 				EA8CE70722C5A4E600E24324 /* Assets.xcassets in Resources */,
 				EA8CE70522C5A4E400E24324 /* Main.storyboard in Resources */,
@@ -709,10 +736,12 @@
 				EA2E0F5424FBB60F00240F5E /* DynamicCellHeightViewController.m in Sources */,
 				EA8CE70D22C5A4E600E24324 /* main.m in Sources */,
 				EAD65B5422DCD50100911886 /* GCDTestViewController.m in Sources */,
+				EA061651256E0314004B5342 /* TransitionImageDetailViewController.m in Sources */,
 				EA8CE6FF22C5A4E400E24324 /* AppDelegate.m in Sources */,
 				EA6E6B7F25093B470039A8A6 /* DynamicTableViewController.m in Sources */,
 				EA2DD46F230F91D00078C11F /* JMTableViewController.m in Sources */,
 				EA864A70255B91C90068F1C8 /* TransitionViewController.m in Sources */,
+				EA06165C256F7739004B5342 /* TLFullScreenSwipeTransitionDelegate.m in Sources */,
 				EA8CE73922C5A67800E24324 /* JMNavigationController.m in Sources */,
 				EA8CE73122C5A57900E24324 /* MainTableViewController.m in Sources */,
 				EA864AA5255E690C0068F1C8 /* TLViewA.m in Sources */,
@@ -721,6 +750,7 @@
 				EAD65B5722DCD64800911886 /* SerialTest.m in Sources */,
 				EA2DD473230FD64D0078C11F /* NSArray+JMSubArray.m in Sources */,
 				EA6E6B6225072C040039A8A6 /* TableViewTestViewController.m in Sources */,
+				EA061648256DFB79004B5342 /* TLFullScreenSwipeAnimator.m in Sources */,
 				EAC4B8E2254BDDEE00D79A5A /* TLCollectionViewController.m in Sources */,
 				EA10BCC722F2C8040078EE4D /* BasicTestViewController.m in Sources */,
 				EAC62E282566510500A7A3A2 /* TransitonFirstViewController.m in Sources */,

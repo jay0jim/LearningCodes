@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TransitionViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIButton *imgButton;
+
 @end
 
 NS_ASSUME_NONNULL_END
