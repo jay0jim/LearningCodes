@@ -11,7 +11,11 @@
 #import "TLViewA.h"
 #import "TLViewB.h"
 
+#import "TLScrollView.h"
+
 @interface TouchTestViewController ()
+
+@property (strong, nonatomic) TLScrollView *scrollView;
 
 @end
 
@@ -21,14 +25,49 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    TLViewA *viewA = [[TLViewA alloc] initWithFrame:CGRectMake(100, 200, 200, 170)];
-    viewA.backgroundColor = [UIColor redColor];
-    [self.view addSubview:viewA];
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGestureRecognizer:)];
+    [self.view addGestureRecognizer:panGesture];
     
-//    TLViewB *viewB = [[TLViewB alloc] initWithFrame:CGRectMake(-50, -100, 200, 170)];
-//    viewB.backgroundColor = [UIColor blueColor];
-//    viewB.alpha = 0.8;
-//    [viewA addSubview:viewB];
+    [self initSubviews];
+}
+
+- (void)initSubviews {
+    self.scrollView = [[TLScrollView alloc] initWithFrame:self.view.frame];
+    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    [self.scrollView setContentSize:CGSizeMake(4*SCREEN_WIDTH, 2*SCREEN_HEIGHT)];
+    [self.scrollView setPagingEnabled:YES];
+    NSArray *colorArray = @[
+        [UIColor blueColor],
+        [UIColor greenColor],
+        [UIColor redColor],
+        [UIColor yellowColor],
+    ];
+    for (int i = 0; i < 4; i++) {
+        CGRect frame = self.scrollView.frame;
+        frame.origin.x += i * SCREEN_WIDTH;
+        UIView *tempView = [[UIView alloc] initWithFrame:frame];
+        tempView.backgroundColor = colorArray[i];
+        [self.scrollView addSubview:tempView];
+    }
+    [self.view insertSubview:self.scrollView atIndex:0];
+}
+
+- (void)handlePanGestureRecognizer:(UIPanGestureRecognizer *)gesture {
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"%@", NSStringFromCGPoint([gesture velocityInView:self.view]));
+        CGPoint vel = [gesture velocityInView:gesture.view];
+        if (fabs(vel.x) - fabs(vel.y) < 50) {
+            NSLog(@"偏向竖直方向");
+            if (vel.y >= 0) {
+                NSLog(@"方向向下");
+            } else {
+                NSLog(@"方向向上");
+            }
+        }
+    }
+    
+    
+    
 }
 
 

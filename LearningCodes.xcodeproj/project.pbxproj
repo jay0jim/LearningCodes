@@ -27,6 +27,7 @@
 		EA6E6B73250764100039A8A6 /* JMImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E6B70250764100039A8A6 /* JMImageCache.m */; };
 		EA6E6B7B250914BE0039A8A6 /* teacher.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA6E6B7A250914BD0039A8A6 /* teacher.txt */; };
 		EA6E6B7F25093B470039A8A6 /* DynamicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E6B7E25093B470039A8A6 /* DynamicTableViewController.m */; };
+		EA70171A25773FB300D08AF0 /* TLSwipeDownTransitionInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA70171925773FB300D08AF0 /* TLSwipeDownTransitionInteractionController.m */; };
 		EA864A70255B91C90068F1C8 /* TransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA864A6F255B91C90068F1C8 /* TransitionViewController.m */; };
 		EA864A92255BC0740068F1C8 /* TLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA864A91255BC0740068F1C8 /* TLScrollView.m */; };
 		EA864A9C255E68DF0068F1C8 /* TouchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA864A9B255E68DF0068F1C8 /* TouchTestViewController.m */; };
@@ -122,6 +123,8 @@
 		EA6E6B7A250914BD0039A8A6 /* teacher.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = teacher.txt; sourceTree = "<group>"; };
 		EA6E6B7D25093B470039A8A6 /* DynamicTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicTableViewController.h; sourceTree = "<group>"; };
 		EA6E6B7E25093B470039A8A6 /* DynamicTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicTableViewController.m; sourceTree = "<group>"; };
+		EA70171825773FB300D08AF0 /* TLSwipeDownTransitionInteractionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLSwipeDownTransitionInteractionController.h; sourceTree = "<group>"; };
+		EA70171925773FB300D08AF0 /* TLSwipeDownTransitionInteractionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLSwipeDownTransitionInteractionController.m; sourceTree = "<group>"; };
 		EA864A6E255B91C90068F1C8 /* TransitionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionViewController.h; sourceTree = "<group>"; };
 		EA864A6F255B91C90068F1C8 /* TransitionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionViewController.m; sourceTree = "<group>"; };
 		EA864A90255BC0740068F1C8 /* TLScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLScrollView.h; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 				EA061650256E0314004B5342 /* TransitionImageDetailViewController.m */,
 				EA06165A256F7739004B5342 /* TLFullScreenSwipeTransitionDelegate.h */,
 				EA06165B256F7739004B5342 /* TLFullScreenSwipeTransitionDelegate.m */,
+				EA70171825773FB300D08AF0 /* TLSwipeDownTransitionInteractionController.h */,
+				EA70171925773FB300D08AF0 /* TLSwipeDownTransitionInteractionController.m */,
 			);
 			path = FullScreenSwipe;
 			sourceTree = "<group>";
@@ -720,6 +725,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA70171A25773FB300D08AF0 /* TLSwipeDownTransitionInteractionController.m in Sources */,
 				EAC62E3B2567A50500A7A3A2 /* TLTransitioningDelegate.m in Sources */,
 				EA2E0F582500E15500240F5E /* DynamicCellHeightTableViewCell.m in Sources */,
 				EA864AAB255E69480068F1C8 /* TLViewB.m in Sources */,
