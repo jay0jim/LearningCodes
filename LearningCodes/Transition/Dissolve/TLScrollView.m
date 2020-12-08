@@ -23,12 +23,16 @@
         }
     }
     
-//    // test
-//    if ([otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-//        return YES;
-//    }
+    // 判断是否为panGesture
+    if ([otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+        if (otherGestureRecognizer.state == UIGestureRecognizerStateBegan && self.contentOffset.y <= 0) {
+            return YES;
+        }
+    }
     
     return NO;
 }
+
+
 
 @end

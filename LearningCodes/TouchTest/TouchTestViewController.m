@@ -34,8 +34,8 @@
 - (void)initSubviews {
     self.scrollView = [[TLScrollView alloc] initWithFrame:self.view.frame];
     self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    [self.scrollView setContentSize:CGSizeMake(4*SCREEN_WIDTH, 2*SCREEN_HEIGHT)];
-    [self.scrollView setPagingEnabled:YES];
+    [self.scrollView setContentSize:CGSizeMake(0, 4*SCREEN_HEIGHT)];
+//    [self.scrollView setPagingEnabled:YES];
     NSArray *colorArray = @[
         [UIColor blueColor],
         [UIColor greenColor],
@@ -44,7 +44,7 @@
     ];
     for (int i = 0; i < 4; i++) {
         CGRect frame = self.scrollView.frame;
-        frame.origin.x += i * SCREEN_WIDTH;
+        frame.origin.y += i * SCREEN_HEIGHT;
         UIView *tempView = [[UIView alloc] initWithFrame:frame];
         tempView.backgroundColor = colorArray[i];
         [self.scrollView addSubview:tempView];
