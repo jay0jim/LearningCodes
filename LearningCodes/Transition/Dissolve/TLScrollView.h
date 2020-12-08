@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TLScrollView : UIScrollView
+@interface TLScrollView : UIScrollView <UIScrollViewDelegate>
 
 @property (assign, nonatomic) BOOL canPullDown;
 

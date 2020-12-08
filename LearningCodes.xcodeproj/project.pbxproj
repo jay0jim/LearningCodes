@@ -28,6 +28,7 @@
 		EA6E6B7B250914BE0039A8A6 /* teacher.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA6E6B7A250914BD0039A8A6 /* teacher.txt */; };
 		EA6E6B7F25093B470039A8A6 /* DynamicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E6B7E25093B470039A8A6 /* DynamicTableViewController.m */; };
 		EA70171A25773FB300D08AF0 /* TLSwipeDownTransitionInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA70171925773FB300D08AF0 /* TLSwipeDownTransitionInteractionController.m */; };
+		EA8331A5257FE49D00934B21 /* LongPic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA8331A4257FE49D00934B21 /* LongPic.jpg */; };
 		EA864A70255B91C90068F1C8 /* TransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA864A6F255B91C90068F1C8 /* TransitionViewController.m */; };
 		EA864A92255BC0740068F1C8 /* TLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA864A91255BC0740068F1C8 /* TLScrollView.m */; };
 		EA864A9C255E68DF0068F1C8 /* TouchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA864A9B255E68DF0068F1C8 /* TouchTestViewController.m */; };
@@ -125,6 +126,7 @@
 		EA6E6B7E25093B470039A8A6 /* DynamicTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicTableViewController.m; sourceTree = "<group>"; };
 		EA70171825773FB300D08AF0 /* TLSwipeDownTransitionInteractionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLSwipeDownTransitionInteractionController.h; sourceTree = "<group>"; };
 		EA70171925773FB300D08AF0 /* TLSwipeDownTransitionInteractionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLSwipeDownTransitionInteractionController.m; sourceTree = "<group>"; };
+		EA8331A4257FE49D00934B21 /* LongPic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LongPic.jpg; sourceTree = "<group>"; };
 		EA864A6E255B91C90068F1C8 /* TransitionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionViewController.h; sourceTree = "<group>"; };
 		EA864A6F255B91C90068F1C8 /* TransitionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionViewController.m; sourceTree = "<group>"; };
 		EA864A90255BC0740068F1C8 /* TLScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLScrollView.h; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 		EA8CE6F122C5A4E400E24324 = {
 			isa = PBXGroup;
 			children = (
+				EA8331A4257FE49D00934B21 /* LongPic.jpg */,
 				EA061655256E06B9004B5342 /* testImage.jpg */,
 				EA20E5FC2552815700AF46D7 /* rgba.txt */,
 				EAC4B8DA25360C2900D79A5A /* HTMLBody */,
@@ -671,6 +674,7 @@
 				EA8CE70522C5A4E400E24324 /* Main.storyboard in Resources */,
 				EADEDA4A251C76BA004A5B51 /* localHTML.css in Resources */,
 				EAC4B8D625360BDD00D79A5A /* style.css in Resources */,
+				EA8331A5257FE49D00934B21 /* LongPic.jpg in Resources */,
 				EA8BDADC238E59C200C6CAC4 /* 1573592711.ts in Resources */,
 				EA2E0F592500E15500240F5E /* DynamicCellHeightTableViewCell.xib in Resources */,
 				EA8BDAF12390E1A600C6CAC4 /* 190204084208765161.mp4 in Resources */,

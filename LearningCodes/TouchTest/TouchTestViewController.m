@@ -54,14 +54,15 @@
 
 - (void)handlePanGestureRecognizer:(UIPanGestureRecognizer *)gesture {
     if (gesture.state == UIGestureRecognizerStateBegan) {
-        NSLog(@"%@", NSStringFromCGPoint([gesture velocityInView:self.view]));
         CGPoint vel = [gesture velocityInView:gesture.view];
+        
+        // 偏向竖直方向
         if (fabs(vel.x) - fabs(vel.y) < 50) {
-            NSLog(@"偏向竖直方向");
+            // 方向向下
             if (vel.y >= 0) {
-                NSLog(@"方向向下");
+                
             } else {
-                NSLog(@"方向向上");
+                
             }
         }
     }
